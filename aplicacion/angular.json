@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "gestion": {
+    "aplicacion": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/gestion",
+            "outputPath": "dist/aplicacion",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -21,12 +21,18 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets/styles_admin.css",
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/popper.js/dist/umd/popper.min.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -63,18 +69,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "gestion:build"
+            "browserTarget": "aplicacion:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "gestion:build:production"
+              "browserTarget": "aplicacion:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "gestion:build"
+            "browserTarget": "aplicacion:build"
           }
         },
         "test": {
@@ -111,15 +117,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "gestion:serve"
+            "devServerTarget": "aplicacion:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "gestion:serve:production"
+              "devServerTarget": "aplicacion:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "gestion"
+  "defaultProject": "aplicacion"
 }
