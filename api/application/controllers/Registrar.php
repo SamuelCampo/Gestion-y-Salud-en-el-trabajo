@@ -28,9 +28,8 @@ public function __construct()
 				$this->Planthtml->cont['js'] = "";
 			break;
 			case 'ver':
-				$usuario['datusuario'] = $this->Usuario->ConsultaUsuario();
-				$this->Planthtml->cont['contenido'] = $this->load->view('Principal/home',$usuario,true);
-				$this->Planthtml->cont['js'] = "";
+				$query = $this->Usuario->ConsultaUsuario();
+				echo json_encode($query);
 				break;
 		default:
 			# code...
