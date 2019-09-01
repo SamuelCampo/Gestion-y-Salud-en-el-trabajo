@@ -12,7 +12,7 @@ class Itens extends CI_Controller {
 				if ($this->uri->segment(4) == "guardar") {
 
 				$query = $this->Registro->RegistrarIten();
-				json_encode($query);
+				echo json_encode($query);
 				}
 				break;
 			

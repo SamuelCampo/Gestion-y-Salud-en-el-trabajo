@@ -29,8 +29,7 @@ public function __construct()
 			break;
 			case 'ver':
 				$usuario['datusuario'] = $this->Usuario->ConsultaUsuario();
-				$this->Planthtml->cont['contenido'] = $this->load->view('Principal/home',$usuario,true);
-				$this->Planthtml->cont['js'] = "";
+				
 				break;
 		default:
 			# code...

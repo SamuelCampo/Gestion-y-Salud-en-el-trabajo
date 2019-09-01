@@ -12,7 +12,7 @@ class Terceros extends CI_Controller {
 				if ($this->uri->segment(4) == "guardar") {
 
 				$query = $this->Registro->RegistrarTercero();
-				json_encode($query);
+				echo json_encode($query);
 				}
 				break;
 			

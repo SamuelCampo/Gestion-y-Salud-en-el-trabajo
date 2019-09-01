@@ -12,7 +12,7 @@ class Formatos extends CI_Controller {
 				if ($this->uri->segment(4) == "guardar") {
 
 				$query = $this->Registro->RegistrarFormato();
-				json_encode($query);
+				echo json_encode($query);
 				}
 				break;
 			
