@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ConfiguracionService } from '../service/configuracion.service';
+
 
 
 @Component({
@@ -11,13 +13,26 @@ export class IntroduccionComponent implements OnInit {
   
   nombre1;
   nombre2;
-  constructor() { }
+  config: any = {};
+  constructor(private configuracion:ConfiguracionService) { }
 
   ngOnInit() {
+    this.consultarUsuarios();
   }
 
   IniciarSesion(){
   	console.log(this.nombre1+' '+this.nombre2);
+  }
+
+  consultarUsuarios(){
+    this.configuracion.getConfig()
+      .subscribe(data => {
+      this.config = data;
+      complete => 
+      console.log(this.config);
+    },error => {
+
+    })
   }
 
 }
