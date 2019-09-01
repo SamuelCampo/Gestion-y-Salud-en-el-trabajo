@@ -28,7 +28,6 @@ export class IntroduccionComponent implements OnInit {
     this.configuracion.getConfig()
       .subscribe(data => {
       this.config = data;
-      complete => 
       console.log(this.config);
     },error => {
 
