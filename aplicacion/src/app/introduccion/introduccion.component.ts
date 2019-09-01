@@ -13,6 +13,13 @@ export class IntroduccionComponent implements OnInit {
   
   nombre1;
   nombre2;
+  apellido1;
+  apellido2;
+  cedula;
+  telefono;
+  direccion;
+  cargo;
+  clave;
   config: any = {};
   constructor(private configuracion:ConfiguracionService) { }
 

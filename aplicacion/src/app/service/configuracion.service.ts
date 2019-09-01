@@ -1,16 +1,22 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient , HttpHeaders} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConfiguracionService {
 
+	
+
   constructor(private http:HttpClient) {
+  	
    }
 
 
    getConfig() {
-	  return this.http.get('https://jsonplaceholder.typicode.com/users');
+   		const path = "http://localhost/gestion/api/index.php/registrar/usuario/ver";
+	   	let headers = new HttpHeaders();
+    	headers = headers.set("Content-Type", "application/x-www-form-urlencoded");
+	  	return this.http.get(path);
 	}
 }
