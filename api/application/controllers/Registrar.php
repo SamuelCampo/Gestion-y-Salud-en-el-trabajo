@@ -16,6 +16,10 @@ public function __construct()
 
 	public function usuario()
 	{
+	header('Access-Control-Allow-Origin: *');
+	header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method");
+	header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+	header("Allow: GET, POST, OPTIONS, PUT, DELETE");
 	$accion = $this->uri->segment(3,'0');
 	switch ($accion) {
 		case '0':
@@ -24,8 +28,6 @@ public function __construct()
 
 				$query = $this->Registro->RegistrarUsuario();
 				}
-				$this->Planthtml->cont['contenido'] = $this->load->view('Principal/home',"",true);
-				$this->Planthtml->cont['js'] = "";
 			break;
 			case 'ver':
 				$query = $this->Usuario->ConsultaUsuario();
@@ -35,6 +37,5 @@ public function __construct()
 			# code...
 			break;
 	}
-	$this->Planthtml->generar();
 	}
 }

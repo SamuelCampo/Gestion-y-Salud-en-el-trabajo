@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Usuario extends CI_Model {
 
-	function RegistrarUsuario($datusuario)
+	function RegistrarUsuario($datusuario = "")
 	{
 		$datusuario = (object)$this->input->post();
 
@@ -21,11 +21,11 @@ class Usuario extends CI_Model {
 		$this->db->insert('ps_usuario_t0', $arr_usuario);
 	}
 
-public function ConsultaUsuario($idusuario_t0)
+public function ConsultaUsuario($idusuario_t0 = "")
 {
 	$query = $this->db->get('ps_usuario_t0');
-			if ($query->row() > 0) {
-				return $query->row();
+			if ($query->result() > 0) {
+				return $query->result();
 			}
 }
 
