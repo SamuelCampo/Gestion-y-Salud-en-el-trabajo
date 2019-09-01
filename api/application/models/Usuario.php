@@ -16,9 +16,19 @@ class Usuario extends CI_Model {
 		$arr_usuario['telefono_t0'] = $datusuario->telefono_t0;
 		$arr_usuario['direccion_t0'] = $datusuario->direccion_t0;
 		$arr_usuario['clave_t0'] = $datusuario->clave_t0;
+		$arr_usuario['cedula_t0'] = $datusuario->cedula_t0;
 		$arr_usuario['fecha_cracion_t0'] = date('Y-m-d');
 
-		$this->db->insert('ps_usuario_t0', $arr_usuario);
+
+		$this->db->where('cedula_t0', $datusuario->cedula_t0);
+			$query = $this->db->get('ps_usuario_t0');
+			if ($query->row() > 0) {
+				$this->db->where('cedula_t0', $datusuario->cedula_t0);
+				return $this->db->update('ps_usuario_t0', $arr_usuario);
+
+			}else {
+				return $this->db->insert('ps_usuario_t0', $arr_usuario);
+			}
 	}
 
 public function ConsultaUsuario($idusuario_t0 = "")

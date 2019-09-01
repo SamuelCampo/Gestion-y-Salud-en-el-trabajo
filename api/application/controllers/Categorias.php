@@ -12,7 +12,7 @@ class Categorias extends CI_Controller {
 				if ($this->uri->segment(4) == "guardar") {
 
 				$query = $this->Registro->RegistrarCategoria();
-				json_encode($query);
+				echo json_encode($query);
 				}
 				break;
 			
