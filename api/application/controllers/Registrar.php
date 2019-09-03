@@ -26,10 +26,14 @@ public function __construct()
 		case 'gestionar':
 			if ($this->uri->segment(4) == "guardar") {
 
+<<<<<<< HEAD
 				$query = $this->Registro->RegistrarUsuario();
 				if ($query) {
 					echo json_encode('Exitoso');
 				}
+=======
+				$query = $this->Usuario->RegistrarUsuario();
+>>>>>>> 30d71686394213a9da5b49254dade4a30f9c5fce
 				}
 			break;
 			case 'ver':
@@ -41,4 +45,6 @@ public function __construct()
 			break;
 	}
 	}
+
+
 }
