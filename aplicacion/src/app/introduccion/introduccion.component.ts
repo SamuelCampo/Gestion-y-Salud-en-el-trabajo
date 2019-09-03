@@ -1,7 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,NgForm } from '@angular/forms';
 import { ConfiguracionService } from '../service/configuracion.service';
-
+import { Router } from '@angular/router';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+  // ...
+} from '@angular/animations';
 
 
 @Component({
@@ -21,21 +29,32 @@ export class IntroduccionComponent implements OnInit {
   cargo;
   clave;
   config: any = {};
-  constructor(private configuracion:ConfiguracionService) { }
+  constructor(
+    private configuracion:ConfiguracionService,
+    private router:Router
+    ) { }
 
   ngOnInit() {
     this.consultarUsuarios();
   }
 
-  IniciarSesion(){
-  	console.log(this.nombre1+' '+this.nombre2);
+  IniciarSesion(f: NgForm){
+    console.log(f.value);
+  	this.configuracion.guardarUsuario(f.value)
+    .subscribe((newUsuario) => {
+      console.log(newUsuario);
+    })
   }
 
   consultarUsuarios(){
     this.configuracion.getConfig()
       .subscribe(data => {
       this.config = data;
-      console.log(this.config);
+      if (data !== false) {
+       //this.router.navigateByUrl('/setup2'); 
+      }else{
+        
+      }
     },error => {
 
     })
