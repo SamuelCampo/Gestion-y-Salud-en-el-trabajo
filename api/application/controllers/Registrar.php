@@ -39,21 +39,5 @@ public function __construct()
 	}
 	}
 
-	public function UsuarioP()
-	{
-		$datUser = (object)array(
-			'primer_nombre_t0' => 'Ey',
-			'segunda_nombre_t0' => 'Alejandro',
-			'primer_apellido_t0' => 'Ortega',
-			'segundo_apellido_t0' => 'Blanco',
-			'nombre_completo_t0' => 'Miguel Alejandro Ortega Blanco',
-			'usuario_t0' => 'Miguelort095',
-			'telefono_t0' => '302 454 67 08',
-			'direccion_t0' => 'Santa Viviana',
-			'clave_t0' => '123456789',
-			'cedula_t0' => '1053124898',
-			'fecha_cracion_t0' => '2019-09-01'
-		);
-		$this->Usuario->RegistrarUsuario($datUser);
-	}
+
 }
