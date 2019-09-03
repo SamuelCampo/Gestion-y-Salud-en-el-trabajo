@@ -5,18 +5,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { IntroduccionComponent } from './introduccion/introduccion.component';
+import { Routes, RouterModule } from '@angular/router';
+import { Setup2Component } from './setup2/setup2.component';
 
+const routes: Routes = [];
 @NgModule({
   declarations: [
     AppComponent,
-    IntroduccionComponent
+    IntroduccionComponent,
+    Setup2Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(routes)
   ],
+  exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })

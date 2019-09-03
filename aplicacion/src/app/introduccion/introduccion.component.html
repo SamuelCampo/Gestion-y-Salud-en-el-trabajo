@@ -12,25 +12,25 @@
 			    Crea tu usuario principal
 			  </div>
 			  <div class="card-body">
-			    <form #f="ngForm" (ngSubmit)="IniciarSesion()">
+			    <form #f="ngForm" (ngSubmit)="IniciarSesion(f)" id="form_tercero">
 			      <label for="">Primer Nombre</label>
 			      <input [(ngModel)]="nombre1" name="nombre1" type="text" class="form-control">
 			      <label for="">Segundo Nombre</label>
 			      <input [(ngModel)]="nombre2" type="text" name="nombre2" class="form-control">
 			      <label for="">Primer Apellido</label>
-			      <input [(ngModel)]="apellido1" type="text" class="form-control">
+			      <input [(ngModel)]="apellido1" type="text" name="apellido1" class="form-control">
 			      <label for="">Segundo Apellido</label>
-			      <input [(ngModel)]="apellido2" type="text" class="form-control">
+			      <input [(ngModel)]="apellido2" type="text" name="apellido2" class="form-control">
 			      <label for="">Cedula</label>
-			      <input [(ngModel)]="cedula" type="text" class="form-control">
+			      <input [(ngModel)]="cedula" type="text" name="cedula" class="form-control">
 			      <label for="">Telefono</label>
-			      <input [(ngModel)]="telefono" type="text" class="form-control">
+			      <input [(ngModel)]="telefono" type="text" name="telefono" class="form-control">
 			      <label for="">Direccion</label>
-			      <input [(ngModel)]="direccion" type="text" class="form-control">
+			      <input [(ngModel)]="direccion" type="text" name="direccion" class="form-control">
 			      <label for="">Cargo</label>
-			      <input [(ngModel)]="cargo2" type="text" class="form-control">
+			      <input [(ngModel)]="cargo2" type="text" name="cargo2" class="form-control">
 			      <label for="">Contraseña</label>
-			      <input [(ngModel)]="cargo2" type="password" class="form-control">
+			      <input [(ngModel)]="clave" type="password" name="clave" class="form-control">
 			      <button class="btn btn-primary">Guardar</button>
 			    </form>
 
