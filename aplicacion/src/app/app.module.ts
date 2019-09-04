@@ -7,13 +7,23 @@ import { HttpClientModule } from '@angular/common/http';
 import { IntroduccionComponent } from './introduccion/introduccion.component';
 import { Routes, RouterModule } from '@angular/router';
 import { Setup2Component } from './setup2/setup2.component';
+import { LoginComponent } from './login/login.component';
+import { CategoriaComponent } from './categoria/categoria.component';
+import { FormatoComponent } from './formato/formato.component';
+import { ItemsComponent } from './items/items.component';
+import { EvaluacionComponent } from './evaluacion/evaluacion.component';
 
 const routes: Routes = [];
 @NgModule({
   declarations: [
     AppComponent,
     IntroduccionComponent,
-    Setup2Component
+    Setup2Component,
+    LoginComponent,
+    CategoriaComponent,
+    FormatoComponent,
+    ItemsComponent,
+    EvaluacionComponent
   ],
   imports: [
     BrowserModule,

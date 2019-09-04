@@ -25,8 +25,8 @@ public function __construct()
 		case '0':
 		case 'gestionar':
 			if ($this->uri->segment(4) == "guardar") {
-
-				$query = $this->Registro->RegistrarUsuario();
+				echo json_encode($this->input->post());
+				$query = $this->Usuario->RegistrarUsuario();
 				if ($query) {
 					echo json_encode('Exitoso');
 				}

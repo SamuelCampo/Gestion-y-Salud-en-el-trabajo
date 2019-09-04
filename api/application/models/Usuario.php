@@ -13,7 +13,7 @@ class Usuario extends CI_Model {
 		$arr_usuario['segunda_nombre_t0'] = $datusuario->segunda_nombre_t0;
 		$arr_usuario['primer_apellido_t0'] = $datusuario->primer_apellido_t0;
 		$arr_usuario['segundo_apellido_t0'] = $datusuario->segundo_apellido_t0;
-		$arr_usuario['nombre_completo_t0'] = $datusuario->nombre_completo_t0;
+		$arr_usuario['nombre_completo_t0'] = $datusuario->primer_nombre_t0. " ".$datusuario->segunda_nombre_t0." ".$datusuario->primer_apellido_t0." ".$datusuario->segundo_apellido_t0;
 		$arr_usuario['usuario_t0'] = $datusuario->usuario_t0;
 		$arr_usuario['telefono_t0'] = $datusuario->telefono_t0;
 		$arr_usuario['direccion_t0'] = $datusuario->direccion_t0;

@@ -39,10 +39,10 @@ export class IntroduccionComponent implements OnInit {
   }
 
   IniciarSesion(f: NgForm){
-    console.log(f.value);
+    //console.log(f.value);
   	this.configuracion.guardarUsuario(f.value)
     .subscribe((newUsuario) => {
-      console.log(newUsuario);
+      //console.log(newUsuario);
     })
   }
 
