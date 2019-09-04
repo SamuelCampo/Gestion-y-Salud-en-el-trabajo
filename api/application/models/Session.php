@@ -13,7 +13,7 @@ class Seccion extends CI_Model {
 
 	
 
-	function RegistrarSeccion($datseccion = "")
+	function RegistrarSession($datseccion = "")
 	{
 		$datseccion = (object)$this->input->post();
 
@@ -27,7 +27,7 @@ class Seccion extends CI_Model {
 
 	}
 
-	function ValidarSeccion()
+	function ValidarSession()
 	{
 		
 		if ($this->session->userdata('idusuario')) {

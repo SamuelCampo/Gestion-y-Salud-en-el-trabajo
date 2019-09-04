@@ -1,1 +1,37 @@
-<p>formato works!</p>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12 text-center">
+			<h3>Hola , Eres nuevo te invitamos a configurar los datos de tu <b>tu sistema de gestion y salud en el trabajo</b></h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-2"></div>
+		<div class="col-lg-8">
+			<div class="card">
+			  <div class="card-header">
+			    Crear Formato
+			  </div>
+			  <div class="login-wrap">
+			    <form #f="ngForm" (ngSubmit)="IniciarSesion(f)" id="form_tercero" class="login-html">
+			    	<div class="login-form">
+			    		<div class="">
+			    			<div class="group">
+			    				<label for="" class="label">Titulo del Formato</label>
+							    <input [(ngModel)]="titulo1" name="titulo_t2" type="text" class="input form-control">
+							</div>
+							<div class="group">
+							    <label for="" class="label">Descripcion</label>
+							    <textarea [(ngModel)]="descripcion1" type="text" name="descripcion_t2" class="input form-control"></textarea>
+							</div>
+							    <div class="group">
+							    <button class="button">Guardar</button>
+			    			</div>
+					    </div>
+					</div>
+			    </form>
+			  </div>
+			</div>
+		</div>
+	</div>
+</div>
+
