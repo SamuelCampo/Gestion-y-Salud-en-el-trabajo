@@ -1,10 +1,17 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Categorias extends CI_Controller {
+class Sessiones extends CI_Controller {
 
-	public function Categoria() 
+	public function __construct()
 	{
+		parent::__construct();
+		$this->load->model('Session');
+	}
+
+	public function RegistrarSession()
+	{
+		{
 	header('Access-Control-Allow-Origin: *');
 	header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method");
 	header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
@@ -15,7 +22,7 @@ class Categorias extends CI_Controller {
 			case 'gestionar':
 				if ($this->uri->segment(4) == "guardar") {
 
-				$query = $this->Registro->RegistrarCategoria();
+				$query = $this->Session->RegistrarSession();
 				echo json_encode($query);
 				}
 				break;
@@ -23,10 +30,10 @@ class Categorias extends CI_Controller {
 			default:
 				# code...
 				break;
-		}
+	
 	}
 
 }
 
-/* End of file Categorias.php */
-/* Location: ./application/controllers/Categorias.php */
+/* End of file Secciones.php */
+/* Location: ./application/controllers/Secciones.php */
