@@ -3,6 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Terceros extends CI_Controller {
 
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('Tercero');
+	}
+
 	public function Tercero()
 	{
 	header('Access-Control-Allow-Origin: *');
@@ -15,7 +21,7 @@ class Terceros extends CI_Controller {
 			case 'gestionar':
 				if ($this->uri->segment(4) == "guardar") {
 
-				$query = $this->Registro->RegistrarTercero();
+				$query = $this->Tercero->RegistrarTercero();
 				echo json_encode($query);
 				}
 				break;

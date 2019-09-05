@@ -3,6 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Itens extends CI_Controller {
 
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('Itns');
+	}
+
 	public function Iten()
 	{
 	header('Access-Control-Allow-Origin: *');
@@ -15,7 +21,7 @@ class Itens extends CI_Controller {
 			case 'gestionar':
 				if ($this->uri->segment(4) == "guardar") {
 
-				$query = $this->Registro->RegistrarIten();
+				$query = $this->Itns->RegistrarIten();
 				echo json_encode($query);
 				}
 				break;

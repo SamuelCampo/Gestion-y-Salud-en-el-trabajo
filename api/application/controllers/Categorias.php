@@ -3,6 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Categorias extends CI_Controller {
 
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('Categoria');
+	}
+
 	public function Categoria() 
 	{
 	header('Access-Control-Allow-Origin: *');
@@ -15,7 +21,7 @@ class Categorias extends CI_Controller {
 			case 'gestionar':
 				if ($this->uri->segment(4) == "guardar") {
 
-				$query = $this->Registro->RegistrarCategoria();
+				$query = $this->Categoria->RegistrarCategoria();
 				echo json_encode($query);
 				}
 				break;
