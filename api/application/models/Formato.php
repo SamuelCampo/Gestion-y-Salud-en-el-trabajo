@@ -24,6 +24,16 @@ public function RegistrarFormato($datformato = "" ,$idformato_t2 = "")
 			}
 }	
 
+public function ConsultaFormato($idformato_t2 = "")
+{
+	$query = $this->db->get('ps_formato_t2');
+			if ($query->result() > 0) {
+				return $query->result();
+			}
+}
+
+}
+
 }
 
 /* End of file Formato.php */
