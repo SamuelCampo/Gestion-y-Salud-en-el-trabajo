@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Seccion extends CI_Model {
+class Session extends CI_Model {
 
 	public function __construct()
 	{
@@ -55,5 +55,5 @@ class Seccion extends CI_Model {
 
 }
 
-/* End of file Seccion.php */
-/* Location: ./application/models/Seccion.php */
+/* End of file Session.php */
+/* Location: ./application/models/Session.php */

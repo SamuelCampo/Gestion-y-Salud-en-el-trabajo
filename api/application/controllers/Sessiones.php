@@ -35,5 +35,5 @@ class Sessiones extends CI_Controller {
 
 }
 
-/* End of file Secciones.php */
-/* Location: ./application/controllers/Secciones.php */
+/* End of file Sessiones.php */
+/* Location: ./application/controllers/Sessiones.php */

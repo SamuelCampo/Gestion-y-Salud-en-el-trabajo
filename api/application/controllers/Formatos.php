@@ -1,14 +1,22 @@
 <?php
+if( ! ini_get('date.timezone') )
+{
+    date_default_timezone_set('GMT');
+}
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Formatos extends CI_Controller {
-	public function __construct()
+
+public function __construct()
 	{
 		parent::__construct();
+		$this->load->model('Tercero');
+		$this->load->model('Usuario');
 		$this->load->model('Formato');
+		$this->load->model('Session');
 	}
 
-	public function formato()
+	public function Formato()
 	{
 	header('Access-Control-Allow-Origin: *');
 	header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method");
@@ -19,7 +27,7 @@ class Formatos extends CI_Controller {
 			case '0':
 			case 'gestionar':
 				if ($this->uri->segment(4) == "guardar") {
-
+				echo json_encode($this->input->post());
 				$query = $this->Formato->RegistrarFormato();
 				echo json_encode($query);
 				}
