@@ -24,6 +24,10 @@ public function __construct()
 				echo json_encode($query);
 				}
 				break;
+			case 'ver':
+				$query = $this->Formato->ConsultaFormato();
+				echo json_encode($query);
+					break;	
 			
 			default:
 				# code...
