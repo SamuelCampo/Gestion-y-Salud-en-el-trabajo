@@ -10,10 +10,8 @@ class Formatos extends CI_Controller {
 public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('Tercero');
-		$this->load->model('Usuario');
 		$this->load->model('Formato');
-		$this->load->model('Session');
+
 	}
 
 	public function Formato()
