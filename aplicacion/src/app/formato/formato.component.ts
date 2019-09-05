@@ -2,6 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule,NgForm } from '@angular/forms';
 import { ConfiguracionService } from '../service/configuracion.service';
 import { Router } from '@angular/router';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+  // ...
+} from '@angular/animations';
+
 
 @Component({
   selector: 'app-formato',
@@ -10,7 +19,14 @@ import { Router } from '@angular/router';
 })
 export class FormatoComponent implements OnInit {
 
-  constructor(private configuracion:ConfiguracionService) { }
+titulo1;
+descripcion1;
+config: any = {};
+
+  constructor(
+  private configuracion:ConfiguracionService,
+  private router:Router
+  ) { }
 
   ngOnInit() {
   }
