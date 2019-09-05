@@ -5,7 +5,9 @@ class Formato extends CI_Model {
 
 public function RegistrarFormato($datformato = "")
 {
-	$datformato = (object)$this->input->post();
+	if (empty($datusuario)){
+			$datformato = (object)$this->input->post();
+		}
 
 	$arr_formato['titulo_t2'] = $datformato->titulo_t2;
 	$arr_formato['descripcion_t2'] = $datformato->descripcion_t2;
