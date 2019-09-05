@@ -25,9 +25,8 @@ public function __construct()
 			case '0':
 			case 'gestionar':
 				if ($this->uri->segment(4) == "guardar") {
-				echo json_encode($this->input->post());
 				$query = $this->Formato->RegistrarFormato();
-				echo json_encode($query);
+				//echo json_encode($query);
 				}
 				break;
 			
