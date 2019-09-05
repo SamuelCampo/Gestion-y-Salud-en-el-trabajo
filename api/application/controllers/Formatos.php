@@ -6,12 +6,7 @@ class Formatos extends CI_Controller {
 public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('formato');
-	}
-
-	public function index()
-	{
-		echo "hola";
+		$this->load->model('Formato');
 	}
 
 	public function Formato()
@@ -26,7 +21,7 @@ public function __construct()
 			case 'gestionar':
 				if ($this->uri->segment(4) == "guardar") {
 				echo json_encode($this->input->post());
-				$query = $this->formato->RegistrarFormato();
+				$query = $this->Formato->RegistrarFormato();
 				echo json_encode($query);
 				}
 				break;
