@@ -37,4 +37,12 @@ export class ConfiguracionService {
    		const path = "http://localhost/gestion/api/index.php/registrar/usuario/gestionar/guardar";
 	  	return this.http.post<any>(path, formData,{headers:headers});
 	}
+
+	guardarformato(arr_formato){
+		let headers = new HttpHeaders();
+		let formData = new FormData();
+
+		console.log(arr_formato);
+
+	}
 }
