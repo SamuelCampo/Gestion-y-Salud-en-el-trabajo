@@ -7,7 +7,7 @@ import { Usuario } from '../interface/usuario';
 })
 export class ConfiguracionService {
 
-	
+	base_url = "http://localhost/gestion/api/index.php/";
 
   constructor(private http:HttpClient) {
   	
@@ -41,8 +41,9 @@ export class ConfiguracionService {
 	guardarformato(arr_formato){
 		let headers = new HttpHeaders();
 		let formData = new FormData();
-
-		console.log(arr_formato);
-
+		formData.append('titulo_t2',arr_formato.titulo_t2);
+		formData.append('descripcion_t2',arr_formato.descripcion_t2);
+		let path = this.base_url+"Formatos/Formato/gestionar/guardar";
+		return this.http.post<any>(path,formData,{headers:headers})
 	}
 }
