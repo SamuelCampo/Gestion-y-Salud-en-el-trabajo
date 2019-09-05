@@ -34,8 +34,8 @@ config: any = {};
   guardarFormato(f: NgForm){
     //console.log(f.value);
   	this.configuracion.guardarformato(f.value)
-    .subscribe((newUsuario) => {
-      //console.log(newUsuario);
+    .subscribe((formato) => {
+      console.log(formato);
     })
   }
 
