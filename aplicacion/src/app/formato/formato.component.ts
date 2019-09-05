@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormsModule,NgForm } from '@angular/forms';
+import { ConfiguracionService } from '../service/configuracion.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formato',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormatoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private configuracion:ConfiguracionService) { }
 
   ngOnInit() {
+  }
+
+  guardarFormato(f: NgForm){
+    //console.log(f.value);
+  	this.configuracion.guardarformato(f.value)
+    .subscribe((newUsuario) => {
+      //console.log(newUsuario);
+    })
   }
 
 }
