@@ -8,7 +8,7 @@ class Formatos extends CI_Controller {
 		$this->load->model('Formato');
 	}
 
-	public function Formato()
+	public function formato()
 	{
 	header('Access-Control-Allow-Origin: *');
 	header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method");
