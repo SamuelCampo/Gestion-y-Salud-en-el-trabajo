@@ -25,7 +25,11 @@ public function RegistrarFormato($datformato = "" ,$idformato_t2 = "")
 }	
 
 	public function ConsultaFormato($idformato_t2 = "")
-	{
+	{			
+				$datformato = (object)$this->input->post();
+				if (!empty($datformato->id)) {
+					$this->db->like('titulo_t2',$datformato->id,'both');
+				}
 				$query = $this->db->get('ps_formato_t2');
 				if ($query->result() > 0) {
 					return $query->result();

@@ -12,6 +12,7 @@ import { CategoriaComponent } from './categoria/categoria.component';
 import { FormatoComponent } from './formato/formato.component';
 import { ItemsComponent } from './items/items.component';
 import { EvaluacionComponent } from './evaluacion/evaluacion.component';
+import { ListaFormatoComponent } from './formato/lista-formato/lista-formato.component';
 
 const routes: Routes = [];
 @NgModule({
@@ -23,7 +24,8 @@ const routes: Routes = [];
     CategoriaComponent,
     FormatoComponent,
     ItemsComponent,
-    EvaluacionComponent
+    EvaluacionComponent,
+    ListaFormatoComponent
   ],
   imports: [
     BrowserModule,

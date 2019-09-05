@@ -47,4 +47,13 @@ export class ConfiguracionService {
 		let path = this.base_url+"Formatos/Formato/gestionar/guardar";
 		return this.http.post<any>(path,formData,{headers:headers})
 	}
+
+	consultarformato(id:string){
+		let headers = new HttpHeaders();
+		let formData = new FormData();
+		formData.append('id',id);
+		let path = this.base_url+"Formatos/Formato/ver/{id}";
+		console.log(id);
+		return this.http.post<any>(path,formData,{headers:headers})
+	}
 }

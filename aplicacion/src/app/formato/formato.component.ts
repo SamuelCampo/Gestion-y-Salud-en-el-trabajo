@@ -35,7 +35,9 @@ config: any = {};
     //console.log(f.value);
   	this.configuracion.guardarformato(f.value)
     .subscribe((formato) => {
-      console.log(formato);
+      if (formato) {
+      	this.router.navigateByUrl('/listaformato'); 
+      }
     })
   }
 
