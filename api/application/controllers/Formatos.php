@@ -1,8 +1,4 @@
 <?php
-if( ! ini_get('date.timezone') )
-{
-    date_default_timezone_set('GMT');
-}
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Formatos extends CI_Controller {
@@ -11,7 +7,6 @@ public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('Formato');
-
 	}
 
 	public function Formato()

@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Formato extends CI_Model {
 
-public function RegistrarFormato($datformato)
+public function RegistrarFormato($datformato = "")
 {
 	$datformato = (object)$this->input->post();
 
