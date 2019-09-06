@@ -8,6 +8,7 @@ import { ItemsComponent } from './items/items.component';
 import { LoginComponent } from './login/login.component';
 import { EvaluacionComponent } from './evaluacion/evaluacion.component';
 import { ListaFormatoComponent } from './formato/lista-formato/lista-formato.component';
+import { VerFormatoComponent } from './formato/ver-formato/ver-formato.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
 	{ path: 'login', component: LoginComponent },
 	{ path: 'evaluacion', component: EvaluacionComponent },
 	{ path: 'listaformato', component: ListaFormatoComponent },
+	{ path: 'verFormato/:id', component: VerFormatoComponent },
 ];
 
 @NgModule({

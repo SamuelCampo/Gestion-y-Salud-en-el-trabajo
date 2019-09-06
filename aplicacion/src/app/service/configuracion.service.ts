@@ -43,6 +43,9 @@ export class ConfiguracionService {
 		let formData = new FormData();
 		formData.append('titulo_t2',arr_formato.titulo_t2);
 		formData.append('descripcion_t2',arr_formato.descripcion_t2);
+		if (arr_formato.idformato) {
+		formData.append('idformato_t2',arr_formato.descripcion_t2);	
+		}
 		formData.append('usumod_t2','superusuario');
 		let path = this.base_url+"Formatos/Formato/gestionar/guardar";
 		return this.http.post<any>(path,formData,{headers:headers})

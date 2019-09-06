@@ -13,6 +13,7 @@ import { FormatoComponent } from './formato/formato.component';
 import { ItemsComponent } from './items/items.component';
 import { EvaluacionComponent } from './evaluacion/evaluacion.component';
 import { ListaFormatoComponent } from './formato/lista-formato/lista-formato.component';
+import { VerFormatoComponent } from './formato/ver-formato/ver-formato.component';
 
 const routes: Routes = [];
 @NgModule({
@@ -25,7 +26,8 @@ const routes: Routes = [];
     FormatoComponent,
     ItemsComponent,
     EvaluacionComponent,
-    ListaFormatoComponent
+    ListaFormatoComponent,
+    VerFormatoComponent
   ],
   imports: [
     BrowserModule,
