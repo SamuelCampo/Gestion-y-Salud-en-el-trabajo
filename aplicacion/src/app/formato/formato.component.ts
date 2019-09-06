@@ -21,6 +21,7 @@ export class FormatoComponent implements OnInit {
 
 titulo1;
 descripcion1;
+categoria1;
 config: any = {};
 
   constructor(
