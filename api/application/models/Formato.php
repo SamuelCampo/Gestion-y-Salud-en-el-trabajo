@@ -12,12 +12,7 @@ public function RegistrarFormato($datformato = "" ,$idformato_t2 = "")
 			$arr_formato['descripcion_t2'] = $datformato->descripcion_t2;
 			$arr_formato['fmod_t2'] = date('Y-m-d h:i:s');
 			$arr_formato['usumod_t2'] = $datformato->usumod_t2;
-			if (!empty($datformato->idformato_t2)) {
-				$this->db->where('idformato_t2', $datformato->idformato_t2);
-			}else{
-				$this->db->where('idformato_t2', $idformato_t2);
-			}
-			
+			$this->db->where('idformato_t2', $idformato_t2);
 			$query = $this->db->get('ps_formato_t2');
 			if ($query->row() > 0) {
 				$this->db->where('idformato_t2', $idformato_t2);
@@ -44,20 +39,7 @@ public function RegistrarFormato($datformato = "" ,$idformato_t2 = "")
 
 	public function DeleteFormato($idformato_t2)
 		{
-			$datcategoria = (object)$this->input->post();
-
-			$arr_tercero['idformato_t2'] = $datcategoria->idformato_t2;
-			$this->db->where('idformato_t2', $idformato_t2);
-			$query = $this->db->get('ps_formato_t2');
-
-			if ($query->row() > 1) {
-				$this->db->where('idformato_t2', $idformato_t2);
-				return $this->db->delete('ps_formato_t2', $arr_tercero);
-
-			}else {
-
-				$this->db->delete('ps_formato_t2', $arr_tercero);
-			}
+			return $this->db->where('idformato_t2', $idformato_t2)->delete('ps_formato_t2');
 		}
 
 
