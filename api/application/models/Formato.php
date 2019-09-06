@@ -42,6 +42,25 @@ public function RegistrarFormato($datformato = "" ,$idformato_t2 = "")
 				}
 	}
 
+	public function DeleteFormato($idformato_t2)
+		{
+			$datcategoria = (object)$this->input->post();
+
+			$arr_tercero['idformato_t2'] = $datcategoria->idformato_t2;
+			$this->db->where('idformato_t2', $idformato_t2);
+			$query = $this->db->get('ps_formato_t2');
+
+			if ($query->row() > 1) {
+				$this->db->where('idformato_t2', $idformato_t2);
+				return $this->db->delete('ps_formato_t2', $arr_tercero);
+
+			}else {
+
+				$this->db->delete('ps_formato_t2', $arr_tercero);
+			}
+		}
+
+
 }
 
 /* End of file Formato.php */
