@@ -9,7 +9,7 @@ public function RegistrarFormato($datformato = "" ,$idformato_t2 = "")
 			$datformato = (object)$this->input->post();
 		}
 			if(!empty($datformato->titulo_t2))$arr_formato['titulo_t2'] = $datformato->titulo_t2;
-			$arr_formato['descripcion_t2'] = $datformato->descripcion_t2;
+			if(!empty($datformato->descripcion_t2))$arr_formato['descripcion_t2'] = $datformato->descripcion_t2;
 			$arr_formato['fmod_t2'] = date('Y-m-d h:i:s');
 			$arr_formato['usumod_t2'] = $datformato->usumod_t2;
 			$this->db->where('idformato_t2', $idformato_t2);
