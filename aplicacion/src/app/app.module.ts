@@ -14,6 +14,9 @@ import { ItemsComponent } from './items/items.component';
 import { EvaluacionComponent } from './evaluacion/evaluacion.component';
 import { ListaFormatoComponent } from './formato/lista-formato/lista-formato.component';
 import { VerFormatoComponent } from './formato/ver-formato/ver-formato.component';
+import { ListaCategoriaComponent } from './categoria/lista-categoria/lista-categoria.component';
+import { EstandaresComponent } from './estandares/estandares.component';
+import { SubEstandaresComponent } from './estandares/sub-estandares/sub-estandares.component';
 
 const routes: Routes = [];
 @NgModule({
@@ -27,7 +30,10 @@ const routes: Routes = [];
     ItemsComponent,
     EvaluacionComponent,
     ListaFormatoComponent,
-    VerFormatoComponent
+    VerFormatoComponent,
+    ListaCategoriaComponent,
+    EstandaresComponent,
+    SubEstandaresComponent,
   ],
   imports: [
     BrowserModule,

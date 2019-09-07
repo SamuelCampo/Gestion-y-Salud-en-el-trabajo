@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormsModule,NgForm } from '@angular/forms';
+import { ConfiguracionService } from '../service/configuracion.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-categoria',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriaComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+  	private configuracion:ConfiguracionService,
+  	private router:Router
+  	) { }
 
   ngOnInit() {
+  }
+
+  registrarCategoria(f: NgForm){
+    //console.log(f.value);
+  	this.configuracion.registrarCategoria(f.value)
+    .subscribe((categoria) => {
+      if (categoria) {
+      	location.reload(); 
+      }
+    })
   }
 
 }

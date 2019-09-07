@@ -56,7 +56,26 @@ export class ConfiguracionService {
 		let formData = new FormData();
 		formData.append('id',id);
 		let path = this.base_url+"Formatos/Formato/ver/{id}";
-		console.log(id);
 		return this.http.post<any>(path,formData,{headers:headers})
+	}
+
+	eliminarFormato(id:string){
+		let headers = new HttpHeaders();
+		let formData = new FormData();
+		let path = this.base_url+"Formatos/Formato/";
+	}
+
+	registrarCategoria(arr_categoria){
+		let headers = new HttpHeaders();
+		let formData = new FormData();
+		let path = this.base_url+'Categorias/Categoria/gestionar/guardar/';
+		formData.append('descripcion_t4',arr_categoria.descripcion_t4);
+		formData.append('n_identificador_t4',arr_categoria.n_identificador_t4);
+		return this.http.post<any>(path,formData,{headers:headers});
+	}
+
+	consultarCategoria(id:string){
+		let path = this.base_url+'Categorias/Categoria/gestionar/ver/{id}'
+		return this.http.get(path);
 	}
 }

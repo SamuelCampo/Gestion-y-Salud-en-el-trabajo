@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule,NgForm } from '@angular/forms';
 import { ConfiguracionService } from '../../service/configuracion.service';
+import { ConfirmacionService } from '../../dialogo/confirmacion.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,7 +14,10 @@ export class ListaFormatoComponent implements OnInit {
 	formato;
 	idformat = "";
 
-  constructor(private configuracion:ConfiguracionService) {
+  constructor(
+    private configuracion:ConfiguracionService,
+    private dialogo:ConfirmacionService
+    ) {
 
   }
 
@@ -38,6 +42,10 @@ export class ListaFormatoComponent implements OnInit {
 	  		console.log(this.formato);
 	  	})
   	}
+
+    eliminarFormato(){
+      confirm('Estas seguro de eliminar este Formato');
+    }
 
 
   }

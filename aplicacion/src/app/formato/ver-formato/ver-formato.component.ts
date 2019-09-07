@@ -12,6 +12,8 @@ export class VerFormatoComponent implements OnInit {
 
 	formato;
 	idformat = "";
+	titulo_t2;
+	descripcion_t2;
 
   constructor(private configuracion:ConfiguracionService,
   	private route: ActivatedRoute,
@@ -35,7 +37,7 @@ export class VerFormatoComponent implements OnInit {
   	}
 
   guardarFormato(f: NgForm){
-    //console.log(f.value);
+    console.log(f.value);
   	this.configuracion.guardarformato(f.value)
     .subscribe((formato) => {
       if (formato) {
