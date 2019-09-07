@@ -20,7 +20,8 @@ export class CategoriaComponent implements OnInit {
 
   registrarCategoria(f: NgForm){
     //console.log(f.value);
-  	this.configuracion.registrarCategoria(f.value)
+    let id = "";
+  	this.configuracion.registrarCategoria(f.value,id)
     .subscribe((categoria) => {
       if (categoria) {
       	location.reload(); 

@@ -65,10 +65,10 @@ export class ConfiguracionService {
 		let path = this.base_url+"Formatos/Formato/";
 	}
 
-	registrarCategoria(arr_categoria){
+	registrarCategoria(arr_categoria,id:string){
 		let headers = new HttpHeaders();
 		let formData = new FormData();
-		let path = this.base_url+'Categorias/Categoria/gestionar/guardar/{arr_categoria.id}';
+		let path = this.base_url+'Categorias/Categoria/gestionar/guardar/{id}';
 		formData.append('descripcion_t4',arr_categoria.descripcion_t4);
 		formData.append('n_identificador_t4',arr_categoria.n_identificador_t4);
 		return this.http.post<any>(path,formData,{headers:headers});
