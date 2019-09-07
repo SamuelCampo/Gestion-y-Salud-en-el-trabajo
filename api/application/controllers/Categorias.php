@@ -20,7 +20,8 @@ class Categorias extends CI_Controller {
 			case '0':
 			case 'gestionar':
 				if ($this->uri->segment(4) == "guardar") {
-				$query = $this->Categoria->RegistrarCategoria();
+					$id = $this->uri->segment(5);
+				$query = $this->Categoria->RegistrarCategoria($id);
 				echo json_encode($query);
 				}
 				break;
@@ -30,6 +31,13 @@ class Categorias extends CI_Controller {
 				}
 				$query = $this->Categoria->ConsultaCategoria($id);
 				echo json_encode($query);
+				break;
+			case 'delete':
+					if ($this->uri->segment(4)) {
+						$id = $this->uri->segment(4);
+					}
+					$query = $this->Categoria->DeleteCategoria($id);
+					echo json_encode($query);	
 				break;
 			default:
 				# code...
