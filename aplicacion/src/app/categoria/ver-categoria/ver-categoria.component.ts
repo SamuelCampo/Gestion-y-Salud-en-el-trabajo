@@ -30,7 +30,7 @@ export class VerCategoriaComponent implements OnInit {
 
 	registrarCategoria(f: NgForm){
     //console.log(f.value);
-  	this.configuracion.registrarCategoria(f.value,this.idcategoria)
+  	this.configuracion.registrarCategoria(f.value,this.idcategoria)	
     .subscribe((categoria) => {
       if (categoria) {
       	location.reload(); 

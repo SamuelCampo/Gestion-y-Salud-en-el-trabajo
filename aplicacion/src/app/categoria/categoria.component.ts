@@ -24,6 +24,7 @@ export class CategoriaComponent implements OnInit {
   	this.configuracion.registrarCategoria(f.value,id)
     .subscribe((categoria) => {
       if (categoria) {
+        console.log(categoria);
       	//this.router.navigateByUrl('listacategoria');
       }
     })

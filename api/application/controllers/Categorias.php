@@ -20,7 +20,11 @@ class Categorias extends CI_Controller {
 			case '0':
 			case 'gestionar':
 				if ($this->uri->segment(4) == "guardar") {
-					$id = $this->uri->segment(5);
+					if (!empty($this->uri->segment(5))) {
+						$id = $this->uri->segment(5);
+					}else{
+						$id = "";
+					}
 				$query = $this->Categoria->RegistrarCategoria($id);
 				echo json_encode($query);
 				}
