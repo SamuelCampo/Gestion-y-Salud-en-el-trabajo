@@ -33,8 +33,10 @@ public function RegistrarFormato($datformato = "" ,$idformato_t2 = "")
 					$this->db->or_like('titulo_t2',$datformato->id,'both');
 				}
 				$query = $this->db->get('ps_formato_t2');
-				if ($query->result() > 0) {
+				if (count($query->result()) > 1) {
 					return $query->result();
+				}else{
+					return $query->row();
 				}
 	}
 

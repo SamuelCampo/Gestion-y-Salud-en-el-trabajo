@@ -12,7 +12,7 @@ class Categoria extends CI_Model {
 			if(!empty($datcategoria->descripcion_t4))$arr_categoria['descripcion_t4'] = $datcategoria->descripcion_t4;
 			if(!empty($datcategoria->n_identificador_t4))$arr_categoria['n_identificador_t4'] = $datcategoria->n_identificador_t4;
 			$arr_categoria['fmod_t4'] = date('Y-m-d h:i:s');
-			$arr_categoria['usumod_t4'] = $datcategoria->usumod_t4;
+			if(!empty($datcategoria->usumod_t4))$arr_categoria['usumod_t4'] = $datcategoria->usumod_t4;
 			$this->db->where('idcategoria_t4', $idcategoria_t4);
 			$query = $this->db->get('ps_categoria_t4');
 			if ($query->row() > 0) {
