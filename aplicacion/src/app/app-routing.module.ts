@@ -10,6 +10,7 @@ import { EvaluacionComponent } from './evaluacion/evaluacion.component';
 import { ListaFormatoComponent } from './formato/lista-formato/lista-formato.component';
 import { VerFormatoComponent } from './formato/ver-formato/ver-formato.component';
 import { ListaCategoriaComponent } from './categoria/lista-categoria/lista-categoria.component';
+import { VerCategoriaComponent } from './categoria/ver-categoria/ver-categoria.component';
 
 const routes: Routes = [
 	{ path: 'introduccion', component: IntroduccionComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
 	{ path: 'listaformato', component: ListaFormatoComponent },
 	{ path: 'verFormato/:id', component: VerFormatoComponent },
 	{ path: 'listacategoria', component: ListaCategoriaComponent },
+	{ path: 'vercategoria/:id', component: VerCategoriaComponent },
 ];
 
 @NgModule({

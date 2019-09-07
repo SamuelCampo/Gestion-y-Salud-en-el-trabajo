@@ -10,6 +10,7 @@ import { Router } from '@angular/router';import { Component, OnInit } from '@ang
 export class ListaCategoriaComponent implements OnInit {
   
   categoria;
+  idformat = "";
   constructor(
   	private configuracion:ConfiguracionService,
   	private router:Router
@@ -17,16 +18,13 @@ export class ListaCategoriaComponent implements OnInit {
   	}
 
   ngOnInit() {
-  	let id;
-  	this.listarCategoria(id);
+  	this.listarCategoria();
   }
 
 
-  listarCategoria(f:NgForm){
-  	let id = "";
-  	this.configuracion.consultarCategoria(id)
+  listarCategoria(){
+  	this.configuracion.consultarCategoria(this.idformat)
   	.subscribe((categoria) => {
-  		console.log(categoria);
   		this.categoria = categoria;
   	})
   }

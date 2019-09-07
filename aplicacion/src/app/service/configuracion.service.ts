@@ -68,14 +68,18 @@ export class ConfiguracionService {
 	registrarCategoria(arr_categoria){
 		let headers = new HttpHeaders();
 		let formData = new FormData();
-		let path = this.base_url+'Categorias/Categoria/gestionar/guardar/';
+		let path = this.base_url+'Categorias/Categoria/gestionar/guardar/{arr_categoria.id}';
 		formData.append('descripcion_t4',arr_categoria.descripcion_t4);
 		formData.append('n_identificador_t4',arr_categoria.n_identificador_t4);
 		return this.http.post<any>(path,formData,{headers:headers});
 	}
 
 	consultarCategoria(id:string){
-		let path = this.base_url+'Categorias/Categoria/gestionar/ver/{id}'
-		return this.http.get(path);
+		let headers = new HttpHeaders();
+		let formData = new FormData();
+		console.log(id);
+		formData.append('id',id);
+		let path = this.base_url+'Categorias/Categoria/ver/{id}';
+		return this.http.post<any>(path,formData,{headers:headers});
 	}
 }

@@ -17,6 +17,7 @@ import { VerFormatoComponent } from './formato/ver-formato/ver-formato.component
 import { ListaCategoriaComponent } from './categoria/lista-categoria/lista-categoria.component';
 import { EstandaresComponent } from './estandares/estandares.component';
 import { SubEstandaresComponent } from './estandares/sub-estandares/sub-estandares.component';
+import { VerCategoriaComponent } from './categoria/ver-categoria/ver-categoria.component';
 
 const routes: Routes = [];
 @NgModule({
@@ -34,6 +35,7 @@ const routes: Routes = [];
     ListaCategoriaComponent,
     EstandaresComponent,
     SubEstandaresComponent,
+    VerCategoriaComponent,
   ],
   imports: [
     BrowserModule,

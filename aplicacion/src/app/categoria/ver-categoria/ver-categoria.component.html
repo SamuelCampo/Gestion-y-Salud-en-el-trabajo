@@ -1,0 +1,33 @@
+<div class="container-fluid">
+	<div class="row">
+	</div>
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="">
+			  <div class="login-wrap">
+			    <form #f="ngForm" (ngSubmit)="registrarCategoria(f)" id="form_tercero" class="login-html">
+			    	<div class="login-form">
+			    		<div class="">
+			    			<div class="group">
+			    				<h2 class="">Modificar Categoria</h2>
+							</div>
+			    			<div class="group">
+			    				<label for="" class="label">Numero Identificador</label>
+							    <input [(ngModel)]="categoria.n_identificador_t4" name="n_identificador_t4" type="text" class="input form-control">
+							</div>
+							<div class="group">
+							    <label for="" class="label">Descripcion</label>
+							    <textarea [(ngModel)]="categoria.descripcion_t4" type="text" name="descripcion_t4" class="input form-control"></textarea>
+							</div>
+							    <div class="group">
+							    <button class="button">Guardar</button>
+			    			</div>
+					    </div>
+					</div>
+			    </form>
+			  </div>
+			</div>
+		</div>
+	</div>
+</div>
+
