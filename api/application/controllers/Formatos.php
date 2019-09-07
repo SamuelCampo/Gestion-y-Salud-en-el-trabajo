@@ -32,7 +32,14 @@ public function __construct()
 					$query = $this->Formato->ConsultaFormato();
 				}
 				echo json_encode($query);
-					break;	
+					break;
+			case 'delete':
+					if ($this->uri->segment(4)) {
+						$id = $this->uri->segment(4);
+					}
+					$query = $this->Formato->DeleteFormato($id);
+					echo json_encode($query);	
+				break;			
 			
 			default:
 				# code...

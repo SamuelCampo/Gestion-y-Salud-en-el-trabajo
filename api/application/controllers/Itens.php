@@ -25,7 +25,20 @@ class Itens extends CI_Controller {
 				echo json_encode($query);
 				}
 				break;
-			
+			case 'ver':
+				if ($this->uri->segment(4)) {
+					$id = $this->uri->segment(4);
+				}
+				$query = $this->Itns->ConsultaItens($id);
+				echo json_encode($query);
+				break;
+				case 'delete':
+					if ($this->uri->segment(4)) {
+						$id = $this->uri->segment(4);
+					}
+					$query = $this->Itns->DeleteItens($id);
+					echo json_encode($query);	
+				break;
 			default:
 				# code...
 				break;
