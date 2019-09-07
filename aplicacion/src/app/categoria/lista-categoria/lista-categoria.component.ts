@@ -8,13 +8,27 @@ import { Router } from '@angular/router';import { Component, OnInit } from '@ang
   styleUrls: ['./lista-categoria.component.css']
 })
 export class ListaCategoriaComponent implements OnInit {
-
+  
+  categoria;
   constructor(
   	private configuracion:ConfiguracionService,
   	private router:Router
-  	) { }
+  	) {
+  	}
 
   ngOnInit() {
+  	let id;
+  	this.listarCategoria(id);
+  }
+
+
+  listarCategoria(f:NgForm){
+  	let id = "";
+  	this.configuracion.consultarCategoria(id)
+  	.subscribe((categoria) => {
+  		console.log(categoria);
+  		this.categoria = categoria;
+  	})
   }
 
 }
