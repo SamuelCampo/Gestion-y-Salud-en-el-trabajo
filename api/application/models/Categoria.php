@@ -15,7 +15,7 @@ class Categoria extends CI_Model {
 			$arr_categoria['fmod_t4'] = date('Y-m-d h:i:s');
 			if(!empty($datcategoria->usumod_t4))$arr_categoria['usumod_t4'] = $datcategoria->usumod_t4;
 			if(!empty($idcategoria_t4))$query = $this->db->where('idcategoria_t4', $idcategoria_t4)->get('ps_categoria_t4');
-			if ($query->row() > 0) {
+			if ($query->result() > 0) {
 				$this->db->where('idcategoria_t4', $idcategoria_t4);
 				return $this->db->update('ps_categoria_t4', $arr_categoria);
 			}else {
