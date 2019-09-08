@@ -9,10 +9,10 @@ class Categoria extends CI_Model {
 			$datcategoria = (object)$this->input->post();
 		}
 			$query = "";
-			if(!empty($datcategoria->descripcion_t4))$arr_categoria['nombre_t8'] = $datcategoria->nombre_t8;
-			if(!empty($datcategoria->n_identificador_t4))$arr_categoria['n_identificador_t8'] = $datcategoria->n_identificador_t8;
+			if(!empty($datcategoria->nombre_t8))$arr_categoria['nombre_t8'] = $datcategoria->nombre_t8;
+			if(!empty($datcategoria->n_identificador_t8))$arr_categoria['n_identificador_t8'] = $datcategoria->n_identificador_t8;
 			$arr_categoria['fmod_t8'] = date('Y-m-d h:i:s');
-			if(!empty($datcategoria->usumod_t4))$arr_categoria['usumod_t8'] = $datcategoria->usumod_t8;
+			if(!empty($datcategoria->usumod_t8))$arr_categoria['usumod_t8'] = $datcategoria->usumod_t8;
 			if(!empty($idcategoria_t8)){
 				$query = $this->db->where('idcategoria_t8', $idcategoria_t8)->get('ps_categoria_t8');
 				if ($query->result() > 0) {
