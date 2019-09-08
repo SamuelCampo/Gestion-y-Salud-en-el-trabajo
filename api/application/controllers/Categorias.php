@@ -6,10 +6,10 @@ class Categorias extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('categoria');
+		$this->load->model('Categoria');
 	}
 
-	public function categoria() 
+	public function Categoria() 
 	{
 	header('Access-Control-Allow-Origin: *');
 	header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method");
@@ -25,7 +25,7 @@ class Categorias extends CI_Controller {
 					}else{
 						$id = "";
 					}
-				$query = $this->categoria->Registrarcategoria($id);
+				$query = $this->Categoria->RegistrarCategoria($id);
 				echo json_encode($query);
 				}
 				break;
@@ -34,7 +34,7 @@ class Categorias extends CI_Controller {
 					$id = $this->uri->segment(4);
 				}else{
 					$id = "";
-				$query = $this->categoria->Consultacategoria();
+				$query = $this->Categoria->ConsultaCategoria();
 				echo json_encode($query);
 				}
 				break;
@@ -42,7 +42,7 @@ class Categorias extends CI_Controller {
 					if ($this->uri->segment(4)) {
 						$id = $this->uri->segment(4);
 					}
-					$query = $this->categoria->Deletecategoria($id);
+					$query = $this->Categoria->DeleteCategoria($id);
 					echo json_encode($query);	
 				break;
 			default:
