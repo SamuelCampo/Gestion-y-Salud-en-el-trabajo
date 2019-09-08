@@ -27,6 +27,7 @@ export class CategoriaPadreComponent implements OnInit {
   	this.configuracion.insert(f.value,id)
   	.subscribe((data) => {
   		this.categoria = data;
+  		console.log(data);
   	})
   }
 
