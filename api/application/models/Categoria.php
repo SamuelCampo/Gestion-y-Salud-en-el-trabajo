@@ -43,9 +43,7 @@ public function ConsultaCategoria($idcategoria_t8 = "")
 public function DeleteCategoria($idcategoria_t8)
 		{
 			return $this->db->where('idcategoria_t8', $idcategoria_t8)->delete('ps_categoria_t8');
-		}
-
-}	
+		}	
 
 }
 
