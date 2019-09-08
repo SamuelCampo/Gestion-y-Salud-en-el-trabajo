@@ -31,7 +31,7 @@ public function ConsultaSubcategoria($idcategoria_t4 = "")
 				$datsubcategoria = (object)$this->input->post();
 				if (!empty($datsubcategoria->desc)) {
 					$this->db->like('idcategoria_t4',$datsubcategoria->desc,'both');
-					$this->db->or_like('descripcion_t4',$datsubcategoria->id,'both');
+					$this->db->or_like('descripcion_t4',$datsubcategoria->desc,'both');
 				}
 				if (!empty($idcategoria_t4)) {
 					$this->db->where('idcategoria_t4', $idcategoria_t4);
