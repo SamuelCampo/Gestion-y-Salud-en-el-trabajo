@@ -33,7 +33,7 @@ export class VerCategoriaComponent implements OnInit {
   	this.configuracion.registrarCategoria(f.value,this.idcategoria)	
     .subscribe((categoria) => {
       if (categoria) {
-      	location.reload(); 
+      	location.reload();
       }
     })
   }

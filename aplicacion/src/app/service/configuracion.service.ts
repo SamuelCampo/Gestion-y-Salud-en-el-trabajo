@@ -82,4 +82,11 @@ export class ConfiguracionService {
 		let path = this.base_url+'Categorias/Categoria/ver/{id}';
 		return this.http.post<any>(path,formData,{headers:headers});
 	}
+
+	eliminarCategoria(id:string){
+		let headers = new HttpHeaders();
+		let formData = new FormData();
+		let path = this.base_url+'Categorias/Categoria/delete/'+id;
+		return this.http.delete(path);
+	}
 }

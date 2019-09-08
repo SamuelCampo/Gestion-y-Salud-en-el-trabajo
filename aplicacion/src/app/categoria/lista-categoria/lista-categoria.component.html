@@ -21,12 +21,11 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12" >
-			<table class="table">
+			<table class="table" [(ngModel)]="table_result">
 			  <thead class="thead-dark">
 			    <tr>
 			      <th scope="col">Acción</th>
 			      <th scope="col">#</th>
-			      <th scope="col">Titulo de la categoria</th>
 			      <th scope="col">Definicion</th>
 			      <th scope="col">Fecha de modificación</th>
 			    </tr>
@@ -36,7 +35,7 @@
 			    	<td>
 			    	  <div class="btn-group" role="group" aria-label="Basic example">
 					  	<a class="btn btn-secondary" [routerLink]="['/vercategoria',category.idcategoria_t4]"><i class="material-icons">create</i></a>
-					  	<button type="button" class="btn btn-secondary"><i class="material-icons">delete_forever</i></button>
+					  	<button type="button" class="btn btn-secondary" (click)="deleteCategoria(category.idcategoria_t4,category.descripcion_t4,category)"><i class="material-icons">delete_forever</i></button>
 					</div>
 			    	</td>
 			    	<td>{{category.idcategoria_t4}}</td>
