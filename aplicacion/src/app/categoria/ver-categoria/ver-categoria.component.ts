@@ -22,15 +22,15 @@ export class VerCategoriaComponent implements OnInit {
 	  	this.route.paramMap.subscribe(params => {
 	    this.idcategoria = params.get('id');
 		});
-	    this.configuracion.consultarCategoria(this.idcategoria)
+	    this.configuracion.ConsultaSubcategoria(this.idcategoria)
 	  	.subscribe((categoria) => {
   		this.categoria = categoria;
 	  	});
 	}
 
-	registrarCategoria(f: NgForm){
+	RegistrarSubcategoria(f: NgForm){
     //console.log(f.value);
-  	this.configuracion.registrarCategoria(f.value,this.idcategoria)	
+  	this.configuracion.RegistrarSubcategoria(f.value,this.idcategoria)	
     .subscribe((categoria) => {
       if (categoria) {
       	location.reload(); 

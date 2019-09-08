@@ -23,7 +23,7 @@ export class ListaCategoriaComponent implements OnInit {
 
 
   listarCategoria(){
-  	this.configuracion.consultarCategoria(this.idformat)
+  	this.configuracion.ConsultaSubcategoria(this.idformat)
   	.subscribe((categoria) => {
   		this.categoria = categoria;
   	})
