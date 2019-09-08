@@ -29,15 +29,18 @@ class Subcategoria extends CI_Model {
 public function ConsultaSubcategoria($idcategoria_t4 = "")
 	{			
 				$datsubcategoria = (object)$this->input->post();
-				if (!empty($datsubcategoria->id)) {
-					$this->db->like('idcategoria_t4',$datsubcategoria->id,'both');
+				if (!empty($datsubcategoria->desc)) {
+					$this->db->like('idcategoria_t4',$datsubcategoria->desc,'both');
 					$this->db->or_like('descripcion_t4',$datsubcategoria->id,'both');
+				}
+				if (!empty($idcategoria_t4)) {
+					$this->db->where('idcategoria_t4', $idcategoria_t4);
 				}
 				$query = $this->db->get('ps_subcategoria_t4');
 				if (count($query->result()) > 1) {
 					return $query->result();
 				}else{
-					return $query->row();
+					return [$query->row()];
 				}
 	}
 

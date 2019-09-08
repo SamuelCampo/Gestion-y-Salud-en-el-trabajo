@@ -77,7 +77,7 @@ export class ConfiguracionService {
 	ConsultaSubcategoria(id:string){
 		let headers = new HttpHeaders();
 		let formData = new FormData();
-		formData.append('id',id);
+		formData.append('desc',id);
 		let path = this.base_url+'Subcategorias/Subcategoria/ver/'+id;
 		return this.http.post<any>(path,formData,{headers:headers});
 	}
