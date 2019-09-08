@@ -1,15 +1,15 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Categorias extends CI_Controller {
+class Subcategorias extends CI_Controller {
 
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('Categoria');
+		$this->load->model('Subcategoria');
 	}
 
-	public function Categoria() 
+	public function Subcategoria() 
 	{
 	header('Access-Control-Allow-Origin: *');
 	header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method");
@@ -25,7 +25,7 @@ class Categorias extends CI_Controller {
 					}else{
 						$id = "";
 					}
-				$query = $this->Categoria->RegistrarCategoria($id);
+				$query = $this->Subcategoria->RegistrarSubcategoria($id);
 				echo json_encode($query);
 				}
 				break;
@@ -33,14 +33,14 @@ class Categorias extends CI_Controller {
 				if ($this->uri->segment(4)) {
 					$id = $this->uri->segment(4);
 				}
-				$query = $this->Categoria->ConsultaCategoria($id);
+				$query = $this->Subcategoria->ConsultaSubcategoria($id);
 				echo json_encode($query);
 				break;
 			case 'delete':
 					if ($this->uri->segment(4)) {
 						$id = $this->uri->segment(4);
 					}
-					$query = $this->Categoria->DeleteCategoria($id);
+					$query = $this->Subcategoria->DeleteSubcategoria($id);
 					echo json_encode($query);	
 				break;
 			default:
@@ -51,5 +51,5 @@ class Categorias extends CI_Controller {
 
 }
 
-/* End of file Categorias.php */
-/* Location: ./application/controllers/Categorias.php */
+/* End of file Subcategorias.php */
+/* Location: ./application/controllers/Subcategoriass.php */
