@@ -11,7 +11,6 @@ export class ListaCategoriaComponent implements OnInit {
   
   categoria;
   idformat = "";
-  table_result;
   constructor(
   	private configuracion:ConfiguracionService,
   	private router:Router
@@ -25,8 +24,9 @@ export class ListaCategoriaComponent implements OnInit {
 
   listarCategoria(){
   	this.configuracion.ConsultaSubcategoria(this.idformat)
-  	.subscribe((categoria) => {
-  		this.categoria = categoria;
+  	.subscribe((data) => {
+  		this.categoria = data;
+      console.log(this.categoria);
   	})
   }
 

@@ -15,7 +15,7 @@ import { VerCategoriaComponent } from './categoria/ver-categoria/ver-categoria.c
 const routes: Routes = [
 	{ path: 'introduccion', component: IntroduccionComponent },
 	{ path: 'setup2', component: Setup2Component },
-	{ path: 'categoria', component: CategoriaComponent },
+	{ path: 'nueva_categoria', component: CategoriaComponent },
 	{ path: 'formato', component: FormatoComponent },
 	{ path: 'items', component: ItemsComponent },
 	{ path: 'login', component: LoginComponent },

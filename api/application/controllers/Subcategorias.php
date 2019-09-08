@@ -30,13 +30,13 @@ class Subcategorias extends CI_Controller {
 				}
 				break;
 			case 'ver':
-				if ($this->uri->segment(4)) {
+				if (!empty($this->uri->segment(4))){
 					$id = $this->uri->segment(4);
 				}else{
 					$id = "";
-				$query = $this->Subcategoria->ConsultaSubcategoria();
-				echo json_encode($query);
 				}
+				$query = $this->Subcategoria->ConsultaSubcategoria($id);
+				echo json_encode($query);
 				break;
 			case 'delete':
 					if ($this->uri->segment(4)) {
