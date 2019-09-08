@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormsModule,NgForm } from '@angular/forms';
+import { ConfiguracionService } from '../service/configuracion.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-categoria-padre',
@@ -7,7 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriaPadreComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+  	private configuracion:ConfiguracionService,
+  	private router:Router
+  	) { }
+
 
   ngOnInit() {
   }
