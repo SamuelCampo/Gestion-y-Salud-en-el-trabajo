@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule,NgForm } from '@angular/forms';
-import { ConfiguracionService } from '../service/configuracion.service';
+import { CategoriaPadreService } from '../service/categoria-padre/categoria-padre.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,13 +10,24 @@ import { Router } from '@angular/router';
 })
 export class CategoriaPadreComponent implements OnInit {
 
+  categoria;
+  idcategoria = "";
+
   constructor(
-  	private configuracion:ConfiguracionService,
+  	private configuracion:CategoriaPadreService,
   	private router:Router
   	) { }
 
 
   ngOnInit() {
+  }
+
+  insert(f:NgForm){
+  	let id = "";
+  	this.configuracion.insert(f.value,id)
+  	.subscribe((data) => {
+  		this.categoria = data;
+  	})
   }
 
 }

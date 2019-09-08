@@ -25,7 +25,7 @@ const routes: Routes = [
 	{ path: 'verFormato/:id', component: VerFormatoComponent },
 	{ path: 'listacategoria', component: ListaCategoriaComponent },
 	{ path: 'vercategoria/:id', component: VerCategoriaComponent },
-	{ path: 'estructura/:id', component: CategoriaPadreComponent },
+	{ path: 'estructura', component: CategoriaPadreComponent },
 ];
 
 @NgModule({
