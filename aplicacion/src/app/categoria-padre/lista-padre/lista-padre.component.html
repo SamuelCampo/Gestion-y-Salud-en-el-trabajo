@@ -1,0 +1,51 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="login-wrap">
+			    <form #f="ngForm" (ngSubmit)="listarCategoria()"  id="form_tercero" class="form-inline login-html">
+			    	<div class="form-group" style="width: 60%">
+    					<input type="text" [(ngModel)]="id" name="desc" class="input form-control col-lg-12" id="staticEmail2" placeholder="Nombre de la categoria">
+			    	</div>
+			    	<div class="form-group">
+			    		<button class="btn btn-light"><i class="material-icons">search</i></button>
+			    	</div>
+			    	<div class="form-group">
+			    		<a class="btn btn-light" [routerLink]="['/nueva_categoria']"><i class="material-icons">control_point</i></a>
+
+			    	</div>
+			    </form>
+			 </div>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12" >
+			<table class="table">
+			  <thead class="thead-dark">
+			    <tr>
+			      <th scope="col">Acción</th>
+			      <th scope="col">#</th>
+			      <th scope="col">Definicion</th>
+			      <th scope="col">Fecha de modificación</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr *ngFor="let category of categoria">
+			    	<td>
+			    	  <div class="btn-group" role="group" aria-label="Basic example">
+					  	<a class="btn btn-secondary" [routerLink]="['/vercategoria',category.n_identificador_t8]"><i class="material-icons">create</i></a>
+					  	<button type="button" class="btn btn-secondary" (click)="deleteCategoria(category.idcategoria_t8,category.nombre_t8,category)"><i class="material-icons">delete_forever</i></button>
+					</div>
+			    	</td>
+			    	<td>{{category.n_identificador_t8}}</td>
+			    	<td>{{category.nombre_t8}}</td>
+			    	<td>{{category.fmod_t8}}</td>
+			    </tr>
+			  </tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
