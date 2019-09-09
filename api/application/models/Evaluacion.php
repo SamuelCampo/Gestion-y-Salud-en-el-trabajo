@@ -16,7 +16,7 @@ public function RegistrarEvaluacion($datevaluacion = "" ,$idevaluacion_t9 = "")
 		$arr_evaluacion['categoria_t9'] = $datevaluacion->categoria_t9;
 		$arr_evaluacion['subcategoria_t9'] = $datevaluacion->subcategoria_t9;
 		$arr_evaluacion['valor_t9'] = $datevaluacion->valor_t9;
-		$arr_evaluacion['direccion_t1'] = $datevaluacion->direccion_t1;
+		$arr_evaluacion['items_t9'] = $datevaluacion->items_t9;
 		$arr_evaluacion['fmod_t9'] = date('Y-m-d h:i:s');
 		$arr_evaluacion['usumod_t9'] = $datevaluacion->usureg_t1;
 
