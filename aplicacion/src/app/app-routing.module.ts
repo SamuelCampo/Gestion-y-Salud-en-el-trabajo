@@ -11,11 +11,14 @@ import { ListaFormatoComponent } from './formato/lista-formato/lista-formato.com
 import { VerFormatoComponent } from './formato/ver-formato/ver-formato.component';
 import { ListaCategoriaComponent } from './categoria/lista-categoria/lista-categoria.component';
 import { VerCategoriaComponent } from './categoria/ver-categoria/ver-categoria.component';
+import { CategoriaPadreComponent } from './categoria-padre/categoria-padre.component';
+import { ListaPadreComponent } from './categoria-padre/lista-padre/lista-padre.component';
+
 
 const routes: Routes = [
 	{ path: 'introduccion', component: IntroduccionComponent },
 	{ path: 'setup2', component: Setup2Component },
-	{ path: 'categoria', component: CategoriaComponent },
+	{ path: 'nueva_categoria', component: CategoriaComponent },
 	{ path: 'formato', component: FormatoComponent },
 	{ path: 'items', component: ItemsComponent },
 	{ path: 'login', component: LoginComponent },
@@ -24,6 +27,8 @@ const routes: Routes = [
 	{ path: 'verFormato/:id', component: VerFormatoComponent },
 	{ path: 'listacategoria', component: ListaCategoriaComponent },
 	{ path: 'vercategoria/:id', component: VerCategoriaComponent },
+	{ path: 'estructura', component: CategoriaPadreComponent },
+	{ path: 'listarEstructura', component: ListaPadreComponent },
 ];
 
 @NgModule({

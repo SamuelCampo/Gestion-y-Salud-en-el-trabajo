@@ -4,7 +4,7 @@
 			<div class="login-wrap">
 			    <form #f="ngForm" (ngSubmit)="listarCategoria()"  id="form_tercero" class="form-inline login-html">
 			    	<div class="form-group" style="width: 60%">
-    					<input type="text" [(ngModel)]="idformat" name="id" class="input form-control col-lg-12" id="staticEmail2" placeholder="Nombre de la categoria">
+    					<input type="text" [(ngModel)]="id" name="desc" class="input form-control col-lg-12" id="staticEmail2" placeholder="Nombre de la categoria">
 			    	</div>
 			    	<div class="form-group">
 			    		<button class="btn btn-light"><i class="material-icons">search</i></button>
@@ -35,16 +35,17 @@
 			    <tr *ngFor="let category of categoria">
 			    	<td>
 			    	  <div class="btn-group" role="group" aria-label="Basic example">
-					  	<a class="btn btn-secondary" [routerLink]="['/vercategoria',category.idcategoria_t4]"><i class="material-icons">create</i></a>
-					  	<button type="button" class="btn btn-secondary" (click)="deleteCategoria(category.idcategoria_t4,category.descripcion_t4,category)"><i class="material-icons">delete_forever</i></button>
+					  	<a class="btn btn-secondary" [routerLink]="['/vercategoria',category.n_identificador_t8]"><i class="material-icons">create</i></a>
+					  	<button type="button" class="btn btn-secondary" (click)="deleteCategoria(category.idcategoria_t8,category.nombre_t8,category)"><i class="material-icons">delete_forever</i></button>
 					</div>
 			    	</td>
-			    	<td>{{category.idcategoria_t4}}</td>
-			    	<td>{{category.descripcion_t4}}</td>
-			    	<td>{{category.fmod_t4}}</td>
+			    	<td>{{category.n_identificador_t8}}</td>
+			    	<td>{{category.nombre_t8}}</td>
+			    	<td>{{category.fmod_t8}}</td>
 			    </tr>
 			  </tbody>
 			</table>
 		</div>
 	</div>
 </div>
+

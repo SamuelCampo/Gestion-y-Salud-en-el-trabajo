@@ -23,10 +23,24 @@ export class ListaCategoriaComponent implements OnInit {
 
 
   listarCategoria(){
-  	this.configuracion.consultarCategoria(this.idformat)
-  	.subscribe((categoria) => {
-  		this.categoria = categoria;
+  	this.configuracion.ConsultaSubcategoria(this.idformat)
+  	.subscribe((data) => {
+  		this.categoria = data;
+      console.log(this.categoria);
   	})
+  }
+
+  deleteCategoria(id,descripcion,category){
+    let v = confirm('Estas seguro de eliminar la categoria'+' '+descripcion);
+    if (v) {
+      this.configuracion.eliminarCategoria(id)
+      .subscribe((data) => {
+        if (data) {
+          let index = this.categoria.indexOf(category);
+          this.categoria.splice(index, 1);
+        }
+      })
+    }
   }
 
 }

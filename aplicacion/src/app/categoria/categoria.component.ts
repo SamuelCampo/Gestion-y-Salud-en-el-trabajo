@@ -18,15 +18,14 @@ export class CategoriaComponent implements OnInit {
   ngOnInit() {
   }
 
-  registrarCategoria(f: NgForm){
+  RegistrarSubcategoria(f: NgForm){
     //console.log(f.value);
     let id = "";
-  	this.configuracion.registrarCategoria(f.value,id)
+  	this.configuracion.RegistrarSubcategoria(f.value,id)
     .subscribe((categoria) => {
-    console.log(categoria);
       if (categoria) {
         console.log(categoria);
-      	//this.router.navigateByUrl('listacategoria');
+      	this.router.navigateByUrl('listacategoria');
       }
     })
   }

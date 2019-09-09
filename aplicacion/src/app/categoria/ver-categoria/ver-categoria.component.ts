@@ -21,19 +21,21 @@ export class VerCategoriaComponent implements OnInit {
   ngOnInit() {
 	  	this.route.paramMap.subscribe(params => {
 	    this.idcategoria = params.get('id');
+      console.log(this.idcategoria);
 		});
-	    this.configuracion.consultarCategoria(this.idcategoria)
-	  	.subscribe((categoria) => {
-  		this.categoria = categoria;
+	    this.configuracion.ConsultaSubcategoria(this.idcategoria)
+	  	.subscribe((data) => {
+        console.log(data);
+  		this.categoria = data;
 	  	});
 	}
 
-	registrarCategoria(f: NgForm){
+	RegistrarSubcategoria(f: NgForm){
     //console.log(f.value);
-  	this.configuracion.registrarCategoria(f.value,this.idcategoria)	
+  	this.configuracion.RegistrarSubcategoria(f.value,this.idcategoria)	
     .subscribe((categoria) => {
       if (categoria) {
-      	location.reload(); 
+      	location.reload();
       }
     })
   }
