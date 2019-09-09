@@ -19,6 +19,7 @@ import { EstandaresComponent } from './estandares/estandares.component';
 import { SubEstandaresComponent } from './estandares/sub-estandares/sub-estandares.component';
 import { VerCategoriaComponent } from './categoria/ver-categoria/ver-categoria.component';
 import { CategoriaPadreComponent } from './categoria-padre/categoria-padre.component';
+import { ListaPadreComponent } from './categoria-padre/lista-padre/lista-padre.component';
 
 const routes: Routes = [];
 @NgModule({
@@ -38,6 +39,7 @@ const routes: Routes = [];
     SubEstandaresComponent,
     VerCategoriaComponent,
     CategoriaPadreComponent,
+    ListaPadreComponent,
   ],
   imports: [
     BrowserModule,

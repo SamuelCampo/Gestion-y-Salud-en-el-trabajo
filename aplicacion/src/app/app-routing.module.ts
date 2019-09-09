@@ -12,6 +12,8 @@ import { VerFormatoComponent } from './formato/ver-formato/ver-formato.component
 import { ListaCategoriaComponent } from './categoria/lista-categoria/lista-categoria.component';
 import { VerCategoriaComponent } from './categoria/ver-categoria/ver-categoria.component';
 import { CategoriaPadreComponent } from './categoria-padre/categoria-padre.component';
+import { ListaPadreComponent } from './categoria-padre/lista-padre/lista-padre.component';
+
 
 const routes: Routes = [
 	{ path: 'introduccion', component: IntroduccionComponent },
@@ -26,6 +28,7 @@ const routes: Routes = [
 	{ path: 'listacategoria', component: ListaCategoriaComponent },
 	{ path: 'vercategoria/:id', component: VerCategoriaComponent },
 	{ path: 'estructura', component: CategoriaPadreComponent },
+	{ path: 'listarEstructura', component: ListaPadreComponent },
 ];
 
 @NgModule({
