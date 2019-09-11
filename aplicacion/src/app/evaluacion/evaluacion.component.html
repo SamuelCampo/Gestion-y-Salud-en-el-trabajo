@@ -12,28 +12,44 @@
 			    				<h2 class="">Crear Evaluacion</h2>
 							</div>
 							<div class="group">
+							    <label for="" class="label">Formatos</label>
+							    <select [(ngModel)]="formato1" type="text" name="nomb_formato_t9" class="input form-control">
+							    	<option></option>
+							    </select>
+							</div>
+							<div class="group">
 							    <label for="" class="label">Categoria</label>
-							    <select [(ngModel)]="categoria1" type="text" name="idcategoria_t3" class="input form-control">
+							    <select [(ngModel)]="categoria1" type="text" name="categoria_t9" class="input form-control">
+							    	<option></option>
+							    </select>
+							</div>
+							<div class="group">
+							    <label for="" class="label">Sub Categoria</label>
+							    <select [(ngModel)]="sub-categoria1" type="text" name="subcategoria_t9" class="input form-control">
 							    	<option></option>
 							    </select>
 							</div>
 							<div class="group">
 							    <label for="" class="label">Items</label>
-							    <select [(ngModel)]="categoria1" type="text" name="idcategoria_t3" class="input form-control">
+							    <select [(ngModel)]="categoria1" type="text" name="items_t9" class="input form-control">
 							    	<option></option>
 							    </select>
 							</div>
 							<div class="group">
-							    <label for="" class="label">Verificacion</label>
-							    <input [(ngModel)]="verificacion1" type="text" name="mo_verificacion_t3" class="input form-control">
-							</div>
-							<div class="group">
-							    <label for="" class="label">Puntuaje</label>
-							    <input [(ngModel)]="puntuaje1" type="text" name="puntuaje_t3" class="input form-control">
-							</div>
-							<div class="group">
 							    <label for="" class="label">Valoracion</label>
-							    <input [(ngModel)]="valor1" type="text" name="valoracion_t3" class="input form-control">
+							    <input [(ngModel)]="valoracion1" type="text" name="valoracion_t9" class="input form-control">
+							</div>
+							<div class="group">
+							    <label for="" class="label">Justificaicion</label>
+							    <input [(ngModel)]="justificaicion1" type="text" name="justificaicion_t9" class="input form-control">
+							</div>
+							<div class="group">
+							    <label for="" class="label">Observacion</label>
+							    <input [(ngModel)]="observacion1" type="text" name="observacion_t9" class="input form-control">
+							</div>
+							<div class="group">
+							    <label for="" class="label">Valor</label>
+							    <input [(ngModel)]="valor1" type="text" name="valor_t9" class="input form-control">
 							</div>
 							    <div class="group">
 							    <button class="button">Guardar</button>
