@@ -38,7 +38,7 @@ export class CategoriaPadreComponent implements OnInit {
     }
 
   insert(f:NgForm){
-  	let id = "";
+  	let id = this.idcategoria;
     console.log(f.value);
   	this.configuracion.insert(f.value,id)
   	.subscribe((data) => {
