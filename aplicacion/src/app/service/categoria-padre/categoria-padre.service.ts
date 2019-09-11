@@ -38,7 +38,8 @@ export class CategoriaPadreService {
   	
   }
 
-  delete(){
-  	
+  delete(id){
+  	let path = this.base_url+"Categorias/Categoria/delete/"+id;
+    return this.http.delete(path);
   }
 }

@@ -28,6 +28,7 @@ const routes: Routes = [
 	{ path: 'listacategoria', component: ListaCategoriaComponent },
 	{ path: 'vercategoria/:id', component: VerCategoriaComponent },
 	{ path: 'estructura', component: CategoriaPadreComponent },
+	{ path: 'estructura/:id', component: CategoriaPadreComponent },
 	{ path: 'listarEstructura', component: ListaPadreComponent },
 ];
 

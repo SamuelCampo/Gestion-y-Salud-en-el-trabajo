@@ -30,13 +30,13 @@ class Categorias extends CI_Controller {
 				}
 				break;
 			case 'ver':
-				if ($this->uri->segment(4)) {
+				if (!empty($this->uri->segment(4)) && $this->uri->segment(4) != "undefined") {
 					$id = $this->uri->segment(4);
 				}else{
 					$id = "";
-				$query = $this->Categoria->ConsultaCategoria();
-				echo json_encode($query);
 				}
+				$query = $this->Categoria->ConsultaCategoria($id);
+				echo json_encode($query);
 				break;
 			case 'delete':
 					if ($this->uri->segment(4)) {
