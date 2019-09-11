@@ -20,12 +20,25 @@ export class ListaPadreComponent implements OnInit {
   	this.listarCategoriaPadre();
   }
 
-  listarCategoriaPadre(){
+  listarCategoriaPadre(){ 
   	this.configuracion.get(this.id)
   	.subscribe((data) => {
   		this.categoria = data;
       console.log(this.categoria);
   	})
+  }
+
+  deleteCategoria(id,descripcion,category){
+    let v = confirm('Estas seguro de eliminar la categoria'+' '+descripcion);
+    if (v) {
+      this.configuracion.delete(id)
+      .subscribe((data) => {
+        if (data) {
+          let index = this.categoria.indexOf(category);
+          this.categoria.splice(index, 1);
+        }
+      })
+    }
   }
 
 

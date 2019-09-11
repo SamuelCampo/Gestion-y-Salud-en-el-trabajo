@@ -28,9 +28,12 @@ class Categoria extends CI_Model {
 public function ConsultaCategoria($idcategoria_t8 = "")
 	{			
 				$datcategoria = (object)$this->input->post();
-				if (!empty($datcategoria->id)) {
-					$this->db->like('idcategoria_t8',$datcategoria->id,'both');
-					$this->db->or_like('descripcion_t4',$datcategoria->id,'both');
+				if (!empty($datcategoria->desc)) {
+					$this->db->like('idcategoria_t8',$datcategoria->desc,'both');
+					$this->db->or_like('nombre_t',$datcategoria->desc,'both');
+				}
+				if ($idcategoria_t8 != "") {
+					$this->db->where('idcategoria_t8',$idcategoria_t8);
 				}
 				$query = $this->db->get('ps_categoria_t8');
 				if (count($query->result()) > 1) {
