@@ -30,7 +30,7 @@ public function ConsultaCategoria($idcategoria_t8 = "")
 				$datcategoria = (object)$this->input->post();
 				if (!empty($datcategoria->desc)) {
 					$this->db->like('idcategoria_t8',$datcategoria->desc,'both');
-					$this->db->or_like('nombre_t',$datcategoria->desc,'both');
+					$this->db->or_like('nombre_t8',$datcategoria->desc,'both');
 				}
 				if ($idcategoria_t8 != "") {
 					$this->db->where('idcategoria_t8',$idcategoria_t8);

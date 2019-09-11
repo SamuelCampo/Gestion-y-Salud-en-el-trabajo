@@ -24,28 +24,28 @@ export class CategoriaPadreComponent implements OnInit {
       this.route.paramMap.subscribe(params => {
       this.idcategoria = params.get('id');
       console.log(this.idcategoria);
-      this.listar();
+      this.get(this.idcategoria);
     });
   }
 
-  listar(){
-    if (this.idcategoria != ""){
-      this.configuracion.get(this.idcategoria)
+  get(id){
+      this.configuracion.get(id)
       .subscribe((data) => {
         this.categoria = data;
-        console.log(this.categoria);
+        //console.log(id);
+        //console.log(this.categoria);
       });
     }
-  }
 
   insert(f:NgForm){
   	let id = "";
     console.log(f.value);
-  	//this.configuracion.insert(f.value,id)
-  	//.subscribe((data) => {
-  	//	this.categoria = data;
-  	//	console.log(data);
-  	//})*/
+  	this.configuracion.insert(f.value,id)
+  	.subscribe((data) => {
+  	this.categoria = data;
+  		console.log(data);
+      this.router.navigateByUrl('listarEstructura');
+  	})
   }
 
 }

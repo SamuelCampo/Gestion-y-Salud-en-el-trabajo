@@ -35,7 +35,7 @@
 			    <tr *ngFor="let category of categoria">
 			    	<td>
 			    	  <div class="btn-group" role="group" aria-label="Basic example">
-					  	<a class="btn btn-secondary" [routerLink]="['/estructura',category.n_identificador_t8]"><i class="material-icons">create</i></a>
+					  	<a class="btn btn-secondary" [routerLink]="['/estructura',category.idcategoria_t8]"><i class="material-icons">create</i></a>
 					  	<button type="button" class="btn btn-secondary" (click)="deleteCategoria(category.idcategoria_t8,category.nombre_t8,category)"><i class="material-icons">delete_forever</i></button>
 					</div>
 			    	</td>
