@@ -1,9 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Iten extends CI_Model {
+class Items extends CI_Model {
 
-	public function RegistrarIten($arr_itens = "" ,$iditens_t3 = "")
+	public function RegistrarItems($arr_itens = "" ,$iditens_t3 = "")
 
 {
 	if (empty($arr_itens)){
@@ -30,7 +30,7 @@ class Iten extends CI_Model {
 			}
 }
 
-	public function ConsultaItens($iditens_t3 = "")
+	public function ConsultaItems($iditens_t3 = "")
 	{			
 			$datitens = (object)$this->input->post();
 				if (!empty($datitens->id)) {
@@ -45,12 +45,12 @@ class Iten extends CI_Model {
 				}
 	}
 
-	public function DeleteItens($ps_itens_t3)
+	public function DeleteItems($ps_itens_t3)
 		{
 			return $this->db->where('ps_itens_t3', $ps_itens_t3)->delete('ps_itens_t3');
 		}
 
 }
 
-/* End of file Itens.php */
-/* Location: ./application/models/Itens.php */
+/* End of file Items.php */
+/* Location: ./application/models/Items.php */
