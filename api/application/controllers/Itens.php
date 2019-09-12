@@ -28,9 +28,11 @@ class Itens extends CI_Controller {
 			case 'ver':
 				if ($this->uri->segment(4)) {
 					$id = $this->uri->segment(4);
-				}
+				}else{
+				$id = "";
 				$query = $this->Items->ConsultaItems($id);
 				echo json_encode($query);
+				}
 				break;
 				case 'delete':
 					if ($this->uri->segment(4)) {
