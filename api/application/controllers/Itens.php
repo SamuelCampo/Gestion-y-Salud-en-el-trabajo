@@ -34,9 +34,6 @@ class Itens extends CI_Controller {
 				$id = "";
 				$query = $this->Items->ConsultaItems($id);
 				}
-				$query = $this->Iten->ConsultaItens($id);
-				echo json_encode($query);
-				}
 				break;
 				case 'delete':
 					if ($this->uri->segment(4)) {
