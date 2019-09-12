@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Items extends CI_Model {
+class Item extends CI_Model {
 
 	public function RegistrarItems($arr_itens = "" ,$iditens_t3 = "")
 

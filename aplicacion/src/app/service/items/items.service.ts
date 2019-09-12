@@ -13,7 +13,7 @@ export class ItemsService {
 
   get(id:string){
   	this.formData.append('desc',id);
-  	let path = this.base_url+"Itens/Iten/ver/"+id;
+  	let path = this.base_url+"Items/Item/ver/"+id;
     console.log(path);
   	return this.http.get(path);
   }

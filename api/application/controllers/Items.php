@@ -1,12 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Itens extends CI_Controller {
+class Items extends CI_Controller {
 
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('Items');
+		$this->load->model('Item');
 
 	}
 
@@ -21,7 +21,7 @@ class Itens extends CI_Controller {
 			case '0':
 			case 'gestionar':
 				if ($this->uri->segment(4) == "guardar") {
-				$query = $this->Items->RegistrarItems();
+				$query = $this->Item->RegistrarItem();
 				echo json_encode($query);
 				}
 				break;
@@ -31,13 +31,14 @@ class Itens extends CI_Controller {
 				}else{
 				$id = "";
 				}
-				$query = $this->Items->ConsultaItems($id);
+				$query = $this->Item->ConsultaItems($id);
+				echo json_encode($query);
 				break;
 				case 'delete':
 					if ($this->uri->segment(4)) {
 						$id = $this->uri->segment(4);
 					}
-					$query = $this->Items->DeleteItems($id);
+					$query = $this->Item->DeleteItem($id);
 					echo json_encode($query);	
 				break;
 			default:
@@ -48,5 +49,5 @@ class Itens extends CI_Controller {
 
 }
 
-/* End of file Items.php */
-/* Location: ./application/controllers/Items.php */
+/* End of file Item.php */
+/* Location: ./application/controllers/Item.php */
