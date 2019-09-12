@@ -10,7 +10,7 @@ class Itens extends CI_Controller {
 
 	}
 
-	public function Iten()
+	public function Item()
 	{
 	header('Access-Control-Allow-Origin: *');
 	header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method");
@@ -22,7 +22,6 @@ class Itens extends CI_Controller {
 			case 'gestionar':
 				if ($this->uri->segment(4) == "guardar") {
 				$query = $this->Items->RegistrarItems();
-				$query = $this->Iten->RegistrarIten();
 				echo json_encode($query);
 				}
 				break;
@@ -31,18 +30,14 @@ class Itens extends CI_Controller {
 					$id = $this->uri->segment(4);
 				}else{
 				$id = "";
+				}
 				$query = $this->Items->ConsultaItems($id);
-				}
-				$query = $this->Iten->ConsultaItens($id);
-				echo json_encode($query);
-				}
 				break;
 				case 'delete':
 					if ($this->uri->segment(4)) {
 						$id = $this->uri->segment(4);
 					}
 					$query = $this->Items->DeleteItems($id);
-					$query = $this->Iten->DeleteItens($id);
 					echo json_encode($query);	
 				break;
 			default:
@@ -53,5 +48,5 @@ class Itens extends CI_Controller {
 
 }
 
-/* End of file Itens.php */
-/* Location: ./application/controllers/Itens.php */
+/* End of file Items.php */
+/* Location: ./application/controllers/Items.php */
