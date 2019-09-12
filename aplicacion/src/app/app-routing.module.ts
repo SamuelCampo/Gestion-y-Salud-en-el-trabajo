@@ -13,6 +13,7 @@ import { ListaCategoriaComponent } from './categoria/lista-categoria/lista-categ
 import { VerCategoriaComponent } from './categoria/ver-categoria/ver-categoria.component';
 import { CategoriaPadreComponent } from './categoria-padre/categoria-padre.component';
 import { ListaPadreComponent } from './categoria-padre/lista-padre/lista-padre.component';
+import { ListarItemsComponent } from './items/listar-items/listar-items.component' ;
 
 
 const routes: Routes = [
@@ -28,7 +29,9 @@ const routes: Routes = [
 	{ path: 'listacategoria', component: ListaCategoriaComponent },
 	{ path: 'vercategoria/:id', component: VerCategoriaComponent },
 	{ path: 'estructura', component: CategoriaPadreComponent },
+	{ path: 'estructura/:id', component: CategoriaPadreComponent },
 	{ path: 'listarEstructura', component: ListaPadreComponent },
+	{ path: 'listarItems' , component: ListarItemsComponent},
 ];
 
 @NgModule({

@@ -1,23 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient , HttpHeaders} from '@angular/common/http';
-import { GlobalesService } from '../../variables_globales/globales.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CategoriaPadreService {
-
+export class ItemsService {
 	base_url = "http://localhost/gestion/api/index.php/";
 	headers = new HttpHeaders();
   	formData = new FormData();
 
-  constructor(private http:HttpClient) {
-  	
-  }
+  constructor(private http:HttpClient) { }
 
   get(id:string){
   	this.formData.append('desc',id);
-  	let path = this.base_url+"Categorias/Categoria/ver/"+id;
+  	let path = this.base_url+"Itens/Iten/ver/"+id;
     console.log(path);
   	return this.http.get(path);
   }

@@ -32,16 +32,17 @@
 			    </tr>
 			  </thead>
 			  <tbody>
-			    <tr *ngFor="let category of categoria">
+			    <tr *ngFor="let item of items">
 			    	<td>
 			    	  <div class="btn-group" role="group" aria-label="Basic example">
-					  	<a class="btn btn-secondary" [routerLink]="['/estructura',category.idcategoria_t8]"><i class="material-icons">create</i></a>
-					  	<button type="button" class="btn btn-secondary" (click)="deleteCategoria(category.idcategoria_t8,category.nombre_t8,category)"><i class="material-icons">delete_forever</i></button>
+					  	<a class="btn btn-secondary" [routerLink]="['/estructura',item.idcategoria_t8]"><i class="material-icons">create</i></a>
+					  	<button type="button" class="btn btn-secondary" (click)="deleteItems(item.idcategoria_t8,item.nombre_t8,item)"><i class="material-icons">delete_forever</i></button>
 					</div>
 			    	</td>
-			    	<td>{{category.n_identificador_t8}}</td>
-			    	<td>{{category.nombre_t8}}</td>
-			    	<td>{{category.fmod_t8}}</td>
+			    	<td>{{item.n_identificativo_t3}}</td>
+			    	<td>{{item.items_estandar_t3}}</td>
+			    	<td>{{item.mo_verificacion_t3}}</td>
+			    	<td>{{item.fmod_t3}}</td>
 			    </tr>
 			  </tbody>
 			</table>
