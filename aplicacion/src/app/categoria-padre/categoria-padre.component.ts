@@ -38,14 +38,20 @@ export class CategoriaPadreComponent implements OnInit {
     }
 
   insert(f:NgForm){
-  	let id = this.idcategoria;
-    console.log(f.value);
-  	this.configuracion.insert(f.value,id)
-  	.subscribe((data) => {
-  	this.categoria = data;
-  		console.log(data);
-      this.router.navigateByUrl('listarEstructura');
-  	})
-  }
+        this.route.paramMap.subscribe(params => {
+         this.idcategoria = params.get('id');
+         let id = "";
+         if (this.categoria != null) {
+            id = this.idcategoria;
+         }else{
+            id = "";
+         }
+      	this.configuracion.insert(f.value,id)
+      	.subscribe((data) => {
+      	this.categoria = data;
+          this.router.navigateByUrl('listarEstructura');
+      	})
+      })
+   }
 
 }
