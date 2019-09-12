@@ -34,7 +34,7 @@ class Items extends CI_Model {
 	{			
 			$datitens = (object)$this->input->post();
 				if (!empty($datitens->id)) {
-					$this->db->like('ps_itens_t3',$datitens->id,'both');
+					$this->db->like('iditens_t3',$datitens->id,'both');
 				}
 				if (!empty($datitens->id)) {
 					$this->db->or_like('n_identificativo_t3',$datitens->id,'both');
@@ -45,9 +45,9 @@ class Items extends CI_Model {
 				}
 	}
 
-	public function DeleteItems($ps_itens_t3)
+	public function DeleteItems($iditens_t3)
 		{
-			return $this->db->where('ps_itens_t3', $ps_itens_t3)->delete('ps_itens_t3');
+			return $this->db->where('iditens_t3', $iditens_t3)->delete('ps_itens_t3');
 		}
 
 }
