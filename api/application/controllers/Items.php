@@ -10,7 +10,7 @@ class Itens extends CI_Controller {
 
 	}
 
-	public function Iten()
+	public function Item()
 	{
 	header('Access-Control-Allow-Origin: *');
 	header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method");
@@ -51,5 +51,5 @@ class Itens extends CI_Controller {
 
 }
 
-/* End of file Itens.php */
-/* Location: ./application/controllers/Itens.php */
+/* End of file Items.php */
+/* Location: ./application/controllers/Items.php */
