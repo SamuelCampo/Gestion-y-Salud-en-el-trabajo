@@ -6,11 +6,8 @@ class Itens extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-<<<<<<< HEAD
 		$this->load->model('Items');
-=======
-		$this->load->model('Iten');
->>>>>>> a17dad57bb1dbc6b852482d09883520dea5251f7
+
 	}
 
 	public function Iten()
@@ -24,26 +21,20 @@ class Itens extends CI_Controller {
 			case '0':
 			case 'gestionar':
 				if ($this->uri->segment(4) == "guardar") {
-
-<<<<<<< HEAD
 				$query = $this->Items->RegistrarItems();
-=======
 				$query = $this->Iten->RegistrarIten();
->>>>>>> a17dad57bb1dbc6b852482d09883520dea5251f7
 				echo json_encode($query);
 				}
 				break;
 			case 'ver':
 				if ($this->uri->segment(4)) {
 					$id = $this->uri->segment(4);
-<<<<<<< HEAD
+
 				}else{
 				$id = "";
 				$query = $this->Items->ConsultaItems($id);
-=======
 				}
 				$query = $this->Iten->ConsultaItens($id);
->>>>>>> a17dad57bb1dbc6b852482d09883520dea5251f7
 				echo json_encode($query);
 				}
 				break;
@@ -51,11 +42,8 @@ class Itens extends CI_Controller {
 					if ($this->uri->segment(4)) {
 						$id = $this->uri->segment(4);
 					}
-<<<<<<< HEAD
 					$query = $this->Items->DeleteItems($id);
-=======
 					$query = $this->Iten->DeleteItens($id);
->>>>>>> a17dad57bb1dbc6b852482d09883520dea5251f7
 					echo json_encode($query);	
 				break;
 			default:
