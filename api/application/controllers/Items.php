@@ -22,7 +22,6 @@ class Itens extends CI_Controller {
 			case 'gestionar':
 				if ($this->uri->segment(4) == "guardar") {
 				$query = $this->Items->RegistrarItems();
-				$query = $this->Iten->RegistrarIten();
 				echo json_encode($query);
 				}
 				break;
@@ -32,15 +31,14 @@ class Itens extends CI_Controller {
 
 				}else{
 				$id = "";
-				$query = $this->Items->ConsultaItems($id);
 				}
+				$query = $this->Items->ConsultaItems($id);
 				break;
 				case 'delete':
 					if ($this->uri->segment(4)) {
 						$id = $this->uri->segment(4);
 					}
 					$query = $this->Items->DeleteItems($id);
-					$query = $this->Iten->DeleteItens($id);
 					echo json_encode($query);	
 				break;
 			default:
