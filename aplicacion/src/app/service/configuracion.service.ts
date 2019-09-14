@@ -51,18 +51,19 @@ export class ConfiguracionService {
 		return this.http.post<any>(path,formData,{headers:headers})
 	}
 
-	consultarformato(id:string){
+	consultarformato(arr_formato,id:string){
 		let headers = new HttpHeaders();
 		let formData = new FormData();
-		formData.append('id',id);
-		let path = this.base_url+"Formatos/Formato/ver/{id}";
+		formData.append('desc',arr_formato.desc);
+		let path = this.base_url+"Formatos/Formato/ver/"+id;
 		return this.http.post<any>(path,formData,{headers:headers})
 	}
 
 	eliminarFormato(id:string){
 		let headers = new HttpHeaders();
 		let formData = new FormData();
-		let path = this.base_url+"Formatos/Formato/";
+		let path = this.base_url+"Formatos/Formato/delete/"+id;
+		return this.http.delete(path);
 	}
 
 	RegistrarSubcategoria(arr_subcategoria,id:string){

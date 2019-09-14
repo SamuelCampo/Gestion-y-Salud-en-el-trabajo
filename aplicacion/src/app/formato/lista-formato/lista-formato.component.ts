@@ -43,9 +43,17 @@ export class ListaFormatoComponent implements OnInit {
 	  	})
   	}
 
-    eliminarFormato(){
-      confirm('Estas seguro de eliminar este Formato');
+    eliminarFormato(id,descripcion,formato){
+      let v = confirm('Estas seguro de eliminar la categoria'+' '+descripcion);
+      if (v) {
+        this.configuracion.eliminarFormato(id)
+        .subscribe((data) => {
+          if (data) {
+            let index = this.formato.indexOf(formato);
+            this.formato.splice(index, 1);
+          }
+        })
+      }
     }
-
 
   }
