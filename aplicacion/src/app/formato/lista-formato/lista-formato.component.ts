@@ -27,11 +27,19 @@ export class ListaFormatoComponent implements OnInit {
 
 
   listar(f:NgForm){
-	  	this.configuracion.consultarformato(f.value,this.idformat)
-	  	.subscribe((formato) => {
-	  		this.formato = formato;
-	  		console.log(this.formato);
-	  	})
+      if (f) {
+        this.configuracion.consultarformato(f.value,this.idformat)
+        .subscribe((formato) => {
+          this.formato = formato;
+          console.log(this.formato);
+        })
+      }else{
+        this.configuracion.consultarformato("",this.idformat)
+        .subscribe((formato) => {
+          this.formato = formato;
+          console.log(this.formato);
+        })
+      }
   	}
 
   	listarId(f:NgForm){

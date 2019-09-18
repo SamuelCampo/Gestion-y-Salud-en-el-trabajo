@@ -53,6 +53,7 @@ export class ConfiguracionService {
 	}
 
 	consultarformato(arr_formato,id:string){
+		console.log(arr_formato+" id:"+id);
 		let headers = new HttpHeaders();
 		let formData = new FormData();
 		formData.append('desc',arr_formato.desc);

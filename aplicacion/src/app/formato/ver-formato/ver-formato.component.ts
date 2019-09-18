@@ -23,16 +23,24 @@ export class VerFormatoComponent implements OnInit {
   	this.route.paramMap.subscribe(params => {
     this.idformat = params.get('id');
     console.log(this.idformat);
-    this.listarId();
+    this.listarId(this.formato);
   });
   }
 
   listarId(f:NgForm){
-  		this.configuracion.consultarformato(f.value,this.idformat)
-	  	.subscribe((formato) => {
-	  		this.formato = formato;
-	  		console.log(this.formato);
-	  	})
+    if (f) {
+        this.configuracion.consultarformato(f.value,this.idformat)
+        .subscribe((formato) => {
+          this.formato = formato;
+          console.log(this.formato);
+        })
+      }else{
+        this.configuracion.consultarformato("",this.idformat)
+        .subscribe((formato) => {
+          this.formato = formato;
+          console.log(this.formato);
+        })
+      }
   	}
 
   guardarFormato(f: NgForm){
