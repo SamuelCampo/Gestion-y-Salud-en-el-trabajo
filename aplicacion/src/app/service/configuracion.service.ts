@@ -39,6 +39,7 @@ export class ConfiguracionService {
 	}
 
 	guardarformato(arr_formato){
+		console.log(arr_formato);
 		let headers = new HttpHeaders();
 		let formData = new FormData();
 		formData.append('titulo_t2',arr_formato.titulo_t2);

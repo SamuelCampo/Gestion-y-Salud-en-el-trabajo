@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule,NgForm } from '@angular/forms';
 import { ConfiguracionService } from '../service/configuracion.service';
+import { CategoriaPadreService } from '../service/categoria-padre/categoria-padre.service';
 import { Router } from '@angular/router';
 import {
   trigger,
@@ -23,13 +24,16 @@ titulo1;
 descripcion1;
 categoria1;
 config: any = {};
+categoria = {};
 
   constructor(
   private configuracion:ConfiguracionService,
-  private router:Router
+  private router:Router,
+  private arrcategoria:CategoriaPadreService
   ) { }
 
   ngOnInit() {
+    this.getCategoria();
   }
 
   guardarFormato(f: NgForm){
@@ -39,6 +43,14 @@ config: any = {};
       if (formato) {
       	this.router.navigateByUrl('/listaformato'); 
       }
+    })
+  }
+
+  getCategoria(){
+    let id = "";
+    this.arrcategoria.get(id)
+    .subscribe((data) => {
+      this.categoria1 = data;
     })
   }
 
