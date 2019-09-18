@@ -62,7 +62,8 @@ export class ConfiguracionService {
 	eliminarFormato(id:string){
 		let headers = new HttpHeaders();
 		let formData = new FormData();
-		let path = this.base_url+"Formatos/Formato/";
+		let path = this.base_url+"Formatos/Formato/delete/"+id;
+		return this.http.delete(path);
 	}
 
 	RegistrarSubcategoria(arr_subcategoria,id:string){
