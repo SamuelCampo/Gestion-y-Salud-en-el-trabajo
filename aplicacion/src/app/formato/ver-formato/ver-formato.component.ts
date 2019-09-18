@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule,NgForm } from '@angular/forms';
 import { ConfiguracionService } from '../../service/configuracion.service';
 import { Router,ActivatedRoute } from '@angular/router';
+import { CategoriaPadreService } from '../../service/categoria-padre/categoria-padre.service';
 
 @Component({
   selector: 'app-ver-formato',
@@ -14,10 +15,13 @@ export class VerFormatoComponent implements OnInit {
 	idformat = "";
 	titulo_t2;
 	descripcion_t2;
+  categoria = {};
 
   constructor(private configuracion:ConfiguracionService,
   	private route: ActivatedRoute,
-  	private router:Router) { }
+  	private router:Router,
+    private arrcategoria:CategoriaPadreService
+    ) { }
 
   ngOnInit() {
   	this.route.paramMap.subscribe(params => {
@@ -25,6 +29,7 @@ export class VerFormatoComponent implements OnInit {
     console.log(this.idformat);
     this.listarId(this.formato);
   });
+    this.getCategoria();
   }
 
   listarId(f:NgForm){
@@ -50,6 +55,14 @@ export class VerFormatoComponent implements OnInit {
       if (formato) {
       	this.router.navigateByUrl('/listaformato'); 
       }
+    })
+  }
+
+  getCategoria(){
+    let id = "";
+    this.arrcategoria.get(id)
+    .subscribe((data) => {
+      this.categoria1 = data;
     })
   }
 

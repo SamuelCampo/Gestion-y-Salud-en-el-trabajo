@@ -20,6 +20,12 @@
 							    <textarea [(ngModel)]="formato.descripcion_t2" type="text" name="descripcion_t2" class="input form-control"></textarea>
 							    <input type="hidden" [(ngModel)]="formato.idformato_t2" name="id">
 							</div>
+							<div class="group">
+							    <div *ngFor="let categoria of categoria1">
+							 		<input type="checkbox" [(ngModel)]="categorias[categoria.idcategoria_t8]" name="categoria">
+							 		<label for="">{{categoria.nombre_t8}}</label>
+							 	</div>
+							</div>
 							    <div class="group">
 							    <button class="button">Guardar</button>
 			    			</div>
