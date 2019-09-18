@@ -27,9 +27,8 @@ export class VerFormatoComponent implements OnInit {
   });
   }
 
-  listarId(){
-  		console.log(this.idformat);
-  		this.configuracion.consultarformato(this.idformat)
+  listarId(f:NgForm){
+  		this.configuracion.consultarformato(f.value,this.idformat)
 	  	.subscribe((formato) => {
 	  		this.formato = formato;
 	  		console.log(this.formato);

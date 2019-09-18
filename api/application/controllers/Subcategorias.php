@@ -51,6 +51,12 @@ class Subcategorias extends CI_Controller {
 		}
 	}
 
+	function muestra_array(){
+		$query = $this->Subcategoria->get();
+		var_dump($query);
+
+	}
+
 }
 
 /* End of file Subcategorias.php */
