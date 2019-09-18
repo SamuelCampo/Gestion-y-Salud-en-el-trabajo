@@ -27,11 +27,7 @@ public function __construct()
 				break;
 			case 'ver':
 				$id = $this->uri->segment(4);
-				if (!empty($id)) {
-					$query = $this->Formato->ConsultaFormato($id);
-				}else{
-					$query = $this->Formato->ConsultaFormato();
-				}
+				$query = $this->Formato->ConsultaFormato();
 				echo json_encode($query);
 					break;
 			case 'delete':

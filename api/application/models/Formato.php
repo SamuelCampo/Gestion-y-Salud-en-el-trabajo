@@ -29,16 +29,11 @@ public function RegistrarFormato($datformato = "" ,$idformato_t2 = "")
 				if (!empty($datformato->desc)) {
 					$this->db->or_like('titulo_t2',$datformato->desc,'both');
 				}
-				if (!empty($idformato_t2)) {
+				if (!empty($idformato_t2) && $idformato_t2) {
 					$this->db->where('idformato_t2',$idformato_t2);
-				}
-
+				}				
 				$query = $this->db->get('ps_formato_t2');
-				if (count($query->result()) > 1) {
-					return $query->result();
-				}else{
-					return $query->row();
-				}
+				return $query->result();
 	}
 
 	public function DeleteFormato($idformato_t2)
