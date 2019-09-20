@@ -48,7 +48,7 @@ categoria = {};
 
   getCategoria(){
     let id = "";
-    this.arrcategoria.get(id)
+    this.arrcategoria.listar(this.categoria,id)
     .subscribe((data) => {
       this.categoria1 = data;
     })

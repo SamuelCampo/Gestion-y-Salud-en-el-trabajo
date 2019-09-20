@@ -37,19 +37,17 @@ export class VerFormatoComponent implements OnInit {
         this.configuracion.consultarformato(f.value,this.idformat)
         .subscribe((formato) => {
           this.formato = formato;
-          console.log(this.formato);
+          console.log(formato);
         })
       }else{
         this.configuracion.consultarformato("",this.idformat)
         .subscribe((formato) => {
-          this.formato = formato;
-          console.log(this.formato);
+          this.formato = formato[0];
         })
       }
   	}
 
   guardarFormato(f: NgForm){
-    console.log(f.value);
   	this.configuracion.guardarformato(f.value)
     .subscribe((formato) => {
       if (formato) {
@@ -60,9 +58,9 @@ export class VerFormatoComponent implements OnInit {
 
   getCategoria(){
     let id = "";
-    this.arrcategoria.get(id)
+    this.arrcategoria.listar(this.arrcategoria,id)
     .subscribe((data) => {
-      this.categoria1 = data;
+      this.categoria = data;
     })
   }
 
