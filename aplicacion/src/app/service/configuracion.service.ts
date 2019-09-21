@@ -53,11 +53,11 @@ export class ConfiguracionService {
 	}
 
 	consultarformato(arr_formato,id:string){
-		console.log(arr_formato+" desc:"+id);
 		let headers = new HttpHeaders();
 		let formData = new FormData();
 		formData.append('desc',arr_formato.id);
 		let path = this.base_url+"Formatos/Formato/ver/"+id;
+		console.log(path);
 		return this.http.post<any>(path,formData,{headers:headers})
 	}
 
