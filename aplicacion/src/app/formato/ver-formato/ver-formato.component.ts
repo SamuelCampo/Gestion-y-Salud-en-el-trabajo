@@ -16,6 +16,8 @@ export class VerFormatoComponent implements OnInit {
 	titulo_t2;
 	descripcion_t2;
   categoria = {};
+  arr_categoria: any[] = [];
+
 
   constructor(private configuracion:ConfiguracionService,
   	private route: ActivatedRoute,
@@ -47,7 +49,7 @@ export class VerFormatoComponent implements OnInit {
   	}
 
   guardarFormato(f: NgForm){
-  	this.configuracion.guardarformato(f.value)
+  	this.configuracion.guardarformato(f.value,this.arr_categoria)
     .subscribe((formato) => {
       if (formato) {
       	this.router.navigateByUrl('/listaformato'); 
@@ -61,6 +63,18 @@ export class VerFormatoComponent implements OnInit {
     .subscribe((data) => {
       this.categoria = data;
     })
+  }
+
+  guardarValor(id){
+    if (!this.arr_categoria.includes(id)) {
+       if (id != false && id != true) {
+         this.arr_categoria.push(id); 
+       }
+    }else{
+      let index = this.arr_categoria.indexOf(id);
+      this.arr_categoria.splice(index,1);
+    }
+    console.log(this.arr_categoria);
   }
 
 }

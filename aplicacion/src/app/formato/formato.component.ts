@@ -25,6 +25,7 @@ descripcion1;
 categoria1;
 config: any = {};
 categoria = {};
+arr_categoria: any[] = [];
 
   constructor(
   private configuracion:ConfiguracionService,
@@ -38,7 +39,7 @@ categoria = {};
 
   guardarFormato(f: NgForm){
     //console.log(f.value);
-  	this.configuracion.guardarformato(f.value)
+  	this.configuracion.guardarformato(f.value,this.arr_categoria)
     .subscribe((formato) => {
       if (formato) {
       	this.router.navigateByUrl('/listaformato'); 
