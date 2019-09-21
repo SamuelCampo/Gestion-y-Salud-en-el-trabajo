@@ -29,12 +29,14 @@ export class CategoriaPadreComponent implements OnInit {
   }
 
   get(id){
-      this.configuracion.get(id)
-      .subscribe((data) => {
-        this.categoria = data;
-        //console.log(id);
-        //console.log(this.categoria);
-      });
+      if (id) {
+        this.configuracion.listar("",id)
+        .subscribe((data) => {
+          this.categoria = data[0];
+          console.log(id);
+          console.log(this.categoria);
+        });
+      }
     }
 
   insert(f:NgForm){

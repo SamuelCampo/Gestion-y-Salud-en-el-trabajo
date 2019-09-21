@@ -28,18 +28,17 @@ class Categoria extends CI_Model {
 public function ConsultaCategoria($idcategoria_t8 = "")
 	{			
 				$datcategoria = (object)$this->input->post();
-				if (!empty($datcategoria->desc)) {
-					$this->db->like('idcategoria_t8',$datcategoria->desc,'both');
+				if (!empty($datcategoria->desc) && $datcategoria->desc != "undefined" && $datcategoria->desc != "null") {
 					$this->db->or_like('nombre_t8',$datcategoria->desc,'both');
 				}
-				if ($idcategoria_t8 != "") {
+				if (!empty($idcategoria_t8) && $idcategoria_t8 != "undefined" && $idcategoria_t8 != "null") {
 					$this->db->where('idcategoria_t8',$idcategoria_t8);
 				}
 				$query = $this->db->get('ps_categoria_t8');
 				if (count($query->result()) > 1) {
 					return $query->result();
 				}else{
-					return $query->row();
+					return [$query->row()];
 				}
 	}
 

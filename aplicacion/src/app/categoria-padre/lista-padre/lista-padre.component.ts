@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule,NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
 import { CategoriaPadreService } from '../../service/categoria-padre/categoria-padre.service';
 
 @Component({
@@ -10,18 +10,34 @@ import { CategoriaPadreService } from '../../service/categoria-padre/categoria-p
 })
 export class ListaPadreComponent implements OnInit {
 
+  arr_categoria = {};
   categoria;
   id;
-  constructor(private router:Router,private configuracion:CategoriaPadreService,) {
+  constructor(
+    private route:ActivatedRoute,
+    private router:Router,
+    private configuracion:CategoriaPadreService,
+    ) {
 
   }
 
-  ngOnInit() {
-  	this.listarCategoriaPadre();
+  ngOnInit(){
+      this.route.paramMap.subscribe(params => {
+      this.id = params.get('id');
+    });
+      this.listarcategorias();
   }
 
-  listarCategoriaPadre(){ 
-  	this.configuracion.get(this.id)
+  listarcategorias(){
+    this.configuracion.buscar()
+    .subscribe((data) =>{
+      this.categoria = data;
+    })
+  }
+
+  listarCategoriaPadre(f:NgForm){
+    console.log
+  	this.configuracion.listar(f.value,this.id)
   	.subscribe((data) => {
   		this.categoria = data;
       console.log(this.categoria);

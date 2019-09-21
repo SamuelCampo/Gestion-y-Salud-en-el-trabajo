@@ -15,11 +15,16 @@ export class CategoriaPadreService {
   	
   }
 
-  get(id:string){
-  	this.formData.append('desc',id);
+  buscar(){
+    let path = this.base_url+"Categorias/Categoria/ver/";
+    return this.http.get(path);
+  }
+
+  listar(arr_categoria,id:string){
+  	this.formData.append('desc',arr_categoria.desc);
   	let path = this.base_url+"Categorias/Categoria/ver/"+id;
     console.log(path);
-  	return this.http.get(path);
+  	return this.http.post<any>(path,this.formData,{headers:this.headers});
   }
 
   insert(arr_estructura,id:string){
