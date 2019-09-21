@@ -44,6 +44,12 @@ class Evaluaciones extends CI_Controller {
 		}
 	}
 
+		public function Array()
+	{
+		$query = $this->Evaluacion->Eva();
+		var_dump($query);
+	}
+
 }
 
 /* End of file Evaluaciones.php */
