@@ -55,4 +55,16 @@ arr_categoria: any[] = [];
     })
   }
 
+  guardarValor(id){
+    if (!this.arr_categoria.includes(id)) {
+       if (id != false && id != true) {
+         this.arr_categoria.push(id); 
+       }
+    }else{
+      let index = this.arr_categoria.indexOf(id);
+      this.arr_categoria.splice(index,1);
+    }
+    console.log(this.arr_categoria);
+  }
+
 }

@@ -22,9 +22,9 @@
 							    <textarea [(ngModel)]="descripcion1" type="text" name="descripcion_t2" class="input form-control"></textarea>
 							</div>
 							<div class="group">
-							    <div *ngFor="let categoria of categoria1">
-							 		<input type="checkbox" [(ngModel)]="categoria.idcategoria_t8" name="categoria[]">
-							 		<label for="">{{categoria.nombre_t8}}</label>
+							    <div *ngFor="let category of categoria">
+							 		<input type="checkbox" (click)="guardarValor(category.idcategoria_t8)" >
+							 		<label for="">{{category.nombre_t8}}</label>
 							 	</div>
 							</div>
 							    <div class="group">
