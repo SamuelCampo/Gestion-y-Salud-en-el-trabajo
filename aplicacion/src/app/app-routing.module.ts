@@ -22,6 +22,7 @@ const routes: Routes = [
 	{ path: 'nueva_categoria', component: CategoriaComponent },
 	{ path: 'formato', component: FormatoComponent },
 	{ path: 'items', component: ItemsComponent },
+	{ path: 'items/:id', component: ItemsComponent },
 	{ path: 'login', component: LoginComponent },
 	{ path: 'evaluacion', component: EvaluacionComponent },
 	{ path: 'listaformato', component: ListaFormatoComponent },

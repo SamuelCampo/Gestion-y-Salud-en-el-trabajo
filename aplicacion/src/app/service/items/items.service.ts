@@ -26,8 +26,8 @@ export class ItemsService {
   	return this.http.post<any>(path,this.formData,{headers:this.headers});
   }
 
-  delete(id){
-  	let path = this.base_url+"Categorias/Categoria/delete/"+id;
+  deleteItems(id){
+  	let path = this.base_url+"Items/Item/delete/"+id;
     return this.http.delete(path);
   }
 }

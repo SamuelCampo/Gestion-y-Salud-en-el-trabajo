@@ -22,8 +22,11 @@ export class ItemsComponent implements OnInit {
 
   ngOnInit() {
   		this.act_route.paramMap.subscribe(params => {
-    this.id = params.get('id');
+    	this.id = params.get('id');
   })
+  		if (this.id != "") {
+  			this.listarItems();
+  		}
   }
 
   guardarItems(f:NgForm){
@@ -37,6 +40,14 @@ export class ItemsComponent implements OnInit {
 	  		this.ser_items.insert("",this.id)
 	  	}
   }
+
+  listarItems(){ 
+		this.ser_items.getItems(this.id)
+		.subscribe((data) => {
+			this.arr_items = data[0];
+			  console.log(this.arr_items);
+		})
+	}
 
 
 

@@ -38,7 +38,7 @@ class Items extends CI_Controller {
 					if ($this->uri->segment(4)) {
 						$id = $this->uri->segment(4);
 					}
-					$query = $this->Item->DeleteItem($id);
+					$query = $this->Item->DeleteItems($id);
 					echo json_encode($query);	
 				break;
 			default:

@@ -26,6 +26,19 @@ export class ListarItemsComponent implements OnInit {
   	})
   }
 
-  
+  eliminarItems(id,descripcion,items){
+      let v = confirm('Estas seguro de eliminar la categoria'+' '+descripcion);
+      if (v) {
+        this.ser_items.deleteItems(id)
+        .subscribe((data) => {
+          if (data) {
+            let index = this.items.indexOf(items);
+            this.items.splice(index, 1);
+          }
+        })
+      }
+    }
+
+
 
 }
