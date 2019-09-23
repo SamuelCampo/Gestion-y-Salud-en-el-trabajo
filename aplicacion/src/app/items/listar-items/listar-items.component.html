@@ -27,8 +27,10 @@
 			    <tr>
 			      <th scope="col">Acción</th>
 			      <th scope="col">#</th>
-			      <th scope="col">Definicion</th>
-			      <th scope="col">Fecha de modificación</th>
+			      <th scope="col">Marco Legal</th>
+			      <th scope="col">Criterio</th>
+			      <th scope="col">Modo de verificacion</th>
+			      <th scope="col">Fecha de Modificaciòn</th>
 			    </tr>
 			  </thead>
 			  <tbody>
@@ -39,10 +41,11 @@
 					  	<button type="button" class="btn btn-secondary" (click)="deleteItems(item.idcategoria_t8,item.nombre_t8,item)"><i class="material-icons">delete_forever</i></button>
 					</div>
 			    	</td>
-			    	<td>{{item.n_identificativo_t3}}</td>
-			    	<td>{{item.items_estandar_t3}}</td>
-			    	<td>{{item.mo_verificacion_t3}}</td>
-			    	<td>{{item.fmod_t3}}</td>
+			    	<td>{{item.n_identificativo_t10}}</td>
+			    	<td>{{item.marco_legal_t10 | truncate: 100}}</td>
+			    	<td>{{item.criterio_t10 | truncate: 100}}</td>
+			    	<td>{{item.mo_verificacion_t10 | truncate: 100}}</td>
+			    	<td>{{item.fmod_t10}}</td>
 			    </tr>
 			  </tbody>
 			</table>

@@ -11,7 +11,7 @@ export class ListarItemsComponent implements OnInit {
   
   items;
   id = "";
-  constructor(private item:ItemsService,
+  constructor(private ser_items:ItemsService,
   			  private router:Router) { }
 
   ngOnInit() {
@@ -19,7 +19,7 @@ export class ListarItemsComponent implements OnInit {
   }
 
   listarItems(){ 
-  	this.item.get(this.id)
+  	this.ser_items.getItems(this.id)
   	.subscribe((data) => {
   		this.items = data;
       console.log(this.items);
