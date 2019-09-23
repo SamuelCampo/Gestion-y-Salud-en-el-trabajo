@@ -29,7 +29,7 @@ class Items extends CI_Controller {
 				if ($this->uri->segment(4)) {
 					$id = $this->uri->segment(4);
 				}else{
-				$id = "";
+					$id = "";
 				}
 				$query = $this->Item->ConsultaItems($id);
 				echo json_encode($query);

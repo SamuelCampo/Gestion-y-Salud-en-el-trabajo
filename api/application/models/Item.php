@@ -29,12 +29,11 @@ class Item extends CI_Model {
 
 	public function ConsultaItems($iditens_t3 = "")
 	{			
-			$datitens = (object)$this->input->post();
-				if (!empty($datitens->id)) {
-					$this->db->like('iditens_t10',$datitens->id,'both');
+				if (!empty($iditens_t3)) {
+					$this->db->like('iditens_t10',$iditens_t3,'both');
 				}
 				if (!empty($datitens->id)) {
-					$this->db->or_like('n_identificativo_t10',$datitens->id,'both');
+					$this->db->or_like('n_identificativo_t10',$iditens_t3,'both');
 				}
 				$query = $this->db->get('ps_items_t10');
 				if ($query->result() > 0) {

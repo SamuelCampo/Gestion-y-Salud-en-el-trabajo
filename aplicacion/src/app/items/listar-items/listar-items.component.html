@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="login-wrap">
-			    <form #f="ngForm" (ngSubmit)="listarCategoria()"  id="form_tercero" class="form-inline login-html">
+			    <form #f="ngForm" (ngSubmit)="listarItems()"  id="form_tercero" class="form-inline login-html">
 			    	<div class="form-group" style="width: 60%">
     					<input type="text" [(ngModel)]="id" name="desc" class="input form-control col-lg-12" id="staticEmail2" placeholder="Nombre de la categoria">
 			    	</div>
@@ -10,7 +10,7 @@
 			    		<button class="btn btn-light"><i class="material-icons">search</i></button>
 			    	</div>
 			    	<div class="form-group">
-			    		<a class="btn btn-light" [routerLink]="['/estructura']"><i class="material-icons">control_point</i></a>
+			    		<a class="btn btn-light" [routerLink]="['/items']"><i class="material-icons">control_point</i></a>
 
 			    	</div>
 			    </form>
