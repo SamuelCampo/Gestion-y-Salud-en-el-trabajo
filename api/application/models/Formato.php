@@ -25,6 +25,8 @@ public function RegistrarFormato($datformato = "" ,$idformato_t2 = "")
 				$id = $this->db->insert_id();
 			}
 			  $categoria = explode(',', $datformato->categorias);
+			  //var_dump($categoria);
+			  //echo count($categoria);
 			  for ($i = 0; $i < count($categoria); $i++) {
 			 	
 			 	
@@ -37,8 +39,9 @@ public function RegistrarFormato($datformato = "" ,$idformato_t2 = "")
 			  $arr_relacion['categoria_t6'] = $query->nombre_t8;
 			  $arr_relacion['fmod_t6'] = date('Y-m-d h:i:s');
 			  $arr_relacion['umod_t6'] = $datformato->usumod_t2;
-			  return $this->db->insert('ps_categoria_for_t6', $arr_relacion);
+			  $this->db->insert('ps_categoria_for_t6', $arr_relacion);
 			  }
+			  return true;
 
 }	
 

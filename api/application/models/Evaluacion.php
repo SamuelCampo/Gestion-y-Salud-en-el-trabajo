@@ -92,6 +92,8 @@ public function RegistrarEvaluacion($datevaluacion = "" ,$idevaluacion_t9 = "")
 			$this->db->where('idsubcategoria_t3',$query['categoria']->idcategoria_t8);
 			$query['complemento'] = $this->db->get('ps_subcategoria_t4,ps_categoria_t8, ps_complementos_t3',5,$position)->result();
 
+			
+
 			return $query;
 
 		}
