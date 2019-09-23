@@ -22,6 +22,7 @@ import { CategoriaPadreComponent } from './categoria-padre/categoria-padre.compo
 import { ListaPadreComponent } from './categoria-padre/lista-padre/lista-padre.component';
 import { ListarItemsComponent } from './items/listar-items/listar-items.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { TruncateModule } from 'ng2-truncate';
 
 const routes: Routes = [];
 @NgModule({
@@ -50,6 +51,7 @@ const routes: Routes = [];
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    TruncateModule,
     RouterModule.forRoot(routes)
   ],
   exports: [RouterModule],

@@ -21,7 +21,7 @@ class Items extends CI_Controller {
 			case '0':
 			case 'gestionar':
 				if ($this->uri->segment(4) == "guardar") {
-				$query = $this->Item->RegistrarItem();
+				$query = $this->Item->RegistrarItems();
 				echo json_encode($query);
 				}
 				break;

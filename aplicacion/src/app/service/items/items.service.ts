@@ -7,24 +7,23 @@ import { HttpClient , HttpHeaders} from '@angular/common/http';
 export class ItemsService {
 	base_url = "http://localhost/gestion/api/index.php/";
 	headers = new HttpHeaders();
-  	formData = new FormData();
+  formData = new FormData();
 
   constructor(private http:HttpClient) { }
 
-  get(id:string){
-  	this.formData.append('desc',id);
+  getItems(id:string){
   	let path = this.base_url+"Items/Item/ver/"+id;
     console.log(path);
   	return this.http.get(path);
   }
 
   insert(arr_estructura,id:string){
-  	let headers = new HttpHeaders();
-  	let formData = new FormData();
-  	formData.append('nombre_t8',arr_estructura.nombre_t8);
-  	formData.append('n_identificador_t8',arr_estructura.n_identificador_t8);
-  	let path = this.base_url+"Categorias/Categoria/gestionar/guardar/"+id;
-  	return this.http.post<any>(path,formData,{headers:headers});
+    this.formData.append('n_identificativo_t3',arr_estructura.n_identificativo_t3);
+    this.formData.append('marco_legal_t3',arr_estructura.marco_legal_t3);
+    this.formData.append('criterio_t3',arr_estructura.criterio_t3);
+    this.formData.append('mo_verificacion_t3',arr_estructura.mo_verificacion_t3);
+    let path = this.base_url+"Items/Item/gestionar/guardar/"+id;
+  	return this.http.post<any>(path,this.formData,{headers:this.headers});
   }
 
   delete(id){
