@@ -1,0 +1,45 @@
+.bg-granadient-blue{
+  background: #039be5;
+background: -moz-linear-gradient(top, #039be5 1%, #0277bd 100%, #7db9e8 100%);
+background: -webkit-linear-gradient(top, #039be5 1%,#0277bd 100%,#7db9e8 100%);
+background: linear-gradient(to bottom, #039be5 1%,#0277bd 100%,#7db9e8 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#039be5', endColorstr='#7db9e8',GradientType=0 );
+}
+
+.bg-granadient-green{
+	background: #4db6ac;
+	background: -moz-linear-gradient(-45deg,  #4db6ac 1%, #1de9b6 100%, #7db9e8 100%);
+	background: -webkit-linear-gradient(-45deg,  #4db6ac 1%,#1de9b6 100%,#7db9e8 100%);
+	background: linear-gradient(135deg,  #4db6ac 1%,#1de9b6 100%,#7db9e8 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4db6ac', endColorstr='#7db9e8',GradientType=1 );
+}
+
+.bg-granadient-purple{
+	background: #673ab7;
+	background: -moz-linear-gradient(-45deg,  #673ab7 0%, #9575cd 100%, #7db9e8 100%);
+	background: -webkit-linear-gradient(-45deg,  #673ab7 0%,#9575cd 100%,#7db9e8 100%);
+	background: linear-gradient(135deg,  #673ab7 0%,#9575cd 100%,#7db9e8 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#673ab7', endColorstr='#7db9e8',GradientType=1 );
+}
+
+.bg-granadient-grey{
+	background: #263238;
+	background: -moz-linear-gradient(-45deg, #263238 0%, #78909c 100%);
+	background: -webkit-linear-gradient(-45deg, #263238 0%,#78909c 100%);
+	background: linear-gradient(135deg, #263238 0%,#78909c 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#263238', endColorstr='#78909c',GradientType=1 );
+}
+
+.card{
+	-webkit-box-shadow: 10px 10px 20px 1px rgba(0,0,0,.2);
+	box-shadow: 10px 10px 20px 1px rgba(0,0,0,.2);
+	border: 0px solid rgba(0,0,0,0) !important;
+}
+
+.bg-granadient-fluor{
+	background: #006064;
+	background: -moz-linear-gradient(-45deg,  #006064 0%, #18ffff 100%);
+	background: -webkit-linear-gradient(-45deg,  #006064 0%,#18ffff 100%);
+	background: linear-gradient(135deg,  #006064 0%,#18ffff 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006064', endColorstr='#18ffff',GradientType=1 );
+}

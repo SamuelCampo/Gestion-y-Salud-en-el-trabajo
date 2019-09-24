@@ -14,9 +14,11 @@ import { VerCategoriaComponent } from './categoria/ver-categoria/ver-categoria.c
 import { CategoriaPadreComponent } from './categoria-padre/categoria-padre.component';
 import { ListaPadreComponent } from './categoria-padre/lista-padre/lista-padre.component';
 import { ListarItemsComponent } from './items/listar-items/listar-items.component' ;
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 const routes: Routes = [
+	{ path: '', component: DashboardComponent },
 	{ path: 'introduccion', component: IntroduccionComponent },
 	{ path: 'setup2', component: Setup2Component },
 	{ path: 'nueva_categoria', component: CategoriaComponent },
