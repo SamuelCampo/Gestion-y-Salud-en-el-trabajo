@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand mr-1" href="index.html">Gestión y Salud en el trabajo</a>
+    <a class="navbar-brand mr-1" href="index.html">{{title}}</a>
 
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
       <i class="fas fa-bars"></i>
@@ -63,14 +63,22 @@
       <li class="nav-item active">
         <a class="nav-link" href="index.html">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>{{title}}</span>
+          <span></span>
         </a>
       </li>
         <li class="nav-item dropdown">
           <ul class="list-group">
               <li class="list-group-item">
                 <ul class="nav flex-column">
-                  <a href="#" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Administración</a>
+                  <a href="#" data-toggle="collapse" href="#collapseAdmin" role="button" aria-expanded="false" aria-controls="collapseAdmin">Estructura</a>
+                  <div class="collapse" id="collapseAdmin">
+                      <li class="nav-item">
+                        <a class="" style="" [routerLink]="'/listarEstructura'">Usuarios</a>
+                      </li>
+                  </div>
+                </ul>
+                <ul class="nav flex-column">
+                  <a href="#" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Formato</a>
                   <div class="collapse" id="collapseExample">
                     <li class="nav-item">
                         <a class="" style="" [routerLink]="'/listarEstructura'">Categorias</a>

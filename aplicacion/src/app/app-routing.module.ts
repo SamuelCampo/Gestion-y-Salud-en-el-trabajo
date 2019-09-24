@@ -19,7 +19,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
 	{ path: '', component: DashboardComponent },
-	{ path: 'introduccion', component: IntroduccionComponent },
+	{ path: 'usuario/:id', component: IntroduccionComponent },
 	{ path: 'setup2', component: Setup2Component },
 	{ path: 'nueva_categoria', component: CategoriaComponent },
 	{ path: 'formato', component: FormatoComponent },
