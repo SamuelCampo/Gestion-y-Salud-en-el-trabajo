@@ -39,6 +39,8 @@ export class ItemsComponent implements OnInit {
 	  	}else{
 	  		this.ser_items.insert("",this.id)
 	  	}
+	  	this.router.navigateByUrl('listarItems');
+
   }
 
   listarItems(){ 

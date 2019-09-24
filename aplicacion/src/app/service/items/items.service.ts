@@ -23,6 +23,7 @@ export class ItemsService {
     this.formData.append('criterio_t3',arr_estructura.criterio_t3);
     this.formData.append('mo_verificacion_t3',arr_estructura.mo_verificacion_t3);
     let path = this.base_url+"Items/Item/gestionar/guardar/"+id;
+    console.log(path);
   	return this.http.post<any>(path,this.formData,{headers:this.headers});
   }
 

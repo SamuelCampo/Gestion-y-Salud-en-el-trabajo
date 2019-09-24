@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Item extends CI_Model {
 
-	public function RegistrarItems($datitens = "" ,$iditens_t3 = ""){
+	public function RegistrarItems($iditens_t3 = ""){
 			if (empty($datitens)){
 					$datitens = (object)$this->input->post();
 				}
