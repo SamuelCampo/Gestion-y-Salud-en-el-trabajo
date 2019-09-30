@@ -13,6 +13,7 @@ export class ListaFormatoComponent implements OnInit {
 
 	formato;
 	idformat = "";
+  load: boolean = true;
 
   constructor(
     private configuracion:ConfiguracionService,
@@ -30,12 +31,14 @@ export class ListaFormatoComponent implements OnInit {
       if (f) {
         this.configuracion.consultarformato(f.value,this.idformat)
         .subscribe((formato) => {
+          this.load = false;
           this.formato = formato;
           console.log(this.formato);
         })
       }else{
         this.configuracion.consultarformato("",this.idformat)
         .subscribe((formato) => {
+          this.load = false;
           this.formato = formato;
           console.log(this.formato);
         })

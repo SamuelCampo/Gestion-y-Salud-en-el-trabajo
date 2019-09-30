@@ -23,6 +23,8 @@ import { ListaPadreComponent } from './categoria-padre/lista-padre/lista-padre.c
 import { ListarItemsComponent } from './items/listar-items/listar-items.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TruncateModule } from 'ng2-truncate';
+import { ComplementarioComponent } from './complementario/complementario.component';
+import { ListaComplementarioComponent } from './complementario/lista-complementario/lista-complementario.component';
 
 const routes: Routes = [];
 @NgModule({
@@ -45,6 +47,8 @@ const routes: Routes = [];
     ListaPadreComponent,
     ListarItemsComponent,
     DashboardComponent,
+    ComplementarioComponent,
+    ListaComplementarioComponent,
   ],
   imports: [
     BrowserModule,

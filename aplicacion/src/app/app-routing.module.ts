@@ -15,6 +15,8 @@ import { CategoriaPadreComponent } from './categoria-padre/categoria-padre.compo
 import { ListaPadreComponent } from './categoria-padre/lista-padre/lista-padre.component';
 import { ListarItemsComponent } from './items/listar-items/listar-items.component' ;
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ComplementarioComponent } from './complementario/complementario.component';
+import { ListaComplementarioComponent } from './complementario/lista-complementario/lista-complementario.component';
 
 
 const routes: Routes = [
@@ -35,6 +37,9 @@ const routes: Routes = [
 	{ path: 'estructura/:id', component: CategoriaPadreComponent },
 	{ path: 'listarEstructura', component: ListaPadreComponent },
 	{ path: 'listarItems' , component: ListarItemsComponent},
+	{ path: 'listarComplementario' , component: ListaComplementarioComponent },
+	{ path: 'complementario' , component: ComplementarioComponent },
+	{ path: 'complementario/:id' , component: ComplementarioComponent }
 ];
 
 @NgModule({

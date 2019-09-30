@@ -80,6 +80,7 @@ export class ConfiguracionService {
 		formData.append('descripcion_t4',arr_subcategoria.descripcion_t4);
 		formData.append('n_identificador_t4',arr_subcategoria.n_identificador_t4);
 		formData.append('valor_total_t4',arr_subcategoria.valor_total_t4);
+		formData.append('idcategoria_t4',arr_subcategoria.idcategoria);
 		return this.http.post<any>(path,formData,{headers:headers});
 	}
 
