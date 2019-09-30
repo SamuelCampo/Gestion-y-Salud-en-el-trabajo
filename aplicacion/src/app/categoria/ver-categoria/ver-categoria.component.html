@@ -22,7 +22,14 @@
 							</div>
 							<div class="group">
 							    <label for="" class="label">Valor Total</label>
-							    <input [(ngModel)]="category.valor_total_t4" type="text" name="valor_total_t4" class="input form-control">							    <input type="hidden" [(ngModel)]="category.idcategoria_t4" name="id">
+							    <input [(ngModel)]="category.valor_total_t4" type="text" name="valor_total_t4" class="input form-control">
+							    <input type="hidden" [(ngModel)]="category.idcategoria_t4" name="id">
+							</div>
+							<div class="group" >
+								<div *ngFor="let categorias of arr_categoria">
+									<input type="radio" name="idcategoria_t8" (change)="guardarIdCategoria(categorias.idcategoria_t8)">
+								    <label for="" class="text-white">{{categorias.nombre_t8}}</label>
+								</div>
 							</div>
 							    <div class="group">
 							    <button class="button">Guardar</button>

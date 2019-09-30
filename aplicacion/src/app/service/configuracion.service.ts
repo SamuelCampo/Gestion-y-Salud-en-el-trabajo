@@ -73,6 +73,7 @@ export class ConfiguracionService {
 	}
 
 	RegistrarSubcategoria(arr_subcategoria,id:string){
+		console.log(arr_subcategoria);
 		let headers = new HttpHeaders();
 		let formData = new FormData();
 		let path = this.base_url+'Subcategorias/Subcategoria/gestionar/guardar/'+id;
@@ -88,6 +89,11 @@ export class ConfiguracionService {
 		formData.append('desc',id);
 		let path = this.base_url+'Subcategorias/Subcategoria/ver/'+id;
 		return this.http.post<any>(path,formData,{headers:headers});
+	}
+
+	getSubcategoria(id:string){
+		let path = this.base_url+'Subcategorias/Subcategoria/ver/'+id;
+		return this.http.get(path);
 	}
 
 	eliminarCategoria(id:string){

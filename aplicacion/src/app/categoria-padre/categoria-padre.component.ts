@@ -11,7 +11,9 @@ import { Router,ActivatedRoute } from '@angular/router';
 export class CategoriaPadreComponent implements OnInit {
 
   categoria;
+  subcategorias: any;
   idcategoria = "";
+  arr_subcategorias: any[] = [];
 
   constructor(
   	private configuracion:CategoriaPadreService,

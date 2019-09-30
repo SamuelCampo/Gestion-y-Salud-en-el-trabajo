@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { FormsModule,NgForm } from '@angular/forms';
 import { Router,ActivatedRoute } from '@angular/router';
 import { ItemsService } from '../service/items/items.service';
@@ -10,9 +10,10 @@ import { CategoriaPadreService } from '../service/categoria-padre/categoria-padr
   styleUrls: ['./items.component.css']
 })
 export class ItemsComponent implements OnInit {
-  
+
   id = "";
   arr_items;
+  desabilitar = "cargar";
   constructor(
   	private ser_categoria:CategoriaPadreService,
   	private ser_items:ItemsService,
@@ -21,6 +22,7 @@ export class ItemsComponent implements OnInit {
   	) { }
 
   ngOnInit() {
+
   		this.act_route.paramMap.subscribe(params => {
     	this.id = params.get('id');
   })
@@ -29,10 +31,13 @@ export class ItemsComponent implements OnInit {
   		}
   }
 
+  contenedor = this.desabilitar;
+
   guardarItems(f:NgForm){
 	  	if (f) {
 	  		this.ser_items.insert(f.value,this.id)
 	  		.subscribe((data) =>{
+
 	  			this.arr_items = data;
 	  			console.log(this.arr_items);
 	  		})
@@ -43,7 +48,7 @@ export class ItemsComponent implements OnInit {
 
   }
 
-  listarItems(){ 
+  listarItems(){
 		this.ser_items.getItems(this.id)
 		.subscribe((data) => {
 			this.arr_items = data[0];

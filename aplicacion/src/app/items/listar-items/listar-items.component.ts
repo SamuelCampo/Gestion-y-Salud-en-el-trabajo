@@ -11,6 +11,7 @@ export class ListarItemsComponent implements OnInit {
   
   items;
   id = "";
+  load: boolean = true;
   constructor(private ser_items:ItemsService,
   			  private router:Router) { }
 
@@ -18,10 +19,11 @@ export class ListarItemsComponent implements OnInit {
   	this.listarItems();
   }
 
-  listarItems(){ 
+  listarItems(){
   	this.ser_items.getItems(this.id)
   	.subscribe((data) => {
   		this.items = data;
+      this.load = false;
       console.log(this.items);
   	})
   }
