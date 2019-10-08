@@ -29,6 +29,7 @@ export class IntroduccionComponent implements OnInit {
   cargo;
   clave;
   config: any = {};
+  usuario;
   constructor(
     private configuracion:ConfiguracionService,
     private router:Router
