@@ -14,6 +14,7 @@ export class ListaPadreComponent implements OnInit {
   categoria;
   id;
   ListaPadreComponent;
+  desc
   constructor(
     private route:ActivatedRoute,
     private router:Router,
