@@ -8,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class ListaComplementarioComponent implements OnInit {
   
   load: boolean = true;
+  eliminarItems;
+  id;
+  items;
+  listarItems;
+
   constructor() { }
 
   ngOnInit() {

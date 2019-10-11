@@ -13,6 +13,7 @@ export class ListaPadreComponent implements OnInit {
   arr_categoria = {};
   categoria;
   id;
+  ListaPadreComponent;
   constructor(
     private route:ActivatedRoute,
     private router:Router,

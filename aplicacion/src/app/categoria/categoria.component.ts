@@ -12,6 +12,9 @@ import { Router } from '@angular/router';
 export class CategoriaComponent implements OnInit {
 
   arr_subcategoria: any;
+  identificador1;
+  valor1;
+  descripcion1;
 
   constructor(
   	private configuracion:ConfiguracionService,
