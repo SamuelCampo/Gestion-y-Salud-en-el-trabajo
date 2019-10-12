@@ -9,6 +9,10 @@ class Complementarios extends CI_Controller {
 		$this->load->model('Complementario');
 	}
 
+	function index(){
+		echo "hola";
+	}
+
 	public function Complementario()
 	{
 	header('Access-Control-Allow-Origin: *');

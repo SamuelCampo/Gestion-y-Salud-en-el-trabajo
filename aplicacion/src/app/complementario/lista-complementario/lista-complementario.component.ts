@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ComplementarioService } from '../../service/complementario.service';
+import { FormsModule,NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-lista-complementario',
@@ -11,13 +13,46 @@ export class ListaComplementarioComponent implements OnInit {
   eliminarItems;
   id;
   items;
-  listarItems;
+  listarCmple;
+  desc;
+  exitValor: boolean = false;
 
-  constructor() { }
+  constructor(private complementario:ComplementarioService){ }
 
   ngOnInit() {
-
+    this.buscar(this.desc);
   }
 
- 
+   
+   buscar(f: NgForm){
+     if (f) {
+       this.complementario.buscar(this.id,f.value)
+       .subscribe((data) => {
+         this.listarCmple = data;
+         if (this.listarCmple == null){
+           this.exitValor = true;
+         }
+         this.load = false;
+         console.log(this.listarCmple);
+       });
+     }else{
+       this.complementario.buscar(this.id,this.desc)
+       .subscribe((data) => {
+       this.listarCmple = data;
+       if (this.listarCmple == null){
+         this.exitValor = true;
+       }
+       this.load = false;
+       console.log(this.listarCmple);
+     });
+     }
+   }
+
+   insertar(){
+
+   }
+
+   eliminar(){
+
+   }
 }

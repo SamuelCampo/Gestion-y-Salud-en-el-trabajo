@@ -2,15 +2,15 @@
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="login-wrap">
-			    <form #f="ngForm" (ngSubmit)="listarItems()"  id="form_tercero" class="form-inline login-html">
+			    <form #f="ngForm" (ngSubmit)="buscar(f)"  id="form_tercero" class="form-inline login-html">
 			    	<div class="form-group" style="width: 60%">
-    					<input type="text" [(ngModel)]="id" name="desc" class="input form-control col-lg-12" id="staticEmail2" placeholder="Nombre del complementario">
+    					<input type="text" [(ngModel)]="desc" name="desc" class="input form-control col-lg-12" id="staticEmail2" placeholder="Nombre del complementario">
 			    	</div>
 			    	<div class="form-group">
 			    		<button class="btn btn-light"><i class="material-icons">search</i></button>
 			    	</div>
 			    	<div class="form-group">
-			    		<a class="btn btn-light" [routerLink]="['/items']"><i class="material-icons">control_point</i></a>
+			    		<a class="btn btn-light" [routerLink]="['/complementario']"><i class="material-icons">control_point</i></a>
 
 			    	</div>
 			    </form>
@@ -26,9 +26,8 @@
 			    <tr>
 			      <th scope="col">Acción</th>
 			      <th scope="col">#</th>
-			      <th scope="col">Marco Legal</th>
-			      <th scope="col">Criterio</th>
-			      <th scope="col">Modo de verificacion</th>
+			      <th scope="col">Descripcion</th>
+			      <th scope="col">Valoracion</th>
 			      <th scope="col">Fecha de Modificaciòn</th>
 			    </tr>
 			  </thead>
@@ -41,18 +40,20 @@
 			      <th scope="col" class=""></th>
 			      <th scope="col" class=""></th>
 			    </tr>
-			    <tr *ngFor="let item of items">
+			    <tr *ngFor="let Cmple of listarCmple">
 			    	<td>
 			    	  <div class="btn-group" role="group" aria-label="Basic example">
-					  	<a class="btn btn-secondary" [routerLink]="['/items',item.iditens_t10]"><i class="material-icons">create</i></a>
-					  	<button type="button" class="btn btn-secondary" (click)="eliminarItems(item.iditens_t10,item.n_identificativo_t10,item)"><i class="material-icons">delete_forever</i></button>
+					  	<a class="btn btn-secondary" [routerLink]="['/complementario',Cmple.idcomplementos_t3]"><i class="material-icons">create</i></a>
+					  	<button type="button" class="btn btn-secondary" (click)="eliminarItems(item.idcomplementos_t3,Cmple.descripcion_t3,Cmple)"><i class="material-icons">delete_forever</i></button>
 					</div>
 			    	</td>
-			    	<td>{{item.n_identificativo_t10}}</td>
-			    	<td>{{item.marco_legal_t10 | truncate: 100}}</td>
-			    	<td>{{item.criterio_t10 | truncate: 100}}</td>
-			    	<td>{{item.mo_verificacion_t10 | truncate: 100}}</td>
-			    	<td>{{item.fmod_t10}}</td>
+			    	<td>{{Cmple.idcomplementos_t3}}</td>
+			    	<td>{{Cmple.descripcion_t3 | truncate: 100}}</td>
+			    	<td>{{Cmple.valoracion_t3 | truncate: 100}}</td>
+			    	<td>{{Cmple.fmod_t3}}</td>
+			    </tr>
+			    <tr *ngIf="exitValor">
+			    	<td>No tenemos Resultados</td>
 			    </tr>
 			  </tbody>
 			</table>
