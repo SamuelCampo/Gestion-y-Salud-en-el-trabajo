@@ -14,6 +14,8 @@ export class CategoriaPadreComponent implements OnInit {
   subcategorias: any;
   idcategoria = "";
   arr_subcategorias: any[] = [];
+  nombre;
+  identificador;
 
   constructor(
   	private configuracion:CategoriaPadreService,

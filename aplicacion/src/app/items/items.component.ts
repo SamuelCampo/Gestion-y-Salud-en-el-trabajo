@@ -14,6 +14,11 @@ export class ItemsComponent implements OnInit {
   id = "";
   arr_items;
   desabilitar = "cargar";
+  identifiactivo1;
+  marco_legal1;
+  criterio1;
+  verificacion1;
+
   constructor(
   	private ser_categoria:CategoriaPadreService,
   	private ser_items:ItemsService,
