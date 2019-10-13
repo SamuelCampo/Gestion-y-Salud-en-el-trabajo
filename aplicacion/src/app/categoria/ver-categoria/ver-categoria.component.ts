@@ -3,6 +3,7 @@ import { FormsModule,NgForm } from '@angular/forms';
 import { ConfiguracionService } from '../../service/configuracion.service';
 import { Router,ActivatedRoute } from '@angular/router';
 import { CategoriaPadreService } from '../../service/categoria-padre/categoria-padre.service';
+import { ComplementarioService } from '../../service/complementario.service';
 
 @Component({
   selector: 'app-ver-categoria',
@@ -17,10 +18,12 @@ export class VerCategoriaComponent implements OnInit {
   descripcion_t4 = "";
   arr_categoria: any;
   id_categoria;
+  arr_cmpl;
   constructor(private configuracion:ConfiguracionService,
   	private route: ActivatedRoute,
   	private router:Router,
-    private categorias: CategoriaPadreService) { }
+    private categorias: CategoriaPadreService,
+    private cmpl: ComplementarioService) { }
 
   ngOnInit() {
 	  	this.route.paramMap.subscribe(params => {
@@ -32,6 +35,10 @@ export class VerCategoriaComponent implements OnInit {
         this.arr_categoria = data;
         console.log(this.arr_categoria);
       })
+      this.cmpl.buscar("","")
+      .subscribe((data) => {
+        this.arr_cmpl = data;
+      });
 	    this.configuracion.ConsultaSubcategoria(this.idcategoria)
 	  	.subscribe((data) => {
         console.log(data);

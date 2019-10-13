@@ -3,6 +3,7 @@ import { FormsModule,NgForm } from '@angular/forms';
 import { ConfiguracionService } from '../service/configuracion.service';
 import { CategoriaPadreService } from '../service/categoria-padre/categoria-padre.service'
 import { Router } from '@angular/router';
+import { ComplementarioService } from '../service/complementario.service';
 
 @Component({
   selector: 'app-categoria',
@@ -19,7 +20,8 @@ export class CategoriaComponent implements OnInit {
   constructor(
   	private configuracion:ConfiguracionService,
   	private router:Router,
-    private categoria:CategoriaPadreService
+    private categoria:CategoriaPadreService,
+    private cmpl: ComplementarioService
   	) { }
 
   ngOnInit() {

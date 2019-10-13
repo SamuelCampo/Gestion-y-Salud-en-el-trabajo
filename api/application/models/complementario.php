@@ -43,6 +43,7 @@ class Complementario extends CI_Model {
 			  $arr_relacion['usrmod_t7'] = "super";
 			  $this->db->insert('ps_categoria_items_t7', $arr_relacion);
 			  }
+			  return true;
 			
 }
 
@@ -64,9 +65,12 @@ public function ConsultaComplementario($idcomplementos_t3 = "")
 				}
 	}
 
-public function DeleteComplementario($idcomplementos_t3)
+		public function DeleteComplementario($idcomplementos_t3)
 		{
-			return $this->db->where('idcomplementos_t3', $idcomplementos_t3)->delete('ps_complementos_t3');
+			$query = $this->db->where('idcomplementos_t3', $idcomplementos_t3)->delete('ps_complementos_t3');
+			if ($query) {
+				return true;
+			}
 		}
 
 }

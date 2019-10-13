@@ -52,7 +52,14 @@ export class ListaComplementarioComponent implements OnInit {
 
    }
 
-   eliminar(){
-
-   }
+   eliminar(id,descripcion,cmple){
+      let v = confirm('Estas seguro de eliminar el complementario'+' '+descripcion);
+      if (v) {
+        this.complementario.eliminarComplementario(id)
+        .subscribe((data) => {
+            let index = this.listarCmple.indexOf(cmple);
+            this.listarCmple.splice(index, 1);
+        })
+      }
+    }
 }

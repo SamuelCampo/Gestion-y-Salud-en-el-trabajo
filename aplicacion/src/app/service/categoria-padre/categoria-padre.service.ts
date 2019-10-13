@@ -32,6 +32,7 @@ export class CategoriaPadreService {
   	let formData = new FormData();
   	formData.append('nombre_t8',arr_estructura.nombre_t8);
   	formData.append('n_identificador_t8',arr_estructura.n_identificador_t8);
+    formData.append('subcategoria',arr_estructura.subcategoria);
   	let path = this.base_url+"Categorias/Categoria/gestionar/guardar/"+id;
   	return this.http.post<any>(path,formData,{headers:headers});
   }

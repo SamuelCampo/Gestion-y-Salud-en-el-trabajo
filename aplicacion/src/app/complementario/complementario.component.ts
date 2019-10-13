@@ -15,6 +15,7 @@ export class ComplementarioComponent implements OnInit {
   items;
   data;
   arr_items : any[] = [];
+  arr_compl;
   constructor(
   		private item:ItemsService,
   		private route: ActivatedRoute,
@@ -25,9 +26,21 @@ export class ComplementarioComponent implements OnInit {
   ngOnInit() {
   	this.route.paramMap.subscribe(params => {
       this.id = params.get('id');
-      console.log(this.id);
+      //console.log(this.id);
+      this.buscar(this.id);
     });
   	this.listarItems();
+  }
+
+  buscar(id){
+  	if (id) {
+  		this.compl.buscar(id,"")
+	  	.subscribe((data) => {
+	  		this.arr_compl = data;
+	  		console.log(this.arr_compl);
+	  	})
+  	}
+  	
   }
 
   listarItems(){
@@ -65,5 +78,7 @@ export class ComplementarioComponent implements OnInit {
     }
     console.log(this.arr_items);
   }
+
+  
 
 }

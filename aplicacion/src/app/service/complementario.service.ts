@@ -13,13 +13,14 @@ export class ComplementarioService {
   constructor(private http: HttpClient) { }
 
   buscar(id,desc){
-  	console.log(desc);
-  	if (id || desc) {
+  	if (desc) {
   		this.formData.append('desc',desc.desc);
   		return this.http.post<any>(this.base_url+'Complementarios/Complementario/ver/'+id,this.formData,{headers:this.headers});	
+  	}else if(id){
+  		return this.http.get(this.base_url+'Complementarios/Complementario/ver/'+id);
   	}else{
-  		return this.http.get(this.base_url+'Complementarios/Complementario/ver/');
-  	}
+      return this.http.get(this.base_url+'Complementarios/Complementario/ver/');
+    }
   }
 
   insert(id,arr_estructura){
@@ -29,5 +30,9 @@ export class ComplementarioService {
     this.formData.append('items',arr_estructura.items);
     return this.http.post<any>(this.base_url+'Complementarios/Complementario/gestionar/guardar/'+id,this.formData);
 
+  }
+
+  eliminarComplementario(id){
+     return this.http.delete(this.base_url+'Complementarios/Complementario/delete/'+id);
   }
 }

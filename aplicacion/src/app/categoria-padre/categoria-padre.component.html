@@ -19,6 +19,9 @@
 							    <label for="" class="label">Numero de identificador</label>
 							    <textarea [(ngModel)]="categoria.n_identificador_t8" type="text" name="n_identificador_t8" class="input form-control"></textarea>
 							</div>
+							<div class="group" *ngFor="let sub of arr_sub">
+								<label for="" class="text-white"><input type="checkbox" (click)="guardarSub(sub.idsubcategoria_t4)" name="subcategoria">{{sub.descripcion_t4}}</label>
+							</div>
 							    <div class="group">
 							    <button class="button">Guardar</button>
 			    			</div>
@@ -42,6 +45,9 @@
 							<div class="group">
 							    <label for="" class="label">Numero de identificador</label>
 							    <textarea [(ngModel)]="identificador" type="text" name="n_identificador_t8" class="input form-control"></textarea>
+							</div>
+							<div class="group" *ngFor="let sub of arr_sub">
+								<label for="" class="text-white"><input type="checkbox" (click)="guardarSub(sub.idsubcategoria_t4)" name="subcategoria">{{sub.descripcion_t4}}</label>
 							</div>
 							    <div class="group">
 							    <button class="button">Guardar</button>

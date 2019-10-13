@@ -1,5 +1,6 @@
 <div class="container-fluid">
 	<div class="row">
+		<a [routerLink]="['/listarComplementario']" class="btn btn-light"><i class="material-icons">reply</i></a>
 	</div>
 	<div class="row">
 		<div class="col-lg-12">
@@ -21,7 +22,7 @@
 							</div>
 							<div class="group">
 							    <label for="" class="label">Valor</label>
-							    <input type="text" [(ngModel)]="valor" name="valor" class="input form-control">
+							    <input type="number" [(ngModel)]="valor" name="valor" class="input form-control">
 							</div>
 							<div class="items">
 								<div *ngFor="let item of items">
@@ -37,32 +38,36 @@
 			    </form>
 			  </div>
 			  <div class="login-wrap" *ngIf="this.id">
-			    <form #f="ngForm" (ngSubmit)="guardarItems(f)" id="form_tercero" class="login-html">
+			    <form #f="ngForm" (ngSubmit)="insert(f)" id="form_tercero" class="login-html">
 			    	<div class="login-form">
+			    		<div class="login-form">
 			    		<div class="">
 			    			<div class="group">
-			    				<h2 class="">Modificar Complementario</h2>
+			    				<h2 class="">Crear Complementario</h2>
 							</div>
 			    			<div class="group">
 			    				<label for="" class="label">Numero Identificativo</label>
-							    <input [(ngModel)]="this.arr_items.n_identificativo_t10" name="n_identificativo_t3" type="text" class="input form-control">
+							    <input [(ngModel)]= "arr_compl[0].n_identificativo_t3" name="identificativo" type="text" class="input form-control">
 							</div>
 							<div class="group">
-							    <label for="" class="label">Maco Legal</label>
-							    <input [(ngModel)]="this.arr_items.marco_legal_t10" type="text" name="marco_legal_t3" class="input form-control">
+							    <label for="" class="label">Descripcion</label>
+							    <input type="text" [(ngModel)]="arr_compl[0].descripcion_t3" name="descripcion" class="input form-control">
 							</div>
 							<div class="group">
-							    <label for="" class="label">Criterio</label>
-							    <input [(ngModel)]="this.arr_items.criterio_t10" type="text" name="criterio_t3" class="input form-control">
+							    <label for="" class="label">Valor</label>
+							    <input type="number" [(ngModel)]="arr_compl[0].valoracion_t3" name="valor" class="input form-control">
 							</div>
-							<div class="group">
-							    <label for="" class="label">Verificacion</label>
-							    <input [(ngModel)]="this.arr_items.mo_verificacion_t10" type="text" name="mo_verificacion_t3" class="input form-control">
+							<div class="items">
+								<div *ngFor="let item of items">
+									<input type="checkbox" (click)="guardarValor(item.iditens_t10)" name="id_items">
+								    <label for="" class="text-white">{{item.mo_verificacion_t10}}</label>
+								</div>
 							</div>
 							    <div class="group">
 							    <button class="button">Guardar</button>
 			    			</div>
 					    </div>
+					</div>
 					</div>
 			    </form>
 			  </div>

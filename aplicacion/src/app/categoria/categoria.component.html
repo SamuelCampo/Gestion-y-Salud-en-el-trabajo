@@ -23,6 +23,9 @@
 							    <label for="" class="label">Valor de la categoria</label>
 							    <input [(ngModel)]="valor1" type="text" name="valor_total_t4" class="input form-control">
 							</div>
+							<div class="group" *ngFor="let sub of arr_sub">
+								<label for="" class="text-white"><input type="checkbox" (click)="guardarSub(sub.idsubcategoria_t4)" name="subcategoria">{{sub.descripcion_t3}}</label>
+							</div>
 							    <div class="group">
 							    <button class="button">Guardar</button>
 			    			</div>

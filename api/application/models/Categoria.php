@@ -17,12 +17,22 @@ class Categoria extends CI_Model {
 				$query = $this->db->where('idcategoria_t8', $idcategoria_t8)->get('ps_categoria_t8');
 				if ($query->result() > 0) {
 					$this->db->where('idcategoria_t8', $idcategoria_t8);
-					return $this->db->update('ps_categoria_t8', $arr_categoria);
+					$this->db->update('ps_categoria_t8', $arr_categoria);
+					$id = $idcategoria_t8;
 					}
 			}else{
-				return $this->db->insert('ps_categoria_t8', $arr_categoria);
+				 $this->db->insert('ps_categoria_t8', $arr_categoria);
+				 $id = $this->db->insert_id();
 			}
 			
+			$categoria = explode(',', $datcategoria->subcategoria);
+			$this->db->where('idcategoria_t4', $id);
+			 $this->db->update('ps_subcategoria_t4', array('idcategoria_t4' => 'NULL'));
+			  for ($i = 0; $i < count($categoria); $i++) {	
+			    $this->db->where('idsubcategoria_t4', $categoria[$i]);
+			 	$this->db->update('ps_subcategoria_t4', array('idcategoria_t4' => $id));
+			  }
+			  return true;
 }
 
 public function ConsultaCategoria($idcategoria_t8 = "")
