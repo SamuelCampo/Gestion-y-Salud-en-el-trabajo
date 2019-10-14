@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ConfiguracionService } from '../service/configuracion.service';
+import { FormsModule,NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-evaluacion',
@@ -7,18 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EvaluacionComponent implements OnInit {
   
-  categoria1;
-  sub;
-  valoracion1;
-  justificaicion1;
-  observacion1;
-  valor1;
-  IniciarSesion;
-  formato1;
+  formato: any = [];
   
-  constructor() { }
+  constructor(
+      private conf:ConfiguracionService
+    ) { }
 
   ngOnInit() {
+    this.conf.consultarformato("","")
+    .subscribe((data) => {
+      this.formato = data;
+    })
+  }
+
+
+  iniciar(f:NgForm){
+    console.log(f.value);
   }
 
 }

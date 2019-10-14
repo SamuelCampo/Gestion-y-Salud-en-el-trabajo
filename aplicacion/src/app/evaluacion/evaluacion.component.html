@@ -1,64 +1,17 @@
 <div class="container-fluid">
 	<div class="row">
-	</div>
-	<div class="row">
-		<div class="col-lg-12">
-			<div class="">
-			  <div class="login-wrap">
-			    <form #f="ngForm" (ngSubmit)="IniciarSesion(f)" id="form_tercero" class="login-html">
-			    	<div class="login-form">
-			    		<div class="">
-			    			<div class="group">
-			    				<h2 class="">Crear Evaluacion</h2>
-							</div>
-							<div class="group">
-							    <label for="" class="label">Formatos</label>
-							    <select [(ngModel)]="formato1" type="text" name="nomb_formato_t9" class="input form-control">
-							    	<option></option>
-							    </select>
-							</div>
-							<div class="group">
-							    <label for="" class="label">Categoria</label>
-							    <select [(ngModel)]="categoria1" type="text" name="categoria_t9" class="input form-control">
-							    	<option></option>
-							    </select>
-							</div>
-							<div class="group">
-							    <label for="" class="label">Sub Categoria</label>
-							    <select [(ngModel)]="sub-categoria1" type="text" name="subcategoria_t9" class="input form-control">
-							    	<option></option>
-							    </select>
-							</div>
-							<div class="group">
-							    <label for="" class="label">Items</label>
-							    <select [(ngModel)]="categoria1" type="text" name="items_t9" class="input form-control">
-							    	<option></option>
-							    </select>
-							</div>
-							<div class="group">
-							    <label for="" class="label">Valoracion</label>
-							    <input [(ngModel)]="valoracion1" type="text" name="valoracion_t9" class="input form-control">
-							</div>
-							<div class="group">
-							    <label for="" class="label">Justificaicion</label>
-							    <input [(ngModel)]="justificaicion1" type="text" name="justificaicion_t9" class="input form-control">
-							</div>
-							<div class="group">
-							    <label for="" class="label">Observacion</label>
-							    <input [(ngModel)]="observacion1" type="text" name="observacion_t9" class="input form-control">
-							</div>
-							<div class="group">
-							    <label for="" class="label">Valor</label>
-							    <input [(ngModel)]="valor1" type="text" name="valor_t9" class="input form-control">
-							</div>
-							    <div class="group">
-							    <button class="button">Guardar</button>
-			    			</div>
-					    </div>
-					</div>
-			    </form>
-			  </div>
+		<h1 class="text-left col-lg-12">Comencemos una nueva evaluación</h1>
+		<form #f="ngForm" (ngSubmit)="iniciar(f)" id="form_tercero" class="col-lg-12">
+			<div class="group">
+				<label for="#evaluacion">Selecciona el formato para evaluar
+					<select ([ngModel])="id_formato" name="id_formato" id="id_formato" class="form-control">
+						<option *ngFor="let format of formato" value="{{format.idformato_t2}}">{{format.titulo_t2}}</option>
+					</select>
+				</label>
 			</div>
-		</div>
+			<div class="group">
+				<button name="iniciar" value="si" class="btn btn-ligth">Iniciar Evaluación</button>
+			</div>
+		</form>
 	</div>
 </div>
