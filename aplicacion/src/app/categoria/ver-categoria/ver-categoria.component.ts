@@ -19,6 +19,7 @@ export class VerCategoriaComponent implements OnInit {
   arr_categoria: any;
   id_categoria;
   arr_cmpl;
+  arr_cmple_id: any = [];
   constructor(private configuracion:ConfiguracionService,
   	private route: ActivatedRoute,
   	private router:Router,
@@ -50,6 +51,7 @@ export class VerCategoriaComponent implements OnInit {
     //console.log(f.value);
     let index = this.id_categoria;
     f.value['idcategoria'] = index;
+    f.value['cmpl'] = this.arr_cmple_id;
   	this.configuracion.RegistrarSubcategoria(f.value,this.idcategoria)	
     .subscribe((categoria) => {
       if (categoria) {
@@ -61,6 +63,21 @@ export class VerCategoriaComponent implements OnInit {
   guardarIdCategoria(id){
     this.id_categoria = id;
     return this.id_categoria;
+  }
+
+  guardarValor(id){
+    if (!this.arr_cmple_id.includes(id)) {
+       if (id != false && id != true) {
+         this.arr_cmple_id.push(id); 
+       }
+       if (id == 1) {
+         this.arr_cmple_id.push(id); 
+       }
+    }else{
+      let index = this.arr_cmple_id.indexOf(id);
+      this.arr_cmple_id.splice(index,1);
+    }
+    //console.log(this.arr_cmple_id);
   }
 
 }

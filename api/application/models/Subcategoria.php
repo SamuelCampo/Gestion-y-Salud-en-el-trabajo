@@ -19,11 +19,21 @@ class Subcategoria extends CI_Model {
 				$query = $this->db->where('idsubcategoria_t4', $idcategoria_t4)->get('ps_subcategoria_t4');
 				if ($query->result() > 0) {
 					$this->db->where('idsubcategoria_t4', $idcategoria_t4);
-					return $this->db->update('ps_subcategoria_t4', $arr_subcategoria);
+					$this->db->update('ps_subcategoria_t4', $arr_subcategoria);
+					$id = $idcategoria_t4;
 					}
 			}else{
-				return $this->db->insert('ps_subcategoria_t4', $arr_subcategoria);
+				$this->db->insert('ps_subcategoria_t4', $arr_subcategoria);
+				$id = $this->db->insert_id();
 			}
+
+			$cmple = explode(',', $datsubcategoria->cmpl);
+			$this->db->where_in('idsubcategoria_t3', $id);
+			 $this->db->update('ps_complementos_t3', array('idsubcategoria_t3' => 'NULL'));
+			  for ($i = 0; $i < count($cmple); $i++) {	
+			    $this->db->where('idcomplementos_t3', $cmple[$i]);
+			 	$this->db->update('ps_complementos_t3', array('idsubcategoria_t3' => $id));
+			  }
 			
 }
 

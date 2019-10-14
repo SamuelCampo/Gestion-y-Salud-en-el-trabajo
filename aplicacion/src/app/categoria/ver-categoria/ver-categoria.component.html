@@ -25,6 +25,12 @@
 							    <input [(ngModel)]="category.valor_total_t4" type="text" name="valor_total_t4" class="input form-control">
 							    <input type="hidden" [(ngModel)]="category.idcategoria_t4" name="id">
 							</div>
+							<div class="items">
+								<div *ngFor="let cmpl of arr_cmpl">
+									<input type="checkbox" (click)="guardarValor(cmpl.idcomplementos_t3)" name="id_value">
+								    <label for="" class="text-white">{{cmpl.descripcion_t3}}</label>
+								</div>
+							</div>
 							    <div class="group">
 							    <button class="button">Guardar</button>
 			    			</div>

@@ -151,3 +151,8 @@ body{
 			h2{
 				color: white;
 			}
+			.items{
+			  max-height: 300px;
+			  overflow-y: scroll;
+			  margin:20px 0; 
+			}

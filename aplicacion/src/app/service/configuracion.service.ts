@@ -73,14 +73,16 @@ export class ConfiguracionService {
 	}
 
 	RegistrarSubcategoria(arr_subcategoria,id:string){
-		console.log(arr_subcategoria);
+		//console.log(arr_subcategoria);
 		let headers = new HttpHeaders();
 		let formData = new FormData();
 		let path = this.base_url+'Subcategorias/Subcategoria/gestionar/guardar/'+id;
+		console.log(path);
 		formData.append('descripcion_t4',arr_subcategoria.descripcion_t4);
 		formData.append('n_identificador_t4',arr_subcategoria.n_identificador_t4);
 		formData.append('valor_total_t4',arr_subcategoria.valor_total_t4);
 		formData.append('idcategoria_t4',arr_subcategoria.idcategoria);
+		formData.append('cmpl',arr_subcategoria.cmpl);
 		return this.http.post<any>(path,formData,{headers:headers});
 	}
 

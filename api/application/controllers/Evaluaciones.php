@@ -32,15 +32,6 @@ class Evaluaciones extends CI_Controller {
 				$query = $this->Evaluacion->ConsultaEvaluacion($id);
 				echo json_encode($query);
 				break;
-			case 'delete':
-					if ($this->uri->segment(4)) {
-						$id = $this->uri->segment(4);
-					}
-					$query = $this->Evaluacion->DeleteEvaluacion($id);
-						
-			default:
-				# code...
-				break;
 		}
 	}
 

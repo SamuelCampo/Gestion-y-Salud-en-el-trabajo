@@ -18,7 +18,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ComplementarioComponent } from './complementario/complementario.component';
 import { ListaComplementarioComponent } from './complementario/lista-complementario/lista-complementario.component';
 
-
 const routes: Routes = [
 	{ path: '', component: DashboardComponent },
 	{ path: 'usuario/:id', component: IntroduccionComponent },
@@ -28,7 +27,6 @@ const routes: Routes = [
 	{ path: 'items', component: ItemsComponent },
 	{ path: 'items/:id', component: ItemsComponent },
 	{ path: 'login', component: LoginComponent },
-	{ path: 'evaluacion', component: EvaluacionComponent },
 	{ path: 'listaformato', component: ListaFormatoComponent },
 	{ path: 'verFormato/:id', component: VerFormatoComponent },
 	{ path: 'listacategoria', component: ListaCategoriaComponent },
@@ -39,7 +37,8 @@ const routes: Routes = [
 	{ path: 'listarItems' , component: ListarItemsComponent},
 	{ path: 'listarComplementario' , component: ListaComplementarioComponent },
 	{ path: 'complementario' , component: ComplementarioComponent },
-	{ path: 'complementario/:id' , component: ComplementarioComponent }
+	{ path: 'complementario/:id' , component: ComplementarioComponent },
+	{ path: 'evaluacion', component: EvaluacionComponent }
 ];
 
 @NgModule({
