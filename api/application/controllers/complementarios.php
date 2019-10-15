@@ -24,8 +24,8 @@ class Complementarios extends CI_Controller {
 			case '0':
 			case 'gestionar':
 				if ($this->uri->segment(4) == "guardar") {
-
-				$query = $this->Complementario->RegistrarComplementario();
+				$id = $this->uri->segment(5);
+				$query = $this->Complementario->RegistrarComplementario($id);
 				echo json_encode($query);
 				}
 				break;

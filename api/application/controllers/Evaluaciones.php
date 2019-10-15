@@ -6,7 +6,7 @@ class Evaluaciones extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('Evaluacion');
+		$this->load->model('evaluacion');
 	}
 
 	public function Evaluacion()
@@ -21,15 +21,14 @@ class Evaluaciones extends CI_Controller {
 			case 'gestionar':
 				if ($this->uri->segment(4) == "guardar") {
 
-				$query = $this->Evaluacion->RegistrarEvaluacion();
+				$query = $this->evaluacion->RegistrarEvaluacion();
 				echo json_encode($query);
 				}
 				break;
 			case 'ver':
-				if ($this->uri->segment(4)) {
-					$id = $this->uri->segment(4);
-				}
-				$query = $this->Evaluacion->ConsultaEvaluacion($id);
+				$id_position = $this->uri->segment(5);
+				$id = $this->uri->segment(4);
+				$query = $this->evaluacion->get($id,$id_position);
 				echo json_encode($query);
 				break;
 		}
@@ -37,7 +36,7 @@ class Evaluaciones extends CI_Controller {
 
 		public function Array()
 	{
-		$query = $this->Evaluacion->Eva();
+		$query = $this->evaluacion->Eva();
 		var_dump($query);
 	}
 

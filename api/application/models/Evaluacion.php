@@ -48,36 +48,22 @@ public function RegistrarEvaluacion($datevaluacion = "" ,$idevaluacion_t9 = "")
 				}
 	}
 
-	public function DeleteEvaluacion($idevaluacion_t9)
-		{
-			return $this->db->where('idevaluacion_t9', $idevaluacion_t9)->delete('ps_evaluacion_t9');
-		}
-
-	// public function get()
-	// 	{
-	// 		$this->db->where('ps_categoria_t8.idcategoria_t8 / ps_categoria_items_t7.categoria_t7');
-	// 		$query['categoria'] = $this->db->get('ps_categoria_t8,ps_itens_t3,ps_categoria_items_t7,ps_evaluacion_t9')->result();
-	// 		return $query;
-	// 		foreach ($query->result() as $fila) {
-	// 				$producto[] = array('name' => $fila->ps_categoria_t8, 'formato' => $fila->ps_formato_t2,'id' => $fila->idevaluacion_t9);
-	// 			}
-			
-	// 	}
-
-		public function get($position = "")
+		public function get($id_formato = "",$position = "")
 		{
 
 			$this->db->where('idformato_t2 = idformato_t6');
-			$this->db->where('idformato_t2 = 2');
-			$query['formato'] = $this->db->get('ps_formato_t2,ps_categoria_for_t6')->row();
+			$this->db->where('idformato_t2 ',$id_formato);
+			$query['formato'] = $this->db->get('ps_formato_t2,ps_categoria_for_t6',1,$position)->row();
 
-			$this->db->where('ps_categoria_t8.idcategoria_t8',$query['formato']->idcategoria_t6);
-			$this->db->where('ps_categoria_t8.idcategoria_t8 / ps_itens_t3.idcategoria_t3');
-			$query['items'] = $this->db->get('ps_categoria_t8,ps_itens_t3',5,$position)->result();
+			$this->db->where('idcategoria_t4', $query['formato']->idcategoria_t6);
+			$query['subcategoria'] = $this->db->get('ps_subcategoria_t4',1,$position)->row();
 
-			if ($query['items']) {
-				# code...
-			}
+			$this->db->where('idsubcategoria_t3', $query['subcategoria']->idsubcategoria_t4);
+			$query['complemento'] = $this->db->get('ps_complementos_t3',1,$position)->row();
+
+			$this->db->where('complementario_t7', $query['complemento']->idcomplementos_t3);
+			$this->db->where('identificativo_t7 = iditens_t10');
+			$query['items'] = $this->db->get('ps_categoria_items_t7,ps_items_t10')->result();
 
 			return $query;
 
