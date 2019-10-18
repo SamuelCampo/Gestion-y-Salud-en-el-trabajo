@@ -13,7 +13,7 @@ export class EvaluacionService {
   constructor(private http:HttpClient) { }
 
 
-  buscarCategoria(evaluacion:Evaluacion){
+  buscarCategoria(evaluacion:Evaluacion,idposition:string){
   	console.log(this.base_url+'Evaluaciones/Evaluacion/ver/'+evaluacion);
   	return this.http.get(this.base_url+'Evaluaciones/Evaluacion/ver/'+evaluacion);
   }

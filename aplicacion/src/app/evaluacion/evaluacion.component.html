@@ -24,16 +24,23 @@
 					<h6>{{complementario.n_identificativo_t3}} {{ complementario.descripcion_t3 }} Valor: {{ complementario.valoracion_t3 }}</h6>
 				</div>
 				<div class="card-body row">
+					<form #f="ngForm" (ngSubmit)="guardarItems(f)" id="form_tercero">
 					<div class="col-lg-12" *ngFor="let item of items">
 						<div class="">
 								<p style="font-size: 15px">	{{item.mo_verificacion_t10}}</p>
 						</div>
 						<div class="form-check-inline" *ngFor="let val of valpermit">
 						     <label style="font-size: 15px">{{ val }}
-						     	<input type="radio" class="form-check-input" name="occurrences" value="{{val}}" />
+						     	<input type="radio" class="form-check-input" (click)="validar(val)" [(ngModel)]="item.iditens_t10" name="occurrences_{{item.iditens_t10}}" value="{{val}}" />
 						     </label>
 						</div>
 					</div>
+					<div class="col-md-4"></div>
+					<div class="col-md-4">	
+						<button type="submit" class="btn btn-ligth" value="1">Enviar</button>
+					</div>
+					<div class="col-md-4">	</div>
+				</form>
 				</div>
 				<div class="card-footer"></div>
 			</div>

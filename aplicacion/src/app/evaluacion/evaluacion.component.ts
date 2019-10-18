@@ -42,4 +42,14 @@ export class EvaluacionComponent implements OnInit {
      });
   }
 
+  guardarItems(f:NgForm){
+      console.log(f.value);
+  }
+
+  validar(id){
+      if (id != "C") {
+        alert(id);
+      }
+  }
+
 }
