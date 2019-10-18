@@ -17,6 +17,8 @@ export class EvaluacionComponent implements OnInit {
   complementario;
   items;
   valpermit: any = ['C','NC','NP'];
+  arr_formato: any = [];
+  posicion: number = 1;
   
   constructor(
       private conf:ConfiguracionService,
@@ -32,18 +34,29 @@ export class EvaluacionComponent implements OnInit {
 
 
   iniciar(f:NgForm){
-     this.evlu.buscarCategoria(f.value.id_formato)
+     this.evlu.buscarCategoria(f.value.id_formato,0)
      .subscribe((data)=>{
          this.parametros = data['formato'];
          this.subcategoria = data['subcategoria'];
          this.complementario = data['complemento'];
          this.items = data['items'];
-         console.log(this.items);
+         //console.log(this.items);
      });
   }
 
   guardarItems(f:NgForm){
-      console.log(f.value);
+      this.arr_formato['nomb_eval_t14'] = f.value['nomb_eval_t14'];
+     this.arr_formato['id_evalenc_t14'] = f.value['id_evalenc_t14'];
+     this.evlu.guardarEvaluacion(this.arr_formato);
+     this.posicion = f.value['posicion'] + 1;
+     this.evlu.buscarCategoria(f.value['id_evalenc_t14'],this.posicion)
+     .subscribe((data)=>{
+         this.parametros = data['formato'];
+         this.subcategoria = data['subcategoria'];
+         this.complementario = data['complemento'];
+         this.items = data['items'];
+     });
+     
   }
 
   validar(id){

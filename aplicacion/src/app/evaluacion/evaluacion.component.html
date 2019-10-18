@@ -25,22 +25,25 @@
 				</div>
 				<div class="card-body row">
 					<form #f="ngForm" (ngSubmit)="guardarItems(f)" id="form_tercero">
-					<div class="col-lg-12" *ngFor="let item of items">
-						<div class="">
-								<p style="font-size: 15px">	{{item.mo_verificacion_t10}}</p>
+						<div class="col-lg-12" *ngFor="let item of items">
+							<div class="">
+									<p style="font-size: 15px">	{{item.mo_verificacion_t10}}</p>
+							</div>
+							<div class="form-check-inline" *ngFor="let val of valpermit">
+							     <label style="font-size: 15px">{{ val }}
+							     	<input type="radio" class="form-check-input" (click)="validar(val)" [(ngModel)]="item.iditens_t10" name="occurrences_{{item.iditens_t10}}" value="{{val}}" />
+							     </label>
+							</div>
 						</div>
-						<div class="form-check-inline" *ngFor="let val of valpermit">
-						     <label style="font-size: 15px">{{ val }}
-						     	<input type="radio" class="form-check-input" (click)="validar(val)" [(ngModel)]="item.iditens_t10" name="occurrences_{{item.iditens_t10}}" value="{{val}}" />
-						     </label>
+						<div class="col-md-4"></div>
+						<div class="col-md-4">	
+							<button type="submit" class="btn btn-ligth" value="1">Enviar</button>
 						</div>
-					</div>
-					<div class="col-md-4"></div>
-					<div class="col-md-4">	
-						<button type="submit" class="btn btn-ligth" value="1">Enviar</button>
-					</div>
-					<div class="col-md-4">	</div>
-				</form>
+						<div class="col-md-4">	</div>
+						<input type="hidden" name="nomb_eval_t14" [(ngModel)]="parametros.titulo_t2">
+						<input type="hidden" name="id_evalenc_t14" [(ngModel)]="parametros.idformato_t2">
+						<input type="hidden" name="posicion" [(ngModel)]="posicion">
+					</form>
 				</div>
 				<div class="card-footer"></div>
 			</div>

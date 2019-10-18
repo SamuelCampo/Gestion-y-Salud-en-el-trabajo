@@ -7,7 +7,8 @@ class Evaluacion extends CI_Model {
 public function RegistrarEvaluacion($datevaluacion = "" ,$idevaluacion_t9 = "")
 
 {
-	if (empty($datevaluacion)){
+	
+	/*if (empty($datevaluacion)){
 			$datevaluacion = (object)$this->input->post();
 		}
 			
@@ -27,10 +28,12 @@ public function RegistrarEvaluacion($datevaluacion = "" ,$idevaluacion_t9 = "")
 			$query = $this->db->get('ps_evaluacion_t9');
 			if ($query->row() > 0) {
 				$this->db->where('idevaluacion_t9', $idevaluacion_t9);
-				return $this->db->update('ps_evaluacion_t9', $arr_evaluacion);
+				$this->db->update('ps_evaluacion_t9', $arr_evaluacion);
+				return $idevaluacion_t9;
 			}else {
-				return $this->db->insert('ps_evaluacion_t9', $arr_evaluacion);
-			}
+				$this->db->insert('ps_evaluacion_t9', $arr_evaluacion);
+				return $this->db->insert_id();
+			}*/
 }
 
 	public function ConsultaEvaluacion($idevaluacion_t9 = "")
@@ -56,10 +59,10 @@ public function RegistrarEvaluacion($datevaluacion = "" ,$idevaluacion_t9 = "")
 			$query['formato'] = $this->db->get('ps_formato_t2,ps_categoria_for_t6',1,$position)->row();
 
 			$this->db->where('idcategoria_t4', $query['formato']->idcategoria_t6);
-			$query['subcategoria'] = $this->db->get('ps_subcategoria_t4',1,$position)->row();
+			$query['subcategoria'] = $this->db->get('ps_subcategoria_t4',1)->row();
 
 			$this->db->where('idsubcategoria_t3', $query['subcategoria']->idsubcategoria_t4);
-			$query['complemento'] = $this->db->get('ps_complementos_t3',1,$position)->row();
+			$query['complemento'] = $this->db->get('ps_complementos_t3',1)->row();
 
 			$this->db->where('complementario_t7', $query['complemento']->idcomplementos_t3);
 			$this->db->where('identificativo_t7 = iditens_t10');

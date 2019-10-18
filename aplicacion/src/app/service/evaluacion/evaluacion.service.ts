@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient , HttpHeaders} from '@angular/common/http';
-import { Evaluacion } from '../../interface/evaluacion'
+import { Evaluacion,Fmto_evaluacion } from '../../interface/evaluacion'
 
 @Injectable({
   providedIn: 'root'
@@ -13,9 +13,19 @@ export class EvaluacionService {
   constructor(private http:HttpClient) { }
 
 
-  buscarCategoria(evaluacion:Evaluacion,idposition:string){
-  	console.log(this.base_url+'Evaluaciones/Evaluacion/ver/'+evaluacion);
-  	return this.http.get(this.base_url+'Evaluaciones/Evaluacion/ver/'+evaluacion);
+  buscarCategoria(evaluacion:Evaluacion,idposition){
+  	//console.log(this.base_url+'Evaluaciones/Evaluacion/ver/'+evaluacion);
+  	let offset = idposition;
+  	if (idposition = 0) {
+  	  return this.http.get(this.base_url+'Evaluaciones/Evaluacion/ver/'+evaluacion);	
+  	}else{
+  		console.log(this.base_url+'Evaluaciones/Evaluacion/ver/'+evaluacion+'/'+offset);
+  		return this.http.get(this.base_url+'Evaluaciones/Evaluacion/ver/'+evaluacion+'/'+offset);	
+  	}
+  }
+
+  guardarEvaluacion(arr_formato:Fmto_evaluacion){
+  	console.log(arr_formato);
   }
 
 }
