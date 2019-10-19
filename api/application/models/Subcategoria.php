@@ -12,7 +12,7 @@ class Subcategoria extends CI_Model {
 			if(!empty($datsubcategoria->valor_total_t4))$arr_subcategoria['valor_total_t4'] = $datsubcategoria->valor_total_t4;
 			if(!empty($datsubcategoria->descripcion_t4))$arr_subcategoria['descripcion_t4'] = $datsubcategoria->descripcion_t4;
 			if(!empty($datsubcategoria->n_identificador_t4))$arr_subcategoria['n_identificador_t4'] = $datsubcategoria->n_identificador_t4;
-			if(!empty($datsubcategoria->idcategoria_t4))$arr_subcategoria['idcategoria_t4'] = $datsubcategoria->idcategoria_t4;
+			//if(!empty($datsubcategoria->idcategoria_t4))$arr_subcategoria['idcategoria_t4'] = $datsubcategoria->idcategoria_t4;
 			$arr_subcategoria['fmod_t4'] = date('Y-m-d h:i:s');
 			if(!empty($datsubcategoria->usumod_t4))$arr_subcategoria['usumod_t4'] = $datsubcategoria->usumod_t4;
 			if(!empty($idcategoria_t4)){

@@ -59,7 +59,9 @@ public function RegistrarEvaluacion($datevaluacion = "" ,$idevaluacion_t9 = "")
 			$query['formato'] = $this->db->get('ps_formato_t2,ps_categoria_for_t6',1,$position)->row();
 
 			$this->db->where('idcategoria_t4', $query['formato']->idcategoria_t6);
+			$this->db->order_by('idcategoria_t4', 'asc');
 			$query['subcategoria'] = $this->db->get('ps_subcategoria_t4',1)->row();
+
 
 			$this->db->where('idsubcategoria_t3', $query['subcategoria']->idsubcategoria_t4);
 			$query['complemento'] = $this->db->get('ps_complementos_t3',1)->row();
