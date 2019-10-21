@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient , HttpHeaders} from '@angular/common/http';
-import { Usuario } from '../interface/usuario';
+import { Usuario,updateUsuario } from '../interface/usuario';
 
 @Injectable({
   providedIn: 'root'
@@ -9,10 +9,7 @@ export class ConfiguracionService {
 
 	base_url = "http://localhost/gestion/api/index.php/";
 
-  constructor(private http:HttpClient) {
-  	
-   }
-
+  constructor(private http:HttpClient) {}
 
    getConfig() {
    		const path = "http://localhost/gestion/api/index.php/registrar/usuario/ver";
