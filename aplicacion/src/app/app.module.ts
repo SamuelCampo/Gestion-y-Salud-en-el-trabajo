@@ -25,6 +25,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { TruncateModule } from 'ng2-truncate';
 import { ComplementarioComponent } from './complementario/complementario.component';
 import { ListaComplementarioComponent } from './complementario/lista-complementario/lista-complementario.component';
+import { ListaUsuarioComponent } from './introduccion/lista-usuario/lista-usuario.component';
 
 const routes: Routes = [];
 @NgModule({
@@ -49,6 +50,7 @@ const routes: Routes = [];
     DashboardComponent,
     ComplementarioComponent,
     ListaComplementarioComponent,
+    ListaUsuarioComponent,
   ],
   imports: [
     BrowserModule,

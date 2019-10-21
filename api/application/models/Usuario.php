@@ -19,12 +19,13 @@ class Usuario extends CI_Model {
 		$arr_usuario['direccion_t0'] = $datusuario->direccion_t0;
 		$arr_usuario['clave_t0'] = md5($datusuario->clave_t0);
 		$arr_usuario['cedula_t0'] = $datusuario->cedula_t0;
+		$arr_usuario['cargo_t0'] = $datusuario->cargo_t0;
 		$arr_usuario['fecha_cracion_t0'] = date('Y-m-d h:i:s');
 
 
 		$this->db->where('cedula_t0', $datusuario->cedula_t0);
 			$query = $this->db->get('ps_usuario_t0');
-			if ($query->row() > 0) {
+			if ($query->num_rows() > 0) {
 				$this->db->where('cedula_t0', $datusuario->cedula_t0);
 				return $this->db->update('ps_usuario_t0', $arr_usuario);
 
@@ -35,12 +36,21 @@ class Usuario extends CI_Model {
 
 public function ConsultaUsuario($idusuario_t0 = "")
 {
-	$query = $this->db->get('ps_usuario_t0');
-			if ($query->result() > 0) {
-				return $query->result();
-			}
+	
+		if (!empty($idusuario_t0)) {
+			$this->db->where('cedula_t0',$idusuario_t0);
+		}
+		$query = $this->db->get('ps_usuario_t0');
+		if ($query->result() > 0) {
+			return $query->result();
+		}
+
 }
 
+public function DeleteUsuario($idusuario_t0)
+		{
+		return $this->db->where('cedula_t0', $idusuario_t0)->delete('ps_usuario_t0');
+		}
 }
 
 /* End of file Usuario.php */

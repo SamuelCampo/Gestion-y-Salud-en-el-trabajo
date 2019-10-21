@@ -28,7 +28,7 @@ public function __construct()
 				echo json_encode($this->input->post());
 				$query = $this->Usuario->RegistrarUsuario();
 				if ($query) {
-					echo json_encode('Exitoso');
+					echo json_encode($query);
 				}
 
 				$query = $this->Usuario->RegistrarUsuario();
@@ -36,9 +36,16 @@ public function __construct()
 				}
 			break;
 			case 'ver':
-				$query = $this->Usuario->ConsultaUsuario();
+				$query = $this->Usuario->ConsultaUsuario($this->uri->segment(4));
 				echo json_encode($query);
 				break;
+
+		case 'delete':
+			if ($this->uri->segment(4)) {
+				$id = $this->uri->segment(4);
+			}
+			$query = $this->Usuario->DeleteUsuario($id);
+		break;			
 		default:
 			# code...
 			break;

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule,NgForm } from '@angular/forms';
 import { ConfiguracionService } from '../service/configuracion.service';
-import { Router } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
+import { UsuarioService } from '../service/usuario.service';
 import {
   trigger,
   state,
@@ -23,7 +24,7 @@ export class IntroduccionComponent implements OnInit {
   nombre2;
   apellido1;
   apellido2;
-  cedula;
+  cedula = "";
   telefono;
   direccion;
   cargo;
@@ -31,21 +32,34 @@ export class IntroduccionComponent implements OnInit {
   config: any = {};
   usuario;
   cargo2;
+  ver_usuario: any = {};
   constructor(
     private configuracion:ConfiguracionService,
-    private router:Router
+    private router:Router,
+    private route:ActivatedRoute,
+    private usuarios:UsuarioService
     ) { }
 
   ngOnInit() {
+    this.route.paramMap.subscribe(params => {
+      this.cedula = params.get('id');
+      //console.log(this.id);
+      this.usuarios.getConfig(this.cedula)
+      .subscribe((data) =>{
+        this.ver_usuario = data[0];
+        console.log(data);
+      })
+    });
     this.consultarUsuarios();
   }
 
-  IniciarSesion(f: NgForm){
-    //console.log(f.value);
-  	this.configuracion.guardarUsuario(f.value)
+  IniciarSesion(f: NgForm,){
+  	this.usuarios.guardarUsuario(f.value)
     .subscribe((newUsuario) => {
       //console.log(newUsuario);
+
     })
+    this.router.navigateByUrl('lista-usuario'); 
   }
 
   consultarUsuarios(){
@@ -53,7 +67,7 @@ export class IntroduccionComponent implements OnInit {
       .subscribe(data => {
       this.config = data;
       if (data !== false) {
-       //this.router.navigateByUrl('/setup2'); 
+       
       }else{
         
       }

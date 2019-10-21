@@ -11,7 +11,8 @@
 			  <div class="card-header">
 			    Crea tu usuario principal
 			  </div>
-			  <div class="login-wrap">
+			  <div class="login-wrap" *ngIf="!cedula">
+			  	Insertar
 			    <form #f="ngForm" (ngSubmit)="IniciarSesion(f)" id="form_tercero" class="login-html">
 			    	<div class="login-form">
 			    		<div class="">
@@ -54,6 +55,60 @@
 							    <div class="group">
 							    <label for="" class="label">Contraseña</label>
 							    <input [(ngModel)]="clave" type="password" name="clave_t0" class="input form-control">
+							</div>
+							    <div class="group">
+							    <button class="button">Guardar</button>
+			    			</div>
+					    </div>
+					</div>
+
+			    </form>
+
+			  </div>
+			  <div class="login-wrap" *ngIf="cedula">
+			    <form #f="ngForm" (ngSubmit)="IniciarSesion(f)" id="form_tercero" class="login-html">
+			    	<div class="login-form">
+			    		<div class="">
+			    			Modificar
+			    			<div class="group">
+			    				<label for="" class="label">Primer Nombre</label>
+							    <input [(ngModel)]="ver_usuario.primer_nombre_t0" name="primer_nombre_t0" type="text" class="input form-control">
+							</div>
+							<div class="group">
+							    <label for="" class="label">Segundo Nombre</label>
+							    <input [(ngModel)]="ver_usuario.segunda_nombre_t0" type="text" name="segunda_nombre_t0" class="input form-control">
+							</div>
+							<div class="group">
+							    <label for="" class="label">Primer Apellido</label>
+							    <input [(ngModel)]="ver_usuario.primer_apellido_t0" type="text" name="primer_apellido_t0" class="input form-control">
+							</div>
+							    <div class="group">
+							    <label for="" class="label">Segundo Apellido</label>
+							    <input [(ngModel)]="ver_usuario.segundo_apellido_t0" type="text" name="segundo_apellido_t0" class="input form-control">
+							</div>
+							    <div class="group">
+							    <label for="" class="label">Cedula</label>
+							    <input [(ngModel)]="ver_usuario.cedula_t0" type="text" name="cedula_t0" class="input form-control">
+							</div>
+							<div class="group">
+							    <label for="" class="label">Usuario</label>
+							    <input [(ngModel)]="ver_usuario.usuario_t0" type="text" name="usuario_t0" class="input form-control">
+							</div>
+							    <div class="group">
+							    <label for="" class="label">Telefono</label>
+							    <input [(ngModel)]="ver_usuario.telefono_t0" type="text" name="telefono_t0" class="input form-control">
+							</div>
+							    <div class="group">
+							    <label for="" class="label">Direccion</label>
+							    <input [(ngModel)]="ver_usuario.direccion_t0" type="text" name="direccion_t0" class="input form-control">
+							</div>
+							    <div class="group">
+							    <label for="" class="label">Cargo</label>
+							    <input [(ngModel)]="ver_usuario.cargo_t0" type="text" name="cargo_t0" class="input form-control">
+							</div>
+							    <div class="group">
+							    <label for="" class="label">Contraseña</label>
+							    <input [(ngModel)]="ver_usuario.clave_t0" type="password" name="clave_t0" class="input form-control">
 							</div>
 							    <div class="group">
 							    <button class="button">Guardar</button>
