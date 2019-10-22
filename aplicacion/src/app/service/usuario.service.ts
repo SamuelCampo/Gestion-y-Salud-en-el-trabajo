@@ -34,6 +34,7 @@ export class UsuarioService {
 	    formData.append('clave_t0',arr_usuario.clave_t0);
 	    formData.append('cedula_t0',arr_usuario.cedula_t0);
 	    formData.append('cargo_t0',arr_usuario.cargo_t0);
+	    formData.append('roll_t0',arr_usuario.roll_t0);
 	    console.log(arr_usuario);
    		const path = "http://localhost/gestion/api/index.php/registrar/usuario/gestionar/guardar/"+arr_usuario.cedula_t0;
 	  	return this.http.post<any>(path, formData,{headers:headers});

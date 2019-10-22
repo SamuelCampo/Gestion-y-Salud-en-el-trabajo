@@ -11,7 +11,7 @@
 			  <div class="card-header">
 			    Crea tu usuario principal
 			  </div>
-			  <div class="login-wrap" *ngIf="!cedula">
+			  <div class="login-wrap" *ngIf="">
 			  	Insertar
 			    <form #f="ngForm" (ngSubmit)="IniciarSesion(f)" id="form_tercero" class="login-html">
 			    	<div class="login-form">
@@ -52,6 +52,15 @@
 							    <label for="" class="label">Cargo</label>
 							    <input [(ngModel)]="cargo2" type="text" name="cargo_t0" class="input form-control">
 							</div>
+							<div class="group">
+							    <label for="" class="label">Roll del Usuario</label>
+							    <select [(ngModel)]="roll" name="roll_t0" id="" class="input form-control">
+							    	<option value="" style="color: black">SELECT 1</option>
+							    	<option value="" style="color: black">SELECT 2</option>
+							    	<option value="" style="color: black">SELECT 3</option>
+							    	<option value="" style="color: black">SELECT 4</option>
+							    </select>
+							</div>
 							    <div class="group">
 							    <label for="" class="label">Contraseña</label>
 							    <input [(ngModel)]="clave" type="password" name="clave_t0" class="input form-control">
@@ -65,7 +74,7 @@
 			    </form>
 
 			  </div>
-			  <div class="login-wrap" *ngIf="cedula">
+			  <div class="login-wrap" *ngIf="">
 			    <form #f="ngForm" (ngSubmit)="IniciarSesion(f)" id="form_tercero" class="login-html">
 			    	<div class="login-form">
 			    		<div class="">
@@ -105,6 +114,10 @@
 							    <div class="group">
 							    <label for="" class="label">Cargo</label>
 							    <input [(ngModel)]="ver_usuario.cargo_t0" type="text" name="cargo_t0" class="input form-control">
+							</div>
+							<div class="group">
+							    <label for="" class="label">Roll del Usuario</label>
+							    <input [(ngModel)]="roll" type="text" name="roll_t0" class="input form-control">
 							</div>
 							    <div class="group">
 							    <label for="" class="label">Contraseña</label>

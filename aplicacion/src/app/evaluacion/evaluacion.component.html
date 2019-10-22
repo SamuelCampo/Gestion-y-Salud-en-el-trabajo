@@ -21,7 +21,7 @@
 					<h5  *ngIf="parametros != '' ">Iniciamos con el formato: <b>{{parametros.titulo_t2}}</b></h5>
 					<h6 *ngIf="parametros != '' ">Categoria: {{parametros.categoria_t6}}</h6>
 					<h6 *ngIf="subcategoria != ''">{{subcategoria.n_identificador_t4}} {{subcategoria.descripcion_t4}}</h6>
-					<h6>{{complementario.n_identificativo_t3}} {{ complementario.descripcion_t3 }} Valor: {{ complementario.valoracion_t3 }}</h6>
+					<h6>{{complementario.n_identificativo_t3}} {{ complementario.descripcion_t3 }} Valor: {{ complementario.valoracion_t3 }} %</h6>
 				</div>
 				<div class="card-body row">
 					<form #f="ngForm" (ngSubmit)="guardarItems(f)" id="form_tercero">

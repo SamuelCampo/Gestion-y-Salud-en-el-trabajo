@@ -32,6 +32,7 @@ export class IntroduccionComponent implements OnInit {
   config: any = {};
   usuario;
   cargo2;
+  roll;
   ver_usuario: any = {};
   constructor(
     private configuracion:ConfiguracionService,

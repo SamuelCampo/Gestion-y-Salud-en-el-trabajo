@@ -20,6 +20,7 @@ class Usuario extends CI_Model {
 		$arr_usuario['clave_t0'] = md5($datusuario->clave_t0);
 		$arr_usuario['cedula_t0'] = $datusuario->cedula_t0;
 		$arr_usuario['cargo_t0'] = $datusuario->cargo_t0;
+		$arr_usuario['roll_t0'] = $datusuario->roll_t0;
 		$arr_usuario['fecha_cracion_t0'] = date('Y-m-d h:i:s');
 
 

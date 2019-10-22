@@ -51,24 +51,44 @@ public function RegistrarEvaluacion($datevaluacion = "" ,$idevaluacion_t9 = "")
 				}
 	}
 
-		public function get($id_formato = "",$position = "")
+		public function get($id_formato = "",$position = "",$id_sub = "",$id_complementario = "")
 		{
 
 			$this->db->where('idformato_t2 = idformato_t6');
 			$this->db->where('idformato_t2 ',$id_formato);
+			$this->db->order_by('idrelacion_t6', 'asc');
 			$query['formato'] = $this->db->get('ps_formato_t2,ps_categoria_for_t6',1,$position)->row();
-
+				
 			$this->db->where('idcategoria_t4', $query['formato']->idcategoria_t6);
 			$this->db->order_by('idcategoria_t4', 'asc');
-			$query['subcategoria'] = $this->db->get('ps_subcategoria_t4',1)->row();
+			$query['subcategoria'] = $this->db->get('ps_subcategoria_t4',1,$id_sub)->row();
+			if (is_null($query['subcategoria']) === false) {
 
+					$this->db->where('idsubcategoria_t3', $query['subcategoria']->idsubcategoria_t4);
+					$query['complemento'] = $this->db->get('ps_complementos_t3',1,$id_complementario)->row();
 
-			$this->db->where('idsubcategoria_t3', $query['subcategoria']->idsubcategoria_t4);
-			$query['complemento'] = $this->db->get('ps_complementos_t3',1)->row();
+					if (is_null($query['complemento']) === false) {
+						$this->db->where('complementario_t7', $query['complemento']->idcomplementos_t3);
+						$this->db->where('identificativo_t7 = iditens_t10');
+						$query['items'] = $this->db->get('ps_categoria_items_t7,ps_items_t10')->result();	
+					}else{
+						return false;
+					}
 
-			$this->db->where('complementario_t7', $query['complemento']->idcomplementos_t3);
-			$this->db->where('identificativo_t7 = iditens_t10');
-			$query['items'] = $this->db->get('ps_categoria_items_t7,ps_items_t10')->result();
+				}else{
+					$id_complementario = $id_complementario + 1;
+					$this->db->where('idsubcategoria_t3', $query['subcategoria']->idsubcategoria_t4);
+					$query['complemento'] = $this->db->get('ps_complementos_t3',1,$id_complementario)->row();
+
+					if (is_null($query['complemento']) === false) {
+						$this->db->where('complementario_t7', $query['complemento']->idcomplementos_t3);
+						$this->db->where('identificativo_t7 = iditens_t10');
+						$query['items'] = $this->db->get('ps_categoria_items_t7,ps_items_t10')->result();	
+					}else{
+						return false;
+					}
+				}
+
 
 			return $query;
 

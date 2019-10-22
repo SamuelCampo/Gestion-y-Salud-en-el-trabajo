@@ -49,6 +49,8 @@ export class EvaluacionComponent implements OnInit {
      this.arr_formato['id_evalenc_t14'] = f.value['id_evalenc_t14'];
      this.evlu.guardarEvaluacion(this.arr_formato);
      this.posicion = f.value['posicion'] + 1;
+     let id_sub = 0;
+     let id_complementario = 0;
      this.evlu.buscarCategoria(f.value['id_evalenc_t14'],this.posicion)
      .subscribe((data)=>{
          this.parametros = data['formato'];

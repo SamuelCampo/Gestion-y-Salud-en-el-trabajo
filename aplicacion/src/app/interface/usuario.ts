@@ -11,3 +11,10 @@ export interface Usuario {
 	cargo_t0: string;
 	completed: true
 }
+
+
+export interface updateUsuario{
+	id:number;
+	primer_nombre_t0:string;
+	completed:true;
+}
