@@ -18,6 +18,8 @@ import { ListarItemsComponent } from './items/listar-items/listar-items.componen
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ComplementarioComponent } from './complementario/complementario.component';
 import { ListaComplementarioComponent } from './complementario/lista-complementario/lista-complementario.component';
+import { RolesComponent } from './roles/roles.component';
+import { ListarRolesComponent } from './roles/listar-roles/listar-roles.component';
 
 const routes: Routes = [
 	{ path: '', component: DashboardComponent },
@@ -41,7 +43,9 @@ const routes: Routes = [
 	{ path: 'listarComplementario' , component: ListaComplementarioComponent },
 	{ path: 'complementario' , component: ComplementarioComponent },
 	{ path: 'complementario/:id' , component: ComplementarioComponent },
-	{ path: 'evaluacion', component: EvaluacionComponent }
+	{ path: 'evaluacion', component: EvaluacionComponent },
+	{ path: 'roles', component: RolesComponent },
+	{ path: 'listar-roles', component: ListarRolesComponent }
 ];
 
 @NgModule({

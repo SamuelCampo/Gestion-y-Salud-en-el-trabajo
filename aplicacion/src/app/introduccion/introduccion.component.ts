@@ -33,6 +33,7 @@ export class IntroduccionComponent implements OnInit {
   usuario;
   cargo2;
   roll;
+  id;
   ver_usuario: any = {};
   constructor(
     private configuracion:ConfiguracionService,
@@ -43,9 +44,9 @@ export class IntroduccionComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      this.cedula = params.get('id');
+      this.id = params.get('id');
       //console.log(this.id);
-      this.usuarios.getConfig(this.cedula)
+      this.usuarios.getConfig(this.id)
       .subscribe((data) =>{
         this.ver_usuario = data[0];
         console.log(data);

@@ -26,6 +26,8 @@ import { TruncateModule } from 'ng2-truncate';
 import { ComplementarioComponent } from './complementario/complementario.component';
 import { ListaComplementarioComponent } from './complementario/lista-complementario/lista-complementario.component';
 import { ListaUsuarioComponent } from './introduccion/lista-usuario/lista-usuario.component';
+import { RolesComponent } from './roles/roles.component';
+import { ListarRolesComponent } from './roles/listar-roles/listar-roles.component';
 
 const routes: Routes = [];
 @NgModule({
@@ -51,6 +53,8 @@ const routes: Routes = [];
     ComplementarioComponent,
     ListaComplementarioComponent,
     ListaUsuarioComponent,
+    RolesComponent,
+    ListarRolesComponent,
   ],
   imports: [
     BrowserModule,
