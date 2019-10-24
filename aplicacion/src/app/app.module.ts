@@ -28,6 +28,7 @@ import { ListaComplementarioComponent } from './complementario/lista-complementa
 import { ListaUsuarioComponent } from './introduccion/lista-usuario/lista-usuario.component';
 import { RolesComponent } from './roles/roles.component';
 import { ListarRolesComponent } from './roles/listar-roles/listar-roles.component';
+import { InspeccionComponent } from './inspeccion/inspeccion/inspeccion.component';
 
 const routes: Routes = [];
 @NgModule({
@@ -55,6 +56,7 @@ const routes: Routes = [];
     ListaUsuarioComponent,
     RolesComponent,
     ListarRolesComponent,
+    InspeccionComponent,
   ],
   imports: [
     BrowserModule,
