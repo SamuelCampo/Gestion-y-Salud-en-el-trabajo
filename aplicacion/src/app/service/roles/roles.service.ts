@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient , HttpHeaders} from '@angular/common/http';
-import { Roles } from '../interface/roles';
+import { Roles } from '../../interface/roles';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,7 @@ export class RolesService {
 
    }
 
-   getConfig(id:roles){
+   getConfig(id:string){
    	return true;
    }
   

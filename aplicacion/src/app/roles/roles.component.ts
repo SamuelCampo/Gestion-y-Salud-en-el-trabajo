@@ -36,28 +36,12 @@ export class RolesComponent implements OnInit {
  ngOnInit() {
     this.route.paramMap.subscribe(params => {
       this.id = params.get('id');
-      //console.log(this.id);
-      this.roles.getConfig(this.id)
-      .subscribe((data) =>{
-        this.ver_rol = data[0];
-        console.log(data);
-      })
     });
     this.consultarRoles();
   }
 
   consultarRoles(){
-    this.roles.getConfig()
-      .subscribe(data => {
-      this.config = data;
-      if (data !== false) {
-       
-      }else{
-        
-      }
-    },error => {
-
-    })
+    
   }
 
 }
