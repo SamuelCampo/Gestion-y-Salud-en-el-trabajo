@@ -11,7 +11,7 @@ export class RolesService {
   headers = new HttpHeaders();
   formData = new FormData();
 
-  constructor(private http:HttpClient,private roles:Roles){
+  constructor(private http:HttpClient,private rol:Roles){
 
    }
 

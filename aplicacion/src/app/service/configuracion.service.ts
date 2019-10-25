@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient , HttpHeaders} from '@angular/common/http';
 import { Usuario,updateUsuario } from '../interface/usuario';
+import { GlobalesService } from '../variables_globales/globales.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,10 +10,11 @@ export class ConfiguracionService {
 
 	base_url = "http://tienda.hms.com.co/index.php/";
 
-  constructor(private http:HttpClient) {}
+  constructor(private http:HttpClient , public global:GlobalesService) {}
 
    getConfig() {
-   		const path = "http://tienda.hms.com.co/index.php/registrar/usuario/ver";
+   		
+   		const path = this.global.url()+"registrar/usuario/ver";
 	  	return this.http.get(path);
 	}
 

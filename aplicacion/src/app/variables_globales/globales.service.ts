@@ -6,4 +6,10 @@ import { Injectable } from '@angular/core';
 export class GlobalesService {
 
   constructor() { }
+
+
+  url() {
+  	const path = "http://localhost:4200/index.php/";
+  	return path;
+  }
 }
