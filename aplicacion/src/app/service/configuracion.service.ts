@@ -33,7 +33,7 @@ export class ConfiguracionService {
 	    formData.append('cedula_t0',arr_usuario.cedula_t0);
 	    formData.append('cargo_t0',arr_usuario.cargo_t0);
 	    console.log(arr_usuario);
-   		const path = "http://tienda.hms.com.co/index.php/registrar/usuario/gestionar/guardar";
+   		const path = this.global.url()+"index.php/registrar/usuario/gestionar/guardar";
 	  	return this.http.post<any>(path, formData,{headers:headers});
 	}
 
@@ -50,7 +50,7 @@ export class ConfiguracionService {
 			formData.append('categorias',categorias)
 		}
 		formData.append('usumod_t2','superusuario');
-		let path = this.base_url+"Formatos/Formato/gestionar/guardar";
+		let path = this.global.url()+"Formatos/Formato/gestionar/guardar";
 		console.log(formData);
 		return this.http.post<any>(path,formData,{headers:headers})
 	}
@@ -59,7 +59,7 @@ export class ConfiguracionService {
 		let headers = new HttpHeaders();
 		let formData = new FormData();
 		formData.append('desc',arr_formato.id);
-		let path = this.base_url+"Formatos/Formato/ver/"+id;
+		let path = this.global.url()+"Formatos/Formato/ver/"+id;
 		console.log(path);
 		return this.http.post<any>(path,formData,{headers:headers})
 	}
@@ -67,7 +67,7 @@ export class ConfiguracionService {
 	eliminarFormato(id:string){
 		let headers = new HttpHeaders();
 		let formData = new FormData();
-		let path = this.base_url+"Formatos/Formato/delete/"+id;
+		let path = this.global.url()+"Formatos/Formato/delete/"+id;
 		return this.http.delete(path);
 	}
 
@@ -75,7 +75,7 @@ export class ConfiguracionService {
 		//console.log(arr_subcategoria);
 		let headers = new HttpHeaders();
 		let formData = new FormData();
-		let path = this.base_url+'Subcategorias/Subcategoria/gestionar/guardar/'+id;
+		let path = this.global.url()+'Subcategorias/Subcategoria/gestionar/guardar/'+id;
 		console.log(path);
 		formData.append('descripcion_t4',arr_subcategoria.descripcion_t4);
 		formData.append('n_identificador_t4',arr_subcategoria.n_identificador_t4);
@@ -89,19 +89,19 @@ export class ConfiguracionService {
 		let headers = new HttpHeaders();
 		let formData = new FormData();
 		formData.append('desc',id);
-		let path = this.base_url+'Subcategorias/Subcategoria/ver/'+id;
+		let path = this.global.url()+'Subcategorias/Subcategoria/ver/'+id;
 		return this.http.post<any>(path,formData,{headers:headers});
 	}
 
 	getSubcategoria(id:string){
-		let path = this.base_url+'Subcategorias/Subcategoria/ver/'+id;
+		let path = this.global.url()+'Subcategorias/Subcategoria/ver/'+id;
 		return this.http.get(path);
 	}
 
 	eliminarCategoria(id:string){
 		let headers = new HttpHeaders();
 		let formData = new FormData();
-		let path = this.base_url+'Subcategorias/Subcategoria/delete/'+id;
+		let path = this.global.url()+'Subcategorias/Subcategoria/delete/'+id;
 		return this.http.delete(path);
 	}
 }

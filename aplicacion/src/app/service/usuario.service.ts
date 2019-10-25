@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient , HttpHeaders} from '@angular/common/http';
 import { Usuario } from '../interface/usuario';
+import { GlobalesService } from '../variables_globales/globales.service';
 
 
 @Injectable({
@@ -12,11 +13,11 @@ export class UsuarioService {
   headers = new HttpHeaders();
   formData = new FormData();
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, public global:GlobalesService) { }
 
 
   getConfig(id:string) {
-   		const path = "http://tienda.hms.com.co/index.php/registrar/usuario/ver/"+id;
+   		const path = this.global.url()+"registrar/usuario/ver/"+id;
 	  	return this.http.get(path);
 	}
 
@@ -36,12 +37,12 @@ export class UsuarioService {
 	    formData.append('cargo_t0',arr_usuario.cargo_t0);
 	    formData.append('roll_t0',arr_usuario.roll_t0);
 	    console.log(arr_usuario);
-   		const path = "http://tienda.hms.com.co/index.php/registrar/usuario/gestionar/guardar/"+arr_usuario.cedula_t0;
+   		const path = this.global.url()+"registrar/usuario/gestionar/guardar/"+arr_usuario.cedula_t0;
 	  	return this.http.post<any>(path, formData,{headers:headers});
 	}
 
 	eliminarUsuario(id){
-		let path = this.base_url+"Registrar/usuario/delete/"+id;
+		let path = this.global.url()+"Registrar/usuario/delete/"+id;
     return this.http.delete(path);
 	}
 }
