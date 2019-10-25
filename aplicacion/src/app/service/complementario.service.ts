@@ -6,7 +6,7 @@ import { HttpClient , HttpHeaders} from '@angular/common/http';
 })
 export class ComplementarioService {
   
-  base_url = "http://localhost/gestion/api/index.php/";
+  base_url = "http://tienda.hms.com.co/index.php/";
   headers = new HttpHeaders();
   formData = new FormData();
 

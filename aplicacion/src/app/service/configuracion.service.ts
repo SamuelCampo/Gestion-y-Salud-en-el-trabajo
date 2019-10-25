@@ -7,12 +7,12 @@ import { Usuario,updateUsuario } from '../interface/usuario';
 })
 export class ConfiguracionService {
 
-	base_url = "http://localhost/gestion/api/index.php/";
+	base_url = "http://tienda.hms.com.co/index.php/";
 
   constructor(private http:HttpClient) {}
 
    getConfig() {
-   		const path = "http://localhost/gestion/api/index.php/registrar/usuario/ver";
+   		const path = "http://tienda.hms.com.co/index.php/registrar/usuario/ver";
 	  	return this.http.get(path);
 	}
 
@@ -31,7 +31,7 @@ export class ConfiguracionService {
 	    formData.append('cedula_t0',arr_usuario.cedula_t0);
 	    formData.append('cargo_t0',arr_usuario.cargo_t0);
 	    console.log(arr_usuario);
-   		const path = "http://localhost/gestion/api/index.php/registrar/usuario/gestionar/guardar";
+   		const path = "http://tienda.hms.com.co/index.php/registrar/usuario/gestionar/guardar";
 	  	return this.http.post<any>(path, formData,{headers:headers});
 	}
 

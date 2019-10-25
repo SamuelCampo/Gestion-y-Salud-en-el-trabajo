@@ -7,7 +7,7 @@ import { GlobalesService } from '../../variables_globales/globales.service';
 })
 export class CategoriaPadreService {
 
-	base_url = "http://localhost/gestion/api/index.php/";
+	base_url = "http://tienda.hms.com.co/index.php/";
 	headers = new HttpHeaders();
   	formData = new FormData();
 

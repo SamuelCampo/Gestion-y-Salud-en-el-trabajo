@@ -7,7 +7,7 @@ import { Evaluacion,Fmto_evaluacion } from '../../interface/evaluacion'
 })
 export class EvaluacionService {
   
-  base_url = "http://localhost/gestion/api/index.php/";
+  base_url = "http://tienda.hms.com.co/index.php/";
   headers = new HttpHeaders();
   formData = new FormData();
   constructor(private http:HttpClient) { }
