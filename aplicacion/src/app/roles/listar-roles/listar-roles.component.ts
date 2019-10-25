@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./listar-roles.component.css']
 })
 export class ListarRolesComponent implements OnInit {
-
+	arr_usuario;
   constructor() { }
 
   ngOnInit() {

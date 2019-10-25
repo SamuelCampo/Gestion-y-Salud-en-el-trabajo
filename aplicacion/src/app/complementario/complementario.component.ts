@@ -16,6 +16,10 @@ export class ComplementarioComponent implements OnInit {
   data;
   arr_items : any[] = [];
   arr_compl;
+  identificativo;
+  descripcion;
+  valor;
+  
   constructor(
   		private item:ItemsService,
   		private route: ActivatedRoute,

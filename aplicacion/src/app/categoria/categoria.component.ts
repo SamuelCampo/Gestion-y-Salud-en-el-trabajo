@@ -16,6 +16,8 @@ export class CategoriaComponent implements OnInit {
   identificador1;
   valor1;
   descripcion1;
+  guardarSub;
+  arr_sub;
 
   constructor(
   	private configuracion:ConfiguracionService,

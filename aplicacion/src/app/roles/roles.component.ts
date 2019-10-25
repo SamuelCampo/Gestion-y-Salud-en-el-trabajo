@@ -24,6 +24,8 @@ export class RolesComponent implements OnInit {
 	id;
 	ver_rol;
 	config: any = {};
+  IniciarSesion;
+  roless;
 
 	constructor(
     private configuracion:ConfiguracionService,

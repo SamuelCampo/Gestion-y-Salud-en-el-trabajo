@@ -10,6 +10,10 @@ export class ListaUsuarioComponent implements OnInit {
 
   arr_usuario : any = [];
   formato;
+  desc;
+  listarCategoriaPadre;
+  
+  
 
   constructor(private usuario: UsuarioService) { }
 
