@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient , HttpHeaders} from '@angular/common/http';
 import { Roles } from '../../interface/roles';
-import { GlobalesService } from '../variables_globales/globales.service';
+import { GlobalesService } from '../../variables_globales/globales.service';
 
 
 @Injectable({

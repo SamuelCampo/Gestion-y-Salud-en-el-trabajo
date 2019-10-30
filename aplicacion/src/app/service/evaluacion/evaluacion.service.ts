@@ -7,8 +7,6 @@ import { GlobalesService } from '../../variables_globales/globales.service';
   providedIn: 'root'
 })
 export class EvaluacionService {
-  
-  base_url = "http://tienda.hms.com.co/index.php/";
   headers = new HttpHeaders();
   formData = new FormData();
   constructor(private http:HttpClient , public global:GlobalesService) { }
@@ -20,7 +18,6 @@ export class EvaluacionService {
   	if (idposition = 0) {
   	  return this.http.get(this.global.url()+'Evaluaciones/Evaluacion/ver/'+evaluacion);	
   	}else{
-  		console.log(this.base_url+'Evaluaciones/Evaluacion/ver/'+evaluacion+'/'+offset);
   		return this.http.get(this.global.url()+'Evaluaciones/Evaluacion/ver/'+evaluacion+'/'+offset);	
   	}
   }

@@ -9,7 +9,7 @@ export class GlobalesService {
 
 
   url() {
-  	const path = "http://localhost:4200/index.php/";
+  	const path = "http://localhost/gestion/api/index.php/";
   	return path;
   }
 }

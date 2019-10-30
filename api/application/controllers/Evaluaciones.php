@@ -28,9 +28,7 @@ class Evaluaciones extends CI_Controller {
 			case 'ver':
 				$id_position = $this->uri->segment(5);
 				$id = $this->uri->segment(4);
-				$id_sub = $this->uri->segment(6);
-				$id_complementario = $this->uri->segment(7);
-				$query = $this->evaluacion->get($id,$id_position,$id_sub,$id_complementario);
+				$query = $this->evaluacion->get($id,$id_position);
 				echo json_encode($query);
 				break;
 		}
