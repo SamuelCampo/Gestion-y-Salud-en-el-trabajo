@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RolesService } from '../../service/roles/roles.service';
 
 @Component({
   selector: 'app-listar-roles',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./listar-roles.component.css']
 })
 export class ListarRolesComponent implements OnInit {
-	arr_usuario;
+	arr_roles;
+	roles;
   constructor() { }
 
-  ngOnInit() {
+ ngOnInit() {
+  	let id = "";
+  	this.roles.getConfig(id)
+  	.subscribe((data) => {
+  		this.arr_roles = data;
+  		console.log(data);
+  	})
   }
 
 }
