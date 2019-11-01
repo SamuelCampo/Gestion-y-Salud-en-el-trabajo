@@ -34,22 +34,22 @@ export class EvaluacionComponent implements OnInit {
 
 
   iniciar(f:NgForm){
+    this.id_formato = f.value.id_formato;
      this.evlu.buscarCategoria(f.value.id_formato,0)
      .subscribe((data)=>{
-       this.parametros = data;
-       console.log(this.parametros);
+       this.parametros = data['formato'];
+       this.items = data['items'];
+       console.log(this.items);
      });
   }
 
   guardarItems(f:NgForm){
-      this.arr_formato['nomb_eval_t14'] = f.value['nomb_eval_t14'];
-     this.arr_formato['id_evalenc_t14'] = f.value['id_evalenc_t14'];
-     this.evlu.guardarEvaluacion(this.arr_formato);
-     this.posicion = f.value['posicion'] + 5;
+    this.posicion += 1;
      this.evlu.buscarCategoria(f.value['id_evalenc_t14'],this.posicion)
      .subscribe((data)=>{
-       this.parametros = data;
-       console.log(this.parametros);
+       this.parametros = data['formato'];
+       this.items = data['items'];
+       console.log(this.items);
      });
      
   }

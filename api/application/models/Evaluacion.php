@@ -53,17 +53,21 @@ public function RegistrarEvaluacion($datevaluacion = "" ,$idevaluacion_t9 = "")
 
 		public function get($id_formato = "",$position = "",$id_sub = "",$id_complementario = "")
 		{
-			$this->db->select('tituloformato_t6, categoria_t6,descripcion_t4,descripcion_t3,iditens_t10');
+			//$this->db->select('tituloformato_t6, categoria_t6,descripcion_t4,descripcion_t3,iditens_t10');
 			$this->db->from('ps_categoria_for_t6');
 			$this->db->join('ps_formato_t2', 'idformato_t2 = idformato_t6', 'inner');
 			$this->db->join('ps_categoria_t8', 'idcategoria_t8 = idcategoria_t6', 'inner');
 			$this->db->join('ps_subcategoria_t4', 'idcategoria_t4 = idcategoria_t8', 'inner');
 			$this->db->join('ps_complementos_t3', 'idsubcategoria_t3 = idsubcategoria_t4', 'inner');
 			$this->db->join('ps_categoria_items_t7', 'identificativo_t7 = idcomplementos_t3', 'inner');
-			$this->db->join('ps_items_t10', 'iditens_t10 = complementario_t7', 'inner');
+			//$this->db->join('ps_items_t10', 'idcomplemento_t10 = idcomplemento_t10', 'inner');
 			$this->db->where('idformato_t2', $id_formato);
 			$this->db->limit(1,$position);
-			$query = $this->db->get()->result();
+			$query['formato'] = $this->db->get()->result();
+
+			$this->db->from('ps_items_t10');
+			$this->db->where('idcomplemento_t10',$query[0]->idcomplemento_t10);
+			$query['items'] = $this->db->get()->result();
 			return $query;
 
 

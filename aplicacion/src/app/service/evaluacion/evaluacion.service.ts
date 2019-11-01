@@ -18,12 +18,18 @@ export class EvaluacionService {
   	if (idposition = 0) {
   	  return this.http.get(this.global.url()+'Evaluaciones/Evaluacion/ver/'+evaluacion);	
   	}else{
+      console.log(this.global.url()+'Evaluaciones/Evaluacion/ver/'+evaluacion+'/'+offset);
   		return this.http.get(this.global.url()+'Evaluaciones/Evaluacion/ver/'+evaluacion+'/'+offset);	
   	}
   }
 
   guardarEvaluacion(arr_formato:Fmto_evaluacion){
   	console.log(arr_formato);
+  }
+
+
+  buscarEvaluacion(id:string){
+    return this.http.get(this.global.url()+'Evaluaciones/Inspecciones/ver'+id);
   }
 
 }

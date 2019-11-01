@@ -15,17 +15,17 @@
 		</form>
 	</div>
 	<div class="row" *ngIf="parametros != '' ">	
-		<h1 class="col-lg-12">
+		<h1 class="col-lg-12" *ngFor="let header of parametros ; index as i; first as isFirst">
 			<div class="card ">
 				<div class="card-header text-center">
-					<h5  *ngIf="parametros != '' ">Iniciamos con el formato: <b>{{parametros.titulo_t2}}</b></h5>
-					<h6 *ngIf="parametros != '' ">Categoria: {{parametros.categoria_t6}}</h6>
-					<h6 *ngIf="subcategoria != ''">{{parametros.n_identificador_t4}} {{formato.descripcion_t4}}</h6>
-					<h6>{{parametros.n_identificativo_t3}} {{ parametros.descripcion_t3 }} Valor: {{ parametros.valoracion_t3 }} %</h6>
+					<h5 >Iniciamos con el formato: <b>{{parametros.titulo_t2}}</b></h5>
+					<h6 >Categoria: {{header.categoria_t6}}</h6>
+					<h6 >{{header.n_identificador_t4}} {{formato.descripcion_t4}}</h6>
+					<h6>{{header.n_identificativo_t3}} {{ header.descripcion_t3 }} Valor: {{ header.valoracion_t3 }} %</h6>
 				</div>
 				<div class="card-body row">
 					<form #f="ngForm" (ngSubmit)="guardarItems(f)" id="form_tercero">
-						<div class="col-lg-12" *ngFor="let item of parametros">
+						<div class="col-lg-12" *ngFor="let item of items">
 							<div class="">
 									<p style="font-size: 15px">	{{item.mo_verificacion_t10}}</p>
 							</div>
