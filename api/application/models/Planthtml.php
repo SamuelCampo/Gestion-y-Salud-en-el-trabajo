@@ -1,4 +1,4 @@
-<?
+<?php
 class Planthtml extends CI_Model {
   var $titmod;
   var $cont;
@@ -22,10 +22,8 @@ class Planthtml extends CI_Model {
     //var_dump($this->Modulo->modulos); exit;
     if($this->limpia==true){
       $this->load->view('Plantilla/v_plantilla_limp',$this->cont,'refresh');
-    }else{
-      $this->load->view('Plantilla/v_plantilla',$this->cont,'refresh');
-    }
   }
+}
   
   function ucwords($cad){
     return mb_convert_case($cad,MB_CASE_TITLE,"ISO-8859-1");
@@ -36,18 +34,18 @@ class Planthtml extends CI_Model {
   }
   
   function solonumletra($cadena){
-    $cadena = str_replace("√°","a",$cadena);
-    $cadena = str_replace("√Å","A",$cadena);
-    $cadena = str_replace("√©","e",$cadena);
-    $cadena = str_replace("√â","E",$cadena);
-    $cadena = str_replace("√≠","i",$cadena);
-    $cadena = str_replace("√ç","I",$cadena);
-    $cadena = str_replace("√≥","o",$cadena);
-    $cadena = str_replace("√ì","O",$cadena);
-    $cadena = str_replace("√∫","u",$cadena);
-    $cadena = str_replace("√ö","U",$cadena);
-    $cadena = str_replace("√±","n",$cadena);
-    $cadena = str_replace("√ë","N",$cadena);
+    $cadena = str_replace("·","a",$cadena);
+    $cadena = str_replace("¡","A",$cadena);
+    $cadena = str_replace("È","e",$cadena);
+    $cadena = str_replace("…","E",$cadena);
+    $cadena = str_replace("Ì","i",$cadena);
+    $cadena = str_replace("Õ","I",$cadena);
+    $cadena = str_replace("Û","o",$cadena);
+    $cadena = str_replace("”","O",$cadena);
+    $cadena = str_replace("˙","u",$cadena);
+    $cadena = str_replace("⁄","U",$cadena);
+    $cadena = str_replace("Ò","n",$cadena);
+    $cadena = str_replace("—","N",$cadena);
     $cadena = preg_replace("/[^a-zA-Z0-9]/","", $cadena);
     return $cadena;
   }

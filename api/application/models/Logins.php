@@ -6,11 +6,11 @@ class Logins extends CI_Model {
 
 
 		function validaUsuario($usuario_t0,$clave_t0){
-		//var_dump($this->input->post());
-		$this->db->where('usuario_t0', $this->input->post('usuario_t0'));
-		$this->db->where('clave_t0', md5($this->input->post('clave_t0')));
-		$query = $this->db->get('ps_usuario_t0');
-		return $query->row();
+		$query = $this->db->get_where('ps_usuario_t0', array('usuario_t0' => $usuario_t0, 'clave_t0' => $clave_t0),1);
+		// if ($query->result()) {
+		// 	return false;
+		// }
+		return $query->result();
 	}
 
 

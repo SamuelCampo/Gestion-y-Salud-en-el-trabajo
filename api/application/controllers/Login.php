@@ -12,19 +12,35 @@ class Login extends CI_Controller {
 
  public function IniciarSession()
  {
- 	
+
+ 	var_dump($this->session->userdata());
+
+ 	if ($this->uri->segment(3) == 'guardar') {
+
+ 	$user = $this->input->post('usuario_t0');
+ 	$pass = $this->input->post('clave_t0');
+ 	$session = $this->Logins->validaUsuario($user,$pass);
+
+ 	if (empty($session)) {
+ 		return false;
+ 	}else {
+ 		$array = array(
+ 			'usr' => $session[0]
+ 		);
+ 		
+ 		$this->session->set_userdata( $array );
+ 		var_dump($this->session->userdata());
+ 	}
+	
  }
 
- public function validarSesion()
-	{
-		$array = array(
-			'clave_t0' => $this->input->post('clave_t0')
-		);
-		
-		$this->session->set_userdata( $array );
+ $this->load->view('login');
+  
+ }
 
-	}
-
+ function saludar(){
+ 	var_dump($this->session->userdata());
+ }
 
 }
 
