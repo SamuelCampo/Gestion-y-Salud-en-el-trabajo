@@ -30,6 +30,7 @@ import { RolesComponent } from './roles/roles.component';
 import { ListarRolesComponent } from './roles/listar-roles/listar-roles.component';
 import { InspeccionComponent } from './inspeccion/inspeccion/inspeccion.component';
 import { ListaInspeccionComponent } from './inspeccion/lista-inspeccion/lista-inspeccion.component';
+import { ModalComponent } from './modals/modal/modal.component';
 
 const routes: Routes = [];
 @NgModule({
@@ -59,7 +60,9 @@ const routes: Routes = [];
     ListarRolesComponent,
     InspeccionComponent,
     ListaInspeccionComponent,
+    ModalComponent,
   ],
+  entryComponents: [ModalComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -68,7 +71,7 @@ const routes: Routes = [];
     TruncateModule,
     RouterModule.forRoot(routes)
   ],
-  exports: [RouterModule],
+  exports: [RouterModule,ModalComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

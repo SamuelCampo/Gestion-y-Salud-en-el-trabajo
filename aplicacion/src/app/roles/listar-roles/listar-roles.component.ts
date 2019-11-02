@@ -8,8 +8,10 @@ import { RolesService } from '../../service/roles/roles.service';
 })
 export class ListarRolesComponent implements OnInit {
 	arr_roles;
-	roles;
-  constructor() { }
+  
+  constructor(
+    private roles:RolesService
+   ) { }
 
  ngOnInit() {
   	let id = "";
