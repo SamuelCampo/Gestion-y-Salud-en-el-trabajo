@@ -1,4 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { FormsModule,NgForm } from '@angular/forms';
+import { ConfiguracionService } from '../service/configuracion.service';
+import { Router,ActivatedRoute } from '@angular/router';
+import { LoginService } from '../service/login.service';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+  // ...
+}
 
 @Component({
   selector: 'app-login',
@@ -7,10 +19,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  titulo1;
-  descripcion1;
-  IniciarSesion;
-  constructor() { }
+  usuario;
+  clave;
+  id;
+
+  constructor(
+  	private configuracion:ConfiguracionService,
+    private router:Router,
+    private route:ActivatedRoute,
+  	private login:LoginService
+
+  	) { }
+
+
+  IniciarSesion(f: NgForm,){
+  	this.login.guardarUsuario(f.value)
+    .subscribe((newUsuario) => {
+      //console.log(newUsuario);
+
+    })
+    this.router.navigateByUrl('lista-usuario'); 
+  }
 
   ngOnInit() {
   }

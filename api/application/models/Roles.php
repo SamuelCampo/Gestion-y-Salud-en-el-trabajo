@@ -5,7 +5,7 @@ class Roles extends CI_Model {
 
 function RegistrarRol()
 	{
-		if (empty($datusuario)){
+		if (empty($datroles)){
 			$datroles = (object)$this->input->post();
 		}
 
