@@ -14,6 +14,10 @@ class Login extends CI_Controller {
  {
 
  	var_dump($this->session->userdata());
+ }
+
+ public function validarSesion()
+	{
 
  	if ($this->uri->segment(3) == 'guardar') {
 
