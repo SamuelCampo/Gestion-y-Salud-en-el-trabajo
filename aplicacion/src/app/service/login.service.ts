@@ -21,4 +21,6 @@ export class LoginService {
    		const path = this.global.url()+"Login/validarSesion/"+id;
 	  	return this.http.get(path);
 	}
+
+	
 }
