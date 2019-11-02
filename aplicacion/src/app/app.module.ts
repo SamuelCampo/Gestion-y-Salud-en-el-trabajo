@@ -31,6 +31,13 @@ import { ListarRolesComponent } from './roles/listar-roles/listar-roles.componen
 import { InspeccionComponent } from './inspeccion/inspeccion/inspeccion.component';
 import { ListaInspeccionComponent } from './inspeccion/lista-inspeccion/lista-inspeccion.component';
 import { ModalComponent } from './modals/modal/modal.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { 
+   MatDatepickerModule, 
+   MatNativeDateModule,
+   MatFormFieldModule,
+   MatInputModule
+} from '@angular/material';
 
 const routes: Routes = [];
 @NgModule({
@@ -69,9 +76,20 @@ const routes: Routes = [];
     FormsModule,
     HttpClientModule,
     TruncateModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    BrowserAnimationsModule,
+     MatDatepickerModule,
+      MatNativeDateModule,
+      MatFormFieldModule,
+      MatInputModule
   ],
-  exports: [RouterModule,ModalComponent],
+  exports: [
+      RouterModule,
+      ModalComponent,
+      MatDatepickerModule,
+      MatNativeDateModule,
+      MatFormFieldModule,
+      MatInputModule],
   providers: [],
   bootstrap: [AppComponent]
 })
