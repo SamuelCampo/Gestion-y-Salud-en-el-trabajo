@@ -12,16 +12,24 @@ class Login extends CI_Controller {
 
  public function IniciarSession()
  {
- 	
+ 	var_dump($this->session->userdata());
  }
 
  public function validarSesion()
 	{
-		$array = array(
-			'clave_t0' => $this->input->post('clave_t0')
-		);
-		
-		$this->session->set_userdata( $array );
+		echo json_encode($this->input->post());
+		$newdata = array(
+        'username'  => $this->input->post('usuario'),
+        'email'     => $this->input->post('clave'),
+        'logged_in' => TRUE
+    	);
+		$this->session->set_userdata( $newdata );
+		echo json_encode($this->session->userdata());
+		header('Access-Control-Allow-Origin: *');
+		header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method");
+		header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+		header("Allow: GET, POST, OPTIONS, PUT, DELETE");
+
 
 	}
 

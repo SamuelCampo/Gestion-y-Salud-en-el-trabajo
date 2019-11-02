@@ -25,13 +25,14 @@ export class LoginComponent implements OnInit {
   	) { }
 
 
-  IniciarSesion(f: NgForm,){
+  IniciarSesion(f: NgForm){
+   // console.log(f.value);
   	this.login.getConfig(f.value)
     .subscribe((newUsuario) => {
       //console.log(newUsuario);
 
     })
-    this.router.navigateByUrl(''); 
+    //this.router.navigateByUrl(''); 
   }
 
   ngOnInit() {
