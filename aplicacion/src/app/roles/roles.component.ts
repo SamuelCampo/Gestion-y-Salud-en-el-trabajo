@@ -46,4 +46,11 @@ export class RolesComponent implements OnInit {
     
   }
 
+  guardarRoles(f:NgForm){
+    this.roles.guardarRol(f.value)
+    .subscribe((data) =>{
+        console.log(data);
+    })
+  }
+
 }
