@@ -48,6 +48,7 @@ export class InspeccionComponent implements OnInit {
   	this.style = Math.round(100 / this.quanty) + '%';
   	console.log(100 / this.tareas.length);
   	this.add_item = false;
+  	f.reset();
   }
 
   validarCheck(){
