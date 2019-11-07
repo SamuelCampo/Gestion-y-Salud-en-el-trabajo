@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+<nav class="navbar navbar-expand navbar-dark bg-dark static-top" *ngIf="keys">
 
     <a class="navbar-brand mr-1" href="index.html">{{title}}</a>
 
@@ -58,7 +58,7 @@
     </ul>
 
   </nav>
-  <div id="wrapper">
+  <div id="wrapper" *ngIf="keys">
     <ul class="sidebar navbar-nav">
       <li class="nav-item active">
         <a class="nav-link" href="index.html">
@@ -119,3 +119,5 @@
     <router-outlet></router-outlet>
   </div>
   </div>
+
+  <app-login *ngIf="!keys"></app-login>

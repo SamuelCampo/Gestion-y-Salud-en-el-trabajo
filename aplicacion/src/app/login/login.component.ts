@@ -3,6 +3,7 @@ import { FormsModule,NgForm } from '@angular/forms';
 import { ConfiguracionService } from '../service/configuracion.service';
 import { Router,ActivatedRoute } from '@angular/router';
 import { LoginService } from '../service/login.service';
+import { GlobalesService } from '../variables_globales/globales.service';
 
 
 @Component({
@@ -20,8 +21,8 @@ export class LoginComponent implements OnInit {
   	private configuracion:ConfiguracionService,
     private router:Router,
     private route:ActivatedRoute,
-  	private login:LoginService
-
+  	private login:LoginService,
+    private global:GlobalesService
   	) { }
 
 
@@ -36,6 +37,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    let title = this.global.titulo('Inicio de Sesión');
   }
 
 }

@@ -12,4 +12,9 @@ export class GlobalesService {
   	const path = "http://localhost/gestion/api/index.php/";
   	return path;
   }
+
+  titulo(titulo){
+  	titulo = titulo;
+  	return titulo;
+  }
 }
