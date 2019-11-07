@@ -30,14 +30,22 @@ export class LoginComponent implements OnInit {
    // console.log(f.value);
   	this.login.getConfig(f.value)
     .subscribe((newUsuario) => {
-      //console.log(newUsuario);
-
+      localStorage.setItem('user',JSON.stringify(newUsuario['usr']));
+      let keys = localStorage.getItem('user');
+      console.log(keys);
+      if (keys.length > 0) {
+        this.router.navigateByUrl(''); 
+      }
     })
-    //this.router.navigateByUrl(''); 
+    
   }
 
   ngOnInit() {
     let title = this.global.titulo('Inicio de Sesión');
-  }
+      let keys = localStorage.getItem('user');
+      if (keys != "") {
+        this.router.navigateByUrl(''); 
+      }
+    }
 
 }

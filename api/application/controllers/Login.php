@@ -18,6 +18,10 @@ class Login extends CI_Controller {
 
  public function validarSesion()
 	{
+	header('Access-Control-Allow-Origin: *');
+	header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method");
+	header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+	header("Allow: GET, POST, OPTIONS, PUT, DELETE");
 
  	if ($this->uri->segment(3) == 'guardar') {
 
@@ -33,12 +37,10 @@ class Login extends CI_Controller {
  		);
  		
  		$this->session->set_userdata( $array );
- 		var_dump($this->session->userdata());
+ 		echo json_encode($this->session->userdata());
  	}
 	
  }
-
- $this->load->view('login');
   
  }
 

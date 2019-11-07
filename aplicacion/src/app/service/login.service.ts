@@ -22,7 +22,7 @@ export class LoginService {
     this.formData.append('clave',arr_login.clave_t0);
 
     this.headers.append('Access-Control-Allow-Origin','*');
-	  return this.http.post(this.global.url()+"Login/validarSesion/",this.formData,{headers:this.headers});
+	  return this.http.post(this.global.url()+"Login/validarSesion/guardar",this.formData,{headers:this.headers});
 	}
 
 	
