@@ -9,11 +9,13 @@ import { Router,ActivatedRoute } from '@angular/router';
 export class AppComponent implements OnInit{
   title = 'aplicacion';
   keys: boolean = false;
+  user;
 
   constructor(private router:Router) { }
 
   ngOnInit(){
   	let id = localStorage.getItem('user');
+    this.user = JSON.parse(localStorage.getItem('user'));
   	console.log(id);
   	if (id != null) {
   		this.keys = true;
