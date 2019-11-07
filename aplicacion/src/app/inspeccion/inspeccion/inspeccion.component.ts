@@ -22,6 +22,11 @@ export class InspeccionComponent implements OnInit {
   quanty;
   form_verdadero = false;
   add_item;
+  plan_accion;
+  cargo;
+  fecha;
+  recursos;
+  fundamentos;
   
   constructor() {}
 

@@ -18,12 +18,14 @@ export class RolesService {
    }
 
    getConfig(id:string){
-   	return this.http.get(this.global.url()+'Rol/Roles/gestionar');
+    let path = this.global.url()+'Rol/Roles/gestionar';
+   	return this.http.get(path);
    }
 
    guardarRol(arr_roles:Roles){
      this.formData.append('nombre_rol_t11',arr_roles.nombre_rol_t11);
-     return this.http.post(this.global.url()+'Rol/Roles/gestionar/guardar',this.formData);
+     let path = this.global.url()+'Rol/Roles/gestionar/guardar';
+     return this.http.post(path,this.formData);
    }
   
 	

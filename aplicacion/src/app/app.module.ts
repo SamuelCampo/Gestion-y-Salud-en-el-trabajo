@@ -27,7 +27,6 @@ import { ComplementarioComponent } from './complementario/complementario.compone
 import { ListaComplementarioComponent } from './complementario/lista-complementario/lista-complementario.component';
 import { ListaUsuarioComponent } from './introduccion/lista-usuario/lista-usuario.component';
 import { RolesComponent } from './roles/roles.component';
-import { ListarRolesComponent } from './roles/listar-roles/listar-roles.component';
 import { InspeccionComponent } from './inspeccion/inspeccion/inspeccion.component';
 import { ListaInspeccionComponent } from './inspeccion/lista-inspeccion/lista-inspeccion.component';
 import { ModalComponent } from './modals/modal/modal.component';
@@ -38,6 +37,7 @@ import {
    MatFormFieldModule,
    MatInputModule
 } from '@angular/material';
+import { ListaComponent } from './roles/lista/lista.component';
 
 const routes: Routes = [];
 @NgModule({
@@ -64,10 +64,10 @@ const routes: Routes = [];
     ListaComplementarioComponent,
     ListaUsuarioComponent,
     RolesComponent,
-    ListarRolesComponent,
     InspeccionComponent,
     ListaInspeccionComponent,
     ModalComponent,
+    ListaComponent,
   ],
   entryComponents: [ModalComponent],
   imports: [

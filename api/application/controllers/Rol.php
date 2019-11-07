@@ -20,14 +20,10 @@ class Rol extends CI_Controller {
 		case '0':
 		case 'gestionar':
 			if ($this->uri->segment(4) == "guardar") {
-				echo json_encode($this->input->post());
-				$query = $this->Roles->RegistrarRol();
-				if ($query) {
-					echo json_encode($query);
-				}
-
-				$query = $this->Roles->RegistrarRol();
-
+					$query = $this->Roles->RegistrarRol();
+					if ($query) {
+						echo json_encode($query);
+					}
 				}
 			break;
 			case 'ver':
@@ -40,6 +36,7 @@ class Rol extends CI_Controller {
 				$id = $this->uri->segment(4);
 			}
 			$query = $this->Roles->DeleteRoles($id);
+			echo json_encode($query);
 		break;			
 		default:
 			# code...

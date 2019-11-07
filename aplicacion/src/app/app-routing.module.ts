@@ -19,8 +19,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ComplementarioComponent } from './complementario/complementario.component';
 import { ListaComplementarioComponent } from './complementario/lista-complementario/lista-complementario.component';
 import { RolesComponent } from './roles/roles.component';
-import { ListarRolesComponent } from './roles/listar-roles/listar-roles.component';
 import { InspeccionComponent } from './inspeccion/inspeccion/inspeccion.component';
+import { ListaComponent } from './roles/lista/lista.component';
 
 const routes: Routes = [
 	{ path: '', component: DashboardComponent },
@@ -46,7 +46,7 @@ const routes: Routes = [
 	{ path: 'complementario/:id' , component: ComplementarioComponent },
 	{ path: 'evaluacion', component: EvaluacionComponent },
 	{ path: 'roles', component: RolesComponent },
-	{ path: 'listar-roles', component: ListarRolesComponent },
+	{ path: 'lista_roles' , component: ListaComponent },
 	{ path: 'inspeccion', component: InspeccionComponent }
 ];
 
