@@ -60,13 +60,13 @@ public function RegistrarEvaluacion($datevaluacion = "" ,$idevaluacion_t9 = "")
 			$this->db->join('ps_subcategoria_t4', 'idcategoria_t4 = idcategoria_t8', 'inner');
 			$this->db->join('ps_complementos_t3', 'idsubcategoria_t3 = idsubcategoria_t4', 'inner');
 			$this->db->join('ps_categoria_items_t7', 'identificativo_t7 = idcomplementos_t3', 'inner');
-			//$this->db->join('ps_items_t10', 'idcomplemento_t10 = idcomplemento_t10', 'inner');
+			$this->db->join('ps_items_t10', 'idcomplemento_t10 = idcomplemento_t10', 'inner');
 			$this->db->where('idformato_t2', $id_formato);
 			$this->db->limit(1,$position);
 			$query['formato'] = $this->db->get()->result();
 
 			$this->db->from('ps_items_t10');
-			$this->db->where('idcomplemento_t10',$query[0]->idcomplemento_t10);
+			$this->db->where('idcomplemento_t10',$query['formato'][0]->idcomplementos_t3);
 			$query['items'] = $this->db->get()->result();
 			return $query;
 
