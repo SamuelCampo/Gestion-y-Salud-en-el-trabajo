@@ -23,7 +23,13 @@ import { InspeccionComponent } from './inspeccion/inspeccion/inspeccion.componen
 import { ListaComponent } from './roles/lista/lista.component';
 import { EntidadComponent } from './entidad/entidad.component';
 import { ListaEntidadesComponent } from './entidad/lista-entidades/lista-entidades.component';
-import { CategoriasEvaluacionComponent } from './evaluacion/parametros/categorias/categorias.component';,ñ
+import { CategoriasEvaluacionComponent } from './evaluacion/parametros/categorias/categorias.component';
+import { ListaInspeccionComponent } from './inspeccion/lista-inspeccion/lista-inspeccion.component';
+
+
+import { Paso1Component } from './paso1/paso1.component';
+import { Paso2Component } from './paso1/paso2/paso2.component';
+import { Paso3Component } from './paso1/paso3/paso3.component';
 
 const routes: Routes = [
 	{ path: '', component: DashboardComponent },
@@ -31,8 +37,8 @@ const routes: Routes = [
 	{ path: 'usuario/:id', component: IntroduccionComponent },
 	{ path: 'lista-usuario', component: ListaUsuarioComponent },
 	{ path: 'setup2', component: Setup2Component },
-	{ path: 'nueva_categoria', component: CategoriaComponent }, 0                                                                                                                                                                                                                                             ooooooooooooooooonit_t12ppñ
-	{ path: 'items', component: ItemsComponent },0
+	{ path: 'nueva_categoria', component: CategoriaComponent },
+	{ path: 'items', component: ItemsComponent },
 	{ path: 'items/:id', component: ItemsComponent },
 	{ path: 'login', component: LoginComponent },
 	{ path: 'listaformato', component: ListaFormatoComponent },
@@ -52,7 +58,12 @@ const routes: Routes = [
 	{ path: 'lista_roles' , component: ListaComponent },
 	{ path: 'inspeccion', component: InspeccionComponent },
 	{ path: 'entidad', component: EntidadComponent },
-	{ path: 'lista-entidades', component: ListaEntidadesComponent }
+	{ path: 'lista-entidades', component: ListaEntidadesComponent },
+	{ path: 'lista-inspeccion', component: ListaInspeccionComponent },
+
+	{ path: 'paso1', component: Paso1Component },
+	{ path: 'paso2', component: Paso2Component },
+	{ path: 'paso3', component: Paso3Component }
 ];
 
 @NgModule({
