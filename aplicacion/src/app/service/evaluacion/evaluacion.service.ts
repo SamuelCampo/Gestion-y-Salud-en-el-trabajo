@@ -29,4 +29,7 @@ export class EvaluacionService {
     return this.http.get(this.global.url()+'Evaluaciones/Evaluacion/complementarios/'+id+"/"+formato);
   }
 
+  buscarItems(id,evaluacion){
+    return this.http.get(this.global.url()+'Evaluaciones/Evaluacion/items/'+id+'/'+evaluacion);
+  }
 }

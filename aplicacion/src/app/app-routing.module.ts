@@ -25,6 +25,7 @@ import { EntidadComponent } from './entidad/entidad.component';
 import { ListaEntidadesComponent } from './entidad/lista-entidades/lista-entidades.component';
 import { CategoriasEvaluacionComponent } from './evaluacion/parametros/categorias/categorias.component';
 import { SubCategoriaEvaluacionComponent } from './evaluacion/parametros/sub-categoria-evaluacion/sub-categoria-evaluacion.component';
+import { ItemsEComponent } from './evaluacion/parametros/items-e/items-e.component';
 
 const routes: Routes = [
 	{ path: '', component: DashboardComponent },
@@ -37,6 +38,7 @@ const routes: Routes = [
 	{ path: 'items/:id', component: ItemsComponent },
 	{ path: 'login', component: LoginComponent },
 	{ path: 'listaformato', component: ListaFormatoComponent },
+	{ path: 'formato', component: FormatoComponent },
 	{ path: 'verFormato/:id', component: VerFormatoComponent },
 	{ path: 'listacategoria', component: ListaCategoriaComponent },
 	{ path: 'vercategoria/:id', component: VerCategoriaComponent },
@@ -54,7 +56,8 @@ const routes: Routes = [
 	{ path: 'lista_roles' , component: ListaComponent },
 	{ path: 'inspeccion', component: InspeccionComponent },
 	{ path: 'entidad', component: EntidadComponent },
-	{ path: 'lista-entidades', component: ListaEntidadesComponent }
+	{ path: 'lista-entidades', component: ListaEntidadesComponent },
+	{ path: 'items_e/:id/:evaluacion' , component: ItemsEComponent }
 ];
 
 @NgModule({

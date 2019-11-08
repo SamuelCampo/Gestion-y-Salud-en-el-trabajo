@@ -11,6 +11,7 @@ export class SubCategoriaEvaluacionComponent implements OnInit {
   
   categoria : string = "";
   formato: string = "";
+  arr_categorias: any = {};
   constructor(
   		private route:ActivatedRoute,
   		private navigate: Router,
@@ -28,8 +29,12 @@ export class SubCategoriaEvaluacionComponent implements OnInit {
   listar(id,formato){
   	this.serv_eval.buscarComplementos(id,formato)
   	.subscribe((data) => {
-  		console.log(data);
+  		this.arr_categorias = data;
   	})
+  }
+
+  siguiente(id,evaluacion){
+  	this.navigate.navigateByUrl('items_e/'+id+'/'+evaluacion);
   }
 
 }

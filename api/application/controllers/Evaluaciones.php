@@ -37,6 +37,11 @@ class Evaluaciones extends CI_Controller {
 				$query = $this->evaluacion->subCategoria($id,$formato);
 				echo json_encode($query);
 				break;
+			case 'items':
+				$id = $this->uri->segment(4);
+				$query = $this->evaluacion->Complementario($id);
+				echo json_encode($query);
+				break;
 		}
 	}
 

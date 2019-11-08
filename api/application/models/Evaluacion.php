@@ -69,12 +69,21 @@ public function RegistrarEvaluacion($datevaluacion = "" ,$idevaluacion_t9 = "")
 		public function subCategoria($id,$idformato)
 		{
 			$this->db->from('ps_categoria_for_t6');
-			$this->db->join('ps_formato_t2', 'idformato_t2 = idformato_t6', 'inner');
 			$this->db->join('ps_categoria_t8', 'idcategoria_t8 = idcategoria_t6', 'inner');
 			$this->db->join('ps_subcategoria_t4', 'idcategoria_t4 = idcategoria_t8', 'inner');
-			$this->db->join('ps_complementos_t3', 'idsubcategoria_t3 = idsubcategoria_t4', 'inner');
-			$this->db->where('idformato_t2', $id_formato);
+			$this->db->where('idformato_t6', $idformato);
 			$this->db->where('idrelacion_t6', $id);
+			$query = $this->db->get()->result();
+			return $query;
+		}
+
+		public function Complementario($id)
+		{
+			$this->db->from('ps_subcategoria_t4');
+			$this->db->join('ps_complementos_t3', 'idsubcategoria_t3 = idsubcategoria_t4', 'inner');
+			$this->db->join('ps_categoria_items_t7', 'complementario_t7 = idcomplementos_t3', 'inner');
+			$this->db->join('ps_items_t10', 'iditens_t10 = identificativo_t7', 'inner');
+			$this->db->where('idsubcategoria_t4', $id);
 			$query = $this->db->get()->result();
 			return $query;
 		}
