@@ -43,9 +43,13 @@ import { EntidadComponent } from './entidad/entidad.component';
 import { ListaEntidadesComponent } from './entidad/lista-entidades/lista-entidades.component';
 
 import { CategoriasEvaluacionComponent } from './evaluacion/parametros/categorias/categorias.component';
+
 import { Paso1Component } from './paso1/paso1.component';
 import { Paso2Component } from './paso1/paso2/paso2.component';
 import { Paso3Component } from './paso1/paso3/paso3.component';
+
+import { SubCategoriaEvaluacionComponent } from './evaluacion/parametros/sub-categoria-evaluacion/sub-categoria-evaluacion.component';
+
 
 
 const routes: Routes = [];
@@ -88,6 +92,8 @@ const routes: Routes = [];
     Paso2Component,
 
     Paso3Component,
+
+    SubCategoriaEvaluacionComponent,
   ],
   entryComponents: [ModalComponent],
   imports: [

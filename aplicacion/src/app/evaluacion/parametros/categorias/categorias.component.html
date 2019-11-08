@@ -1,11 +1,11 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-12" style="box-sizing: border-box;">
-			<span class="text-success">Categorias Disponibles para el formato <b>{{arr_formato[0].titulo_t2}}</b></span>
+			<span class="text-success animated infinite bounce delay-5s">Categorias Disponibles para el formato <b></b></span>
 		</div>
-		<div class="col-lg-4">
+		<div class="col-lg-12">
 			<div class="list-group" id="list-tab" role="tablist">
-				<a class="list-group-item list-group-item-action" *ngFor="let params of arr_formato" id="list-{{params.idrelacion_t6}}" data-toggle="list" href="#list-{{params.idrelacion_t6}}" role="tab" aria-controls="home">{{params.categoria_t6}}</a>
+				<a (click)="siguiente(params.idrelacion_t6,params.idformato_t6)" class="list-group-item list-group-item-action" *ngFor="let params of arr_formato" id="list-{{params.idrelacion_t6}}" data-toggle="list" href="#list-{{params.idrelacion_t6}}" role="tab" aria-controls="home">{{params.categoria_t6}}</a>
 			</div>
 		</div>
 	</div>
