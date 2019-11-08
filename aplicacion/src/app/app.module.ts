@@ -43,6 +43,7 @@ import { EntidadComponent } from './entidad/entidad.component';
 import { ListaEntidadesComponent } from './entidad/lista-entidades/lista-entidades.component';
 
 import { CategoriasEvaluacionComponent } from './evaluacion/parametros/categorias/categorias.component';
+import { SubCategoriaEvaluacionComponent } from './evaluacion/parametros/sub-categoria-evaluacion/sub-categoria-evaluacion.component';
 
 
 const routes: Routes = [];
@@ -79,6 +80,8 @@ const routes: Routes = [];
     ListaEntidadesComponent,
 
     CategoriasEvaluacionComponent,
+
+    SubCategoriaEvaluacionComponent,
   ],
   entryComponents: [ModalComponent],
   imports: [

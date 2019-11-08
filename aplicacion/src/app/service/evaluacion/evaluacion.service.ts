@@ -25,4 +25,8 @@ export class EvaluacionService {
     return this.http.get(this.global.url()+'Evaluaciones/Inspecciones/ver'+id);
   }
 
+  buscarComplementos(id:string,formato:string){
+    return this.http.get(this.global.url()+'Evaluaciones/Evaluacion/complementarios/'+id+"/"+formato);
+  }
+
 }

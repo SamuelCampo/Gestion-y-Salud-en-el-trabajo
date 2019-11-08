@@ -23,7 +23,8 @@ import { InspeccionComponent } from './inspeccion/inspeccion/inspeccion.componen
 import { ListaComponent } from './roles/lista/lista.component';
 import { EntidadComponent } from './entidad/entidad.component';
 import { ListaEntidadesComponent } from './entidad/lista-entidades/lista-entidades.component';
-import { CategoriasEvaluacionComponent } from './evaluacion/parametros/categorias/categorias.component';,ñ
+import { CategoriasEvaluacionComponent } from './evaluacion/parametros/categorias/categorias.component';
+import { SubCategoriaEvaluacionComponent } from './evaluacion/parametros/sub-categoria-evaluacion/sub-categoria-evaluacion.component';
 
 const routes: Routes = [
 	{ path: '', component: DashboardComponent },
@@ -31,8 +32,8 @@ const routes: Routes = [
 	{ path: 'usuario/:id', component: IntroduccionComponent },
 	{ path: 'lista-usuario', component: ListaUsuarioComponent },
 	{ path: 'setup2', component: Setup2Component },
-	{ path: 'nueva_categoria', component: CategoriaComponent }, 0                                                                                                                                                                                                                                             ooooooooooooooooonit_t12ppñ
-	{ path: 'items', component: ItemsComponent },0
+	{ path: 'nueva_categoria', component: CategoriaComponent },
+	{ path: 'items', component: ItemsComponent },
 	{ path: 'items/:id', component: ItemsComponent },
 	{ path: 'login', component: LoginComponent },
 	{ path: 'listaformato', component: ListaFormatoComponent },
@@ -47,7 +48,8 @@ const routes: Routes = [
 	{ path: 'complementario' , component: ComplementarioComponent },
 	{ path: 'complementario/:id' , component: ComplementarioComponent },
 	{ path: 'evaluacion', component: EvaluacionComponent },
-	{ path: 'evaluacion/:id/categoria' , component: CategoriasEvaluacionComponent }, 
+	{ path: 'evaluacion/:id/categoria' , component: CategoriasEvaluacionComponent },
+	{ path: 'step2/:id/:formato' , component: SubCategoriaEvaluacionComponent },
 	{ path: 'roles', component: RolesComponent },
 	{ path: 'lista_roles' , component: ListaComponent },
 	{ path: 'inspeccion', component: InspeccionComponent },
