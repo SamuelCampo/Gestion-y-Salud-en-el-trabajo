@@ -21,6 +21,8 @@ import { ListaComplementarioComponent } from './complementario/lista-complementa
 import { RolesComponent } from './roles/roles.component';
 import { InspeccionComponent } from './inspeccion/inspeccion/inspeccion.component';
 import { ListaComponent } from './roles/lista/lista.component';
+import { EntidadComponent } from './entidad/entidad.component';
+import { ListaEntidadesComponent } from './entidad/lista-entidades/lista-entidades.component';
 
 const routes: Routes = [
 	{ path: '', component: DashboardComponent },
@@ -47,7 +49,9 @@ const routes: Routes = [
 	{ path: 'evaluacion', component: EvaluacionComponent },
 	{ path: 'roles', component: RolesComponent },
 	{ path: 'lista_roles' , component: ListaComponent },
-	{ path: 'inspeccion', component: InspeccionComponent }
+	{ path: 'inspeccion', component: InspeccionComponent },
+	{ path: 'entidad', component: EntidadComponent },
+	{ path: 'lista-entidades', component: ListaEntidadesComponent }
 ];
 
 @NgModule({

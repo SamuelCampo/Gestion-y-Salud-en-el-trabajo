@@ -38,6 +38,8 @@ import {
    MatInputModule
 } from '@angular/material';
 import { ListaComponent } from './roles/lista/lista.component';
+import { EntidadComponent } from './entidad/entidad.component';
+import { ListaEntidadesComponent } from './entidad/lista-entidades/lista-entidades.component';
 
 const routes: Routes = [];
 @NgModule({
@@ -68,6 +70,8 @@ const routes: Routes = [];
     ListaInspeccionComponent,
     ModalComponent,
     ListaComponent,
+    EntidadComponent,
+    ListaEntidadesComponent,
   ],
   entryComponents: [ModalComponent],
   imports: [
