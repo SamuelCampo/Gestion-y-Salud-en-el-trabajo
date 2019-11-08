@@ -25,12 +25,18 @@ export class CategoriasEvaluacionComponent implements OnInit {
   	});
   	this.serv_eval.buscarCategoria(this.formato)
   	.subscribe((data) => {
+
   		this.arr_formato = data;
   	})
+
+    this.serv_eval.guardarEvaluacion(this.formato)
+    .subscribe((data) => {
+      console.log(data);
+    })
+
   }
 
   siguiente(id,idformato){
-    console.log(id);
     this.navigator.navigateByUrl('step2/'+id+"/"+idformato);
   }
 

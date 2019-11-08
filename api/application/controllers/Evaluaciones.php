@@ -20,9 +20,8 @@ class Evaluaciones extends CI_Controller {
 			case '0':
 			case 'gestionar':
 				if ($this->uri->segment(4) == "guardar") {
-
-				$query = $this->evaluacion->RegistrarEvaluacion();
-				echo json_encode($query);
+					$query = $this->evaluacion->IniciarEvaluacion("",$this->uri->segment(5));
+					echo json_encode($query);
 				}
 				break;
 			case 'ver':

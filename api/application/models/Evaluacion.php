@@ -101,6 +101,32 @@ public function RegistrarEvaluacion($datevaluacion = "" ,$idevaluacion_t9 = "")
 			return $query;
 
 		}
+
+		public function IniciarEvaluacion($id = "",$formato = "")
+		{
+			$eval = (object)$this->input->post();
+
+			if (!empty($formato))$arr_evaluacion['idformato_t25'] = $formato;
+			if (empty($id))$arr_evaluacion['finicio_t25'] = date('Y-m-d h:i:s');
+			if (!empty($eval->finalizar))$arr_evaluacion['ffinal_t25'] = date('Y-m-d h:i:s');;
+			if (!empty($eval->finalizar))$arr_evaluacion['tiempodil_t25'] = "";
+			$arr_evaluacion['area_admin_t25'] = "";
+			$arr_evaluacion['fmod_t25'] = date('Y-m-d h:i:s');;
+			$arr_evaluacion['usrmod_t25'] = $eval->usrmod;
+
+			$this->db->where('idps_eval_formato_t25', $id);
+			$query = $this->db->get('ps_eval_formato_t25')->row();
+
+			if (is_array($query)) {
+				$this->db->where('idps_eval_formato_t25', $id);
+				$this->db->update('ps_eval_formato_t25', $arr_evaluacion);
+				return $id;
+			}else{
+				$this->db->insert('ps_eval_formato_t25', $arr_evaluacion);
+				return $this->db->insert_id();
+			}
+
+		}
 }
 
 /* End of file Evaluacion.php */

@@ -17,4 +17,9 @@ export class GlobalesService {
   	titulo = titulo;
   	return titulo;
   }
+
+  usr(){
+    let arreglo = JSON.parse(localStorage.getItem('user'));
+     return arreglo.cedula_t0;
+  }
 }

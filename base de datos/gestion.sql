@@ -26,19 +26,19 @@ CREATE TABLE IF NOT EXISTS `ps_categoria_for_t6` (
   `fmod_t6` datetime NOT NULL,
   `umod_t6` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
   PRIMARY KEY (`idrelacion_t6`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 -- Volcando datos para la tabla gestion.ps_categoria_for_t6: ~8 rows (aproximadamente)
 /*!40000 ALTER TABLE `ps_categoria_for_t6` DISABLE KEYS */;
 INSERT INTO `ps_categoria_for_t6` (`idrelacion_t6`, `idformato_t6`, `idcategoria_t6`, `tituloformato_t6`, `categoria_t6`, `fmod_t6`, `umod_t6`) VALUES
-	(23, 1, 1, 'Titulo Definido', 'PLANEAR', '2019-10-19 09:08:43', 'superusuario'),
-	(24, 1, 2, 'Titulo Definido', 'HACER', '2019-10-19 09:08:43', 'superusuario'),
-	(25, 1, 3, 'Titulo Definido', 'VERIFICAR', '2019-10-19 09:08:43', 'superusuario'),
-	(26, 1, 4, 'Titulo Definido', 'ACTUAR', '2019-10-19 09:08:44', 'superusuario'),
 	(27, 1, 1, 'Formato 1111', 'PLANEAR', '2019-10-30 06:03:52', 'superusuario'),
 	(28, 1, 2, 'Formato 1111', 'HACER', '2019-10-30 06:03:52', 'superusuario'),
 	(29, 1, 3, 'Formato 1111', 'VERIFICAR', '2019-10-30 06:03:52', 'superusuario'),
-	(30, 1, 4, 'Formato 1111', 'ACTUAR', '2019-10-30 06:03:52', 'superusuario');
+	(30, 1, 4, 'Formato 1111', 'ACTUAR', '2019-10-30 06:03:52', 'superusuario'),
+	(31, 3, 1, 'Formato de resolución de trnasporte', 'PLANEAR', '2019-11-08 08:37:26', 'superusuario'),
+	(32, 3, 3, 'Formato de resolución de trnasporte', 'VERIFICAR', '2019-11-08 08:37:26', 'superusuario'),
+	(33, 3, 2, 'Formato de resolución de trnasporte', 'HACER', '2019-11-08 08:37:26', 'superusuario'),
+	(34, 3, 4, 'Formato de resolución de trnasporte', 'ACTUAR', '2019-11-08 08:37:26', 'superusuario');
 /*!40000 ALTER TABLE `ps_categoria_for_t6` ENABLE KEYS */;
 
 -- Volcando estructura para tabla gestion.ps_categoria_items_t7
@@ -50,15 +50,15 @@ CREATE TABLE IF NOT EXISTS `ps_categoria_items_t7` (
   `fmod_t7` datetime NOT NULL,
   `usrmod_t7` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
   PRIMARY KEY (`idrelacion2`)
-) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=98 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 -- Volcando datos para la tabla gestion.ps_categoria_items_t7: ~4 rows (aproximadamente)
 /*!40000 ALTER TABLE `ps_categoria_items_t7` DISABLE KEYS */;
 INSERT INTO `ps_categoria_items_t7` (`idrelacion2`, `identificativo_t7`, `subcategoria_t7`, `complementario_t7`, `fmod_t7`, `usrmod_t7`) VALUES
-	(90, '1', NULL, '1', '2019-10-31 09:35:31', 'super'),
-	(91, '2', NULL, '1', '2019-10-31 09:35:31', 'super'),
-	(92, '3', NULL, '1', '2019-10-31 09:35:31', 'super'),
-	(93, '4', NULL, '1', '2019-10-31 09:35:32', 'super');
+	(94, '1', NULL, '1', '2019-11-08 08:38:09', 'super'),
+	(95, '2', NULL, '1', '2019-11-08 08:38:10', 'super'),
+	(96, '3', NULL, '1', '2019-11-08 08:38:10', 'super'),
+	(97, '4', NULL, '1', '2019-11-08 08:38:10', 'super');
 /*!40000 ALTER TABLE `ps_categoria_items_t7` ENABLE KEYS */;
 
 -- Volcando estructura para tabla gestion.ps_categoria_t8
@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS `ps_categoria_t8` (
 -- Volcando datos para la tabla gestion.ps_categoria_t8: ~4 rows (aproximadamente)
 /*!40000 ALTER TABLE `ps_categoria_t8` DISABLE KEYS */;
 INSERT INTO `ps_categoria_t8` (`idcategoria_t8`, `n_identificador_t8`, `nombre_t8`, `fmod_t8`, `usumod_t8`) VALUES
-	(1, '1', 'PLANEAR', '2019-10-30 06:08:57', 'SuperUsuario'),
+	(1, '1', 'PLANEAR', '2019-11-08 08:37:39', 'SuperUsuario'),
 	(2, '2', 'HACER', '2019-10-15 01:59:14', 'SuperUsuario'),
 	(3, '3', 'VERIFICAR', '2019-09-08 00:00:00', 'SuperUsuario'),
 	(4, '4', 'ACTUAR', '2019-09-08 00:00:00', 'SuperUsuario');
@@ -96,19 +96,19 @@ CREATE TABLE IF NOT EXISTS `ps_complementos_t3` (
 -- Volcando datos para la tabla gestion.ps_complementos_t3: ~19 rows (aproximadamente)
 /*!40000 ALTER TABLE `ps_complementos_t3` DISABLE KEYS */;
 INSERT INTO `ps_complementos_t3` (`idcomplementos_t3`, `idcategoria_t3`, `idsubcategoria_t3`, `fmod_t3`, `usumod_t3`, `n_identificativo_t3`, `descripcion_t3`, `valoracion_t3`) VALUES
-	(1, 1, '8', '2019-10-31 09:35:29', 'super', '1 Estándar', 'Recursos financieros, técnicos humanos y de otra índole ', '4'),
-	(2, 1, '8', '2019-10-19 08:46:15', 'super', '2 Estándar', 'Capacitación en el Sistema de Gestión de Seguridad y Salud en el Trabajo', '6'),
+	(1, 1, '2', '2019-11-08 08:38:09', 'super', '1 Estándar', 'Recursos financieros, técnicos humanos y de otra índole ', '4'),
+	(2, 1, '2', '2019-10-19 08:46:15', 'super', '2 Estándar', 'Capacitación en el Sistema de Gestión de Seguridad y Salud en el Trabajo', '6'),
 	(3, 1, '2', '2019-10-20 07:01:34', 'super', '1 Estándar', 'Política de Seguridad y Salud en el Trabajo', '15'),
 	(4, 1, '2', '2019-09-21 00:00:00', 'SuperUsuario', '2 Estándar', 'Objetivos del Sistema de Gestión de Seguridad y Salud en el Trabajo SG-SST', '1%'),
-	(5, 1, '2', '2019-10-15 03:27:26', 'super', '3 Estándar', 'Evaluación inicial del Sistema de Gestión – Seguridad y Salud en el Trabajo', '1%'),
-	(6, 1, '2', '2019-09-21 00:00:00', 'superusuario', '4 Estándar', 'Plan Anual de Trabajo', '2%'),
-	(7, 1, '2', '2019-10-20 04:52:00', 'super', '5 Estánda', 'Conservación de la documentación', '10'),
-	(8, 1, '2', '2019-09-21 00:00:00', 'superusuario', '6 Estándar', 'Rendición de cuentas', '1%'),
-	(9, 1, '2', '2019-09-21 00:00:00', 'super usuario', '7 Estándar', 'Normativa nacional vigente y aplicable en materia de Seguridad y Salud en el Trabajo', '2%'),
-	(10, 1, '2', '2019-09-21 00:00:00', 'susperusuario', '8 Estándar', 'Mecanismos de Comunicación', '1%'),
-	(11, 1, '2', '2019-09-21 00:00:00', 'super usuario', '9 Estándar', 'Adquisiciones', '1%'),
-	(12, 1, '2', '2019-09-21 00:00:00', 'super', '10 Estándar', 'Contratación', '2%'),
-	(13, 1, '2', '2019-09-21 00:00:00', 'super', '11 Estándar', ' Gestión del cambio', '1%'),
+	(5, 1, 'NULL', '2019-10-15 03:27:26', 'super', '3 Estándar', 'Evaluación inicial del Sistema de Gestión – Seguridad y Salud en el Trabajo', '1%'),
+	(6, 1, 'NULL', '2019-09-21 00:00:00', 'superusuario', '4 Estándar', 'Plan Anual de Trabajo', '2%'),
+	(7, 1, 'NULL', '2019-10-20 04:52:00', 'super', '5 Estánda', 'Conservación de la documentación', '10'),
+	(8, 1, 'NULL', '2019-09-21 00:00:00', 'superusuario', '6 Estándar', 'Rendición de cuentas', '1%'),
+	(9, 1, 'NULL', '2019-09-21 00:00:00', 'super usuario', '7 Estándar', 'Normativa nacional vigente y aplicable en materia de Seguridad y Salud en el Trabajo', '2%'),
+	(10, 1, 'NULL', '2019-09-21 00:00:00', 'susperusuario', '8 Estándar', 'Mecanismos de Comunicación', '1%'),
+	(11, 1, 'NULL', '2019-09-21 00:00:00', 'super usuario', '9 Estándar', 'Adquisiciones', '1%'),
+	(12, 1, 'NULL', '2019-09-21 00:00:00', 'super', '10 Estándar', 'Contratación', '2%'),
+	(13, 1, 'NULL', '2019-09-21 00:00:00', 'super', '11 Estándar', ' Gestión del cambio', '1%'),
 	(14, 2, NULL, '2019-09-21 00:00:00', 'super', '1 Estándar', 'Condiciones de salud en el trabajo', '9%'),
 	(15, 2, NULL, '2019-09-21 00:00:00', 'super', '2 Estándar', 'Registro, reporte e investigación de las enfermedades laborales, incidentes y accidentes del trabajo', '5%'),
 	(16, 2, NULL, '2019-09-21 00:00:00', 'super', '3 Estándar', 'Mecanismos de vigilancia de las condiciones de salud de los trabajadores', '6%'),
@@ -150,7 +150,7 @@ CREATE TABLE IF NOT EXISTS `ps_eval_formato_t25` (
   `fmod_t25` datetime DEFAULT '0000-00-00 00:00:00',
   `usrmod_t25` varchar(100) DEFAULT '0',
   PRIMARY KEY (`idps_eval_formato_t25`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='resumen de la evaluacion';
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='resumen de la evaluacion';
 
 -- Volcando datos para la tabla gestion.ps_eval_formato_t25: ~1 rows (aproximadamente)
 /*!40000 ALTER TABLE `ps_eval_formato_t25` DISABLE KEYS */;
@@ -167,12 +167,13 @@ CREATE TABLE IF NOT EXISTS `ps_formato_t2` (
   `usumod_t2` longtext COLLATE utf8_spanish2_ci NOT NULL,
   `categoria_t2` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
   PRIMARY KEY (`idformato_t2`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
--- Volcando datos para la tabla gestion.ps_formato_t2: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla gestion.ps_formato_t2: ~2 rows (aproximadamente)
 /*!40000 ALTER TABLE `ps_formato_t2` DISABLE KEYS */;
 INSERT INTO `ps_formato_t2` (`idformato_t2`, `titulo_t2`, `descripcion_t2`, `fmod_t2`, `usumod_t2`, `categoria_t2`) VALUES
-	(1, 'Formato 1111', 'Esta es la información del formato que vamos a informar', '2019-10-30 06:03:51', 'superusuario', '');
+	(1, 'Formato 1111', 'Esta es la información del formato que vamos a informar', '2019-10-30 06:03:51', 'superusuario', ''),
+	(3, 'Formato de resolución de trnasporte', 'Evaluacion de transportistas', '2019-11-08 08:37:25', 'superusuario', '');
 /*!40000 ALTER TABLE `ps_formato_t2` ENABLE KEYS */;
 
 -- Volcando estructura para tabla gestion.ps_items_t10
@@ -244,12 +245,12 @@ CREATE TABLE IF NOT EXISTS `ps_subcategoria_t4` (
 -- Volcando datos para la tabla gestion.ps_subcategoria_t4: ~6 rows (aproximadamente)
 /*!40000 ALTER TABLE `ps_subcategoria_t4` DISABLE KEYS */;
 INSERT INTO `ps_subcategoria_t4` (`idsubcategoria_t4`, `idcategoria_t4`, `n_identificador_t4`, `descripcion_t4`, `valor_total_t4`, `fmod_t4`, `usumod_t4`) VALUES
-	(2, '1', 'ESTANDAR  2', 'GESTIÓN INTEGRAL DEL SISTEMA DE LA SEGURIDAD Y SALUD EN EL TRABAJO', '15%', '2019-10-30 06:40:41', 'Superusuario'),
-	(3, '2', 'ESTÁNDAR 3', 'GESTIÓN DE LA SALUD', '20%', '2019-10-14 11:14:32', 'superusuario'),
+	(2, '1', 'ESTANDAR  2', 'GESTIÓN INTEGRAL DEL SISTEMA DE LA SEGURIDAD Y SALUD EN EL TRABAJO', '15%', '2019-11-08 08:37:52', 'Superusuario'),
+	(3, '1', 'ESTÁNDAR 3', 'GESTIÓN DE LA SALUD', '20%', '2019-10-14 11:14:32', 'superusuario'),
 	(5, 'NULL', 'ESTÁNDAR 6', 'VERIFICACIÓN DEL SISTEMA DE GESTIÓN EN SEGURIDAD Y SALUD EN EL TRABAJO', '5%', '2019-09-21 00:00:00', 'Superusuario'),
 	(6, 'NULL', 'ESTÁNDAR  7', 'MEJORAMIENTO', '10%', '2019-09-21 00:00:00', 'Superusuario'),
 	(7, 'undefined', 'Esta es una nueva categoria', 'esta es la descripcion de mi categoria', '12', '2019-10-14 11:59:12', NULL),
-	(8, '1', '1', 'RECURSOS ', '10', '2019-10-30 06:34:15', NULL);
+	(8, 'NULL', '1', 'RECURSOS ', '10', '2019-10-30 06:34:15', NULL);
 /*!40000 ALTER TABLE `ps_subcategoria_t4` ENABLE KEYS */;
 
 -- Volcando estructura para tabla gestion.ps_terceros_t1
@@ -290,7 +291,7 @@ CREATE TABLE IF NOT EXISTS `ps_usuario_t0` (
   PRIMARY KEY (`idusuario_t0`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
--- Volcando datos para la tabla gestion.ps_usuario_t0: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla gestion.ps_usuario_t0: ~2 rows (aproximadamente)
 /*!40000 ALTER TABLE `ps_usuario_t0` DISABLE KEYS */;
 INSERT INTO `ps_usuario_t0` (`idusuario_t0`, `cedula_t0`, `primer_nombre_t0`, `segunda_nombre_t0`, `primer_apellido_t0`, `segundo_apellido_t0`, `nombre_completo_t0`, `usuario_t0`, `fecha_cracion_t0`, `telefono_t0`, `direccion_t0`, `cargo_t0`, `roll_t0`, `clave_t0`) VALUES
 	(1, '1053124899', 'Ey', 'Alejandro', 'Ortega', 'Blanco', 'Miguel Alejandro Ortega Blanco', 'Miguelort095', '2019-09-02 00:00:00', '302 454 67 08', 'Santa Viviana', NULL, NULL, '25f9e794323b453885f5181f1b624d0b'),

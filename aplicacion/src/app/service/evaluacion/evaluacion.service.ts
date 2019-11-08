@@ -16,8 +16,9 @@ export class EvaluacionService {
   	  return this.http.get(this.global.url()+'Evaluaciones/Evaluacion/ver/'+evaluacion);	
   }
 
-  guardarEvaluacion(arr_formato:Fmto_evaluacion){
-  	console.log(arr_formato);
+  guardarEvaluacion(id){
+    this.formData.append('usrmod',this.global.usr());
+  	return this.http.post(this.global.url()+'Evaluaciones/Evaluacion/gestionar/guardar/'+id,this.formData);
   }
 
 

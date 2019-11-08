@@ -12,6 +12,7 @@ export class ItemsEComponent implements OnInit {
   id: string = "";
   complementario: string = "";
   arr_estructura;
+  valpermit: any = ['C','NC','NP'];
   constructor(
   		private route:ActivatedRoute,
   		private navigate: Router,
@@ -35,6 +36,13 @@ export class ItemsEComponent implements OnInit {
   			this.arr_estructura = data;
   		}
   	});
+  }
+
+  guardarItems(f:NgForm){
+     this.serv_eval.buscarCategoria(f)
+     .subscribe((data)=>{
+     });
+     
   }
   
 }
