@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CategoriasEvaluacionComponent implements OnInit {
 
-  formato : string = "";
+  formato;
   arr_formato:any = {};
   constructor(
   	private serv_eval:EvaluacionService,
