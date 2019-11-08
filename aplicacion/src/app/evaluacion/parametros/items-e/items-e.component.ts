@@ -12,6 +12,7 @@ export class ItemsEComponent implements OnInit {
   id: string = "";
   complementario: string = "";
   arr_estructura;
+  valpermit: any = ['C','NC','NP'];
   constructor(
   		private route:ActivatedRoute,
   		private navigate: Router,
