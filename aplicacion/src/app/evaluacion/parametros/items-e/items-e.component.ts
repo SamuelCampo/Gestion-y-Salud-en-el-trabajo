@@ -37,5 +37,13 @@ export class ItemsEComponent implements OnInit {
   		}
   	});
   }
+
+  guardarItems(f:NgForm){
+     this.serv_eval.buscarCategoria(f)
+     .subscribe((data)=>{
+       console.log(this.items);
+     });
+     
+  }
   
 }
