@@ -24,8 +24,17 @@ import { ListaComponent } from './roles/lista/lista.component';
 import { EntidadComponent } from './entidad/entidad.component';
 import { ListaEntidadesComponent } from './entidad/lista-entidades/lista-entidades.component';
 import { CategoriasEvaluacionComponent } from './evaluacion/parametros/categorias/categorias.component';
+
+import { ListaInspeccionComponent } from './inspeccion/lista-inspeccion/lista-inspeccion.component';
+
+
+import { Paso1Component } from './paso1/paso1.component';
+import { Paso2Component } from './paso1/paso2/paso2.component';
+import { Paso3Component } from './paso1/paso3/paso3.component';
+
 import { SubCategoriaEvaluacionComponent } from './evaluacion/parametros/sub-categoria-evaluacion/sub-categoria-evaluacion.component';
 import { ItemsEComponent } from './evaluacion/parametros/items-e/items-e.component';
+
 
 const routes: Routes = [
 	{ path: '', component: DashboardComponent },
@@ -57,7 +66,15 @@ const routes: Routes = [
 	{ path: 'inspeccion', component: InspeccionComponent },
 	{ path: 'entidad', component: EntidadComponent },
 	{ path: 'lista-entidades', component: ListaEntidadesComponent },
+
 	{ path: 'items_e/:id/:evaluacion' , component: ItemsEComponent }
+
+	{ path: 'lista-inspeccion', component: ListaInspeccionComponent },
+
+	{ path: 'paso1', component: Paso1Component },
+	{ path: 'paso2', component: Paso2Component },
+	{ path: 'paso3', component: Paso3Component }
+
 ];
 
 @NgModule({
