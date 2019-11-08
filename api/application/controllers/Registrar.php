@@ -27,12 +27,9 @@ public function __construct()
 			if ($this->uri->segment(4) == "guardar") {
 				echo json_encode($this->input->post());
 				$query = $this->Usuario->RegistrarUsuario();
-				if ($query) {
-					echo json_encode($query);
-				}
-
-				$query = $this->Usuario->RegistrarUsuario();
-
+					if ($query) {
+						echo json_encode($query);
+					}
 				}
 			break;
 			case 'ver':

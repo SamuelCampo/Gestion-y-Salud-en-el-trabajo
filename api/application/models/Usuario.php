@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Usuario extends CI_Model {
 
-	function RegistrarUsuario($datusuario = "")
+	function RegistrarUsuario($iddatusuario = "")
 	{
 		if (empty($datusuario)){
 			$datusuario = (object)$this->input->post();
@@ -24,10 +24,10 @@ class Usuario extends CI_Model {
 		$arr_usuario['fecha_cracion_t0'] = date('Y-m-d h:i:s');
 
 
-		$this->db->where('cedula_t0', $datusuario->cedula_t0);
+			$this->db->where('cedula_t0', $iddatusuario);
 			$query = $this->db->get('ps_usuario_t0');
 			if ($query->num_rows() > 0) {
-				$this->db->where('cedula_t0', $datusuario->cedula_t0);
+				$this->db->where('cedula_t0', $iddatusuario);
 				return $this->db->update('ps_usuario_t0', $arr_usuario);
 
 			}else {

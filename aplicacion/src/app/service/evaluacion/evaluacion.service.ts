@@ -12,15 +12,8 @@ export class EvaluacionService {
   constructor(private http:HttpClient , public global:GlobalesService) { }
 
 
-  buscarCategoria(evaluacion:Evaluacion,idposition){
-  	//console.log(this.base_url+'Evaluaciones/Evaluacion/ver/'+evaluacion);
-  	let offset = idposition;
-  	if (idposition = 0) {
+  buscarCategoria(evaluacion:Evaluacion){
   	  return this.http.get(this.global.url()+'Evaluaciones/Evaluacion/ver/'+evaluacion);	
-  	}else{
-      console.log(this.global.url()+'Evaluaciones/Evaluacion/ver/'+evaluacion+'/'+offset);
-  		return this.http.get(this.global.url()+'Evaluaciones/Evaluacion/ver/'+evaluacion+'/'+offset);	
-  	}
   }
 
   guardarEvaluacion(arr_formato:Fmto_evaluacion){
