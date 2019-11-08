@@ -1,0 +1,91 @@
+<div class="container">
+	<div class="row">
+		<div class="col-lg-2"></div>
+		<div class="col-lg-8">
+			<div class="card" style="border: none;">
+			  <div class="text-center">
+			    <h4>Crea tu usuario principal</h4>
+			  </div>
+			  <div class="login-wrap" *ngIf="!id">
+			  	Insertar
+			    <form #f="ngForm" (ngSubmit)="IniciarSesion(f)" id="form_tercero" class="login-html">
+			    	<div class="login-form">
+			    		<div class="">
+			    			<div class="group">
+			    				<label for="" class="label">Nombre de la Entidad</label>
+							    <input [(ngModel)]="nombre1" name="nombre_t12" type="text" class="input form-control">
+							</div>
+							<div class="group">
+							    <label for="" class="label">Nit de la Entidad</label>
+							    <input [(ngModel)]="entidad1" type="text" name="nit_t12" class="input form-control">
+							</div>
+							<div class="group">
+							    <label for="" class="label">Responsable</label>
+							    <input [(ngModel)]="responsabel1" type="text" name="responsable_t12" class="input form-control">
+							</div>
+							    <div class="group">
+							    <label for="" class="label">Telefoo</label>
+							    <input [(ngModel)]="telefono2" type="text" name="telefono_t12" class="input form-control">
+							</div>
+							    <div class="group">
+							    <label for="" class="label">Correo</label>
+							    <input [(ngModel)]="Correo1" type="text" name="correo_t12" class="input form-control">
+							</div>
+							<div class="group">
+							    <label for="" class="label">Direccion</label>
+							    <input [(ngModel)]="direccion1" type="text" name="direccion_t12" class="input form-control">
+							</div>
+							    
+							    <div class="group">
+							    <button class="button">Guardar</button>
+			    			</div>
+					    </div>
+					</div>
+
+			    </form>
+
+			  </div>
+			  <div class="login-wrap" *ngIf="id">
+			    <form #f="ngForm" (ngSubmit)="IniciarSesion(f)" id="form_tercero" class="login-html">
+			    	<div class="login-form">
+			    		<div class="">
+			    			Modificar
+			    			<div class="group">
+			    				<label for="" class="label">Primer Nombre</label>
+							    <input [(ngModel)]="ver_usuario.nombre_t12" name="nombre_t12" type="text" class="input form-control">
+							</div>
+							<div class="group">
+							    <label for="" class="label">Segundo Nombre</label>
+							    <input [(ngModel)]="ver_usuario.nit_t12" type="text" name="nit_t12" class="input form-control">
+							</div>
+							<div class="group">
+							    <label for="" class="label">Primer Apellido</label>
+							    <input [(ngModel)]="ver_usuario.responsable_t12" type="text" name="responsable_t12" class="input form-control">
+							</div>
+							    <div class="group">
+							    <label for="" class="label">Segundo Apellido</label>
+							    <input [(ngModel)]="ver_usuario.telefono_t12" type="text" name="telefono_t12" class="input form-control">
+							</div>
+							    <div class="group">
+							    <label for="" class="label">Cedula</label>
+							    <input [(ngModel)]="ver_usuario.direccion_t12" type="text" name="direccion_t12" class="input form-control">
+							</div>
+							    <div class="group">
+							    <button class="button">Guardar</button>
+			    			</div>
+					    </div>
+					</div>
+
+			    </form>
+
+			  </div>
+			  <div class="card-footer text-muted">
+			    
+			  </div>
+			</div>	
+		</div>
+		<div class="col-lg-2"></div>
+		
+	</div>
+</div>
+
