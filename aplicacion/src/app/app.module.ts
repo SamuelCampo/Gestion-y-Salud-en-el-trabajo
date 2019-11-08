@@ -38,6 +38,7 @@ import {
    MatInputModule
 } from '@angular/material';
 import { ListaComponent } from './roles/lista/lista.component';
+import { CategoriasEvaluacionComponent } from './evaluacion/parametros/categorias/categorias.component';
 
 const routes: Routes = [];
 @NgModule({
@@ -68,6 +69,7 @@ const routes: Routes = [];
     ListaInspeccionComponent,
     ModalComponent,
     ListaComponent,
+    CategoriasEvaluacionComponent,
   ],
   entryComponents: [ModalComponent],
   imports: [

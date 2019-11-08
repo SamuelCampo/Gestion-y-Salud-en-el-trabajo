@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ConfiguracionService } from '../service/configuracion.service';
 import { FormsModule,NgForm } from '@angular/forms';
-import { EvaluacionService } from '../service/evaluacion/evaluacion.service'
+import { EvaluacionService } from '../service/evaluacion/evaluacion.service';
+import { Router,ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-evaluacion',
@@ -22,7 +23,8 @@ export class EvaluacionComponent implements OnInit {
   
   constructor(
       private conf:ConfiguracionService,
-      private evlu:EvaluacionService
+      private evlu:EvaluacionService,
+      private route:Router
     ) { }
 
   ngOnInit() {
@@ -35,17 +37,16 @@ export class EvaluacionComponent implements OnInit {
 
   iniciar(f:NgForm){
     this.id_formato = f.value.id_formato;
-     this.evlu.buscarCategoria(f.value.id_formato,0)
+    this.route.navigateByUrl('/evaluacion/'+f.value.id_formato+'/categoria');
+     /*this.evlu.buscarCategoria(f.value.id_formato,0)
      .subscribe((data)=>{
        this.parametros = data['formato'];
        this.items = data['items'];
-       console.log(this.items);
-     });
+     });*/
   }
 
   guardarItems(f:NgForm){
-    this.posicion += 1;
-     this.evlu.buscarCategoria(f.value['id_evalenc_t14'],this.posicion)
+     this.evlu.buscarCategoria(f.value['id_evalenc_t14'])
      .subscribe((data)=>{
        this.parametros = data['formato'];
        this.items = data['items'];

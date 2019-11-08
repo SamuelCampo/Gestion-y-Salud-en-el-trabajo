@@ -21,6 +21,7 @@ import { ListaComplementarioComponent } from './complementario/lista-complementa
 import { RolesComponent } from './roles/roles.component';
 import { InspeccionComponent } from './inspeccion/inspeccion/inspeccion.component';
 import { ListaComponent } from './roles/lista/lista.component';
+import { CategoriasEvaluacionComponent } from './evaluacion/parametros/categorias/categorias.component';
 
 const routes: Routes = [
 	{ path: '', component: DashboardComponent },
@@ -45,6 +46,7 @@ const routes: Routes = [
 	{ path: 'complementario' , component: ComplementarioComponent },
 	{ path: 'complementario/:id' , component: ComplementarioComponent },
 	{ path: 'evaluacion', component: EvaluacionComponent },
+	{ path: 'evaluacion/:id/categoria' , component: CategoriasEvaluacionComponent }, 
 	{ path: 'roles', component: RolesComponent },
 	{ path: 'lista_roles' , component: ListaComponent },
 	{ path: 'inspeccion', component: InspeccionComponent }
