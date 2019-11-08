@@ -67,7 +67,7 @@ const routes: Routes = [
 	{ path: 'entidad', component: EntidadComponent },
 	{ path: 'lista-entidades', component: ListaEntidadesComponent },
 
-	{ path: 'items_e/:id/:evaluacion' , component: ItemsEComponent }
+	{ path: 'items_e/:id/:evaluacion' , component: ItemsEComponent },
 
 	{ path: 'lista-inspeccion', component: ListaInspeccionComponent },
 

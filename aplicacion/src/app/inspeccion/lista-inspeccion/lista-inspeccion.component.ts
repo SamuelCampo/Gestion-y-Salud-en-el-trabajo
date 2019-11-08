@@ -24,6 +24,7 @@ export class ListaInspeccionComponent implements OnInit {
 	inspecciones;
 	id;
 	listar;
+  desc;
 
   constructor(
 

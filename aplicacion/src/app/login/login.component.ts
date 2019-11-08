@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   usuario;
   clave;
   id;
+  title;
 
   constructor(
   	private configuracion:ConfiguracionService,
