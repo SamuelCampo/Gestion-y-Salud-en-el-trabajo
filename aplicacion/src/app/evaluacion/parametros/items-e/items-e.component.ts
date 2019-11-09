@@ -14,7 +14,7 @@ export class ItemsEComponent implements OnInit {
   complementario: string = "";
   arr_estructura;
   valpermit: any = ['C','NC','NP'];
-  validar;
+  arr_items:any = [];
   constructor(
   		private route:ActivatedRoute,
   		private navigate: Router,
@@ -40,9 +40,29 @@ export class ItemsEComponent implements OnInit {
   	});
   }
 
-  guardarItems(f:NgForm,evaluacion){
-     this.serv_eval.guardarItems(f.value)
+  guardarItems(f:NgForm){
+     this.serv_eval.guardarItems(f.value,this.arr_items)
      .subscribe((data)=>{
+     	console.log(data);
      });
   
+}
+
+	validar(id,val,complementario,val_cmpl){
+		let arreglo = {'items':id,'valor':val,'cmpl':complementario,'val_cmpl':val_cmpl};
+	    if (!this.arr_items.includes(id)) {
+	       if (id != false && id != true) {
+	       	
+	         this.arr_items.push(arreglo); 
+	       }
+	       if (id == 1) {
+	       	this.arr_items.push(arreglo); 
+	       }
+	    }else{
+	      let index = this.arr_items.indexOf(id);
+	      this.arr_items.splice(index,1);
+	    }
+	    console.log(this.arr_items);
+	}
+
 }

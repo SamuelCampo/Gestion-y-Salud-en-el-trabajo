@@ -68,7 +68,7 @@ switch (ENVIRONMENT)
 	case 'development':
 	case 'testing':
 	case 'production':
-		ini_set('display_errors',0);
+		ini_set('display_errors',-1);
 	break;
 
 	default:

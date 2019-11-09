@@ -41,6 +41,10 @@ class Evaluaciones extends CI_Controller {
 				$query = $this->evaluacion->Complementario($id);
 				echo json_encode($query);
 				break;
+			case 'guardarItems':
+				$query = $this->evaluacion->guardarItems();
+				echo json_encode($query);
+				break;
 		}
 	}
 
