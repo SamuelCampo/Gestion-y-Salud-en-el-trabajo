@@ -19,6 +19,7 @@ export class ItemsEComponent implements OnInit {
   		private route:ActivatedRoute,
   		private navigate: Router,
   		private serv_eval: EvaluacionService,
+  		private serv_eval: EvaluacionService
   	) { }
 
   ngOnInit() {
@@ -47,15 +48,12 @@ export class ItemsEComponent implements OnInit {
      this.serv_eval.guardarItems(f.value,this.arr_items)
      .subscribe((data)=>{
      	if (data) {
-     		this.navigate.events.subscribe((events) => {
-     			console.log(events);
-     		})
+     		alert('Excelente el compleemtario ha sido diligenciado');
+     		this.navigate.navigateByUrl('/step2/27/1');
      	}
      });
   
 }
-
-
 
 	validar(id,val,complementario,val_cmpl){
 		let arreglo = {'items':id,'valor':val,'cmpl':complementario,'val_cmpl':val_cmpl};
