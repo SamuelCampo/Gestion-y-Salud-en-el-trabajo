@@ -17,16 +17,16 @@ class Inspecciones extends CI_Controller {
 	header("Allow: GET, POST, OPTIONS, PUT, DELETE");
 	$accion = $this->uri->segment(3,'0');
 	switch ($accion) {
-		// case '0':
-		// case 'gestionar':
-		// 	if ($this->uri->segment(4) == "guardar") {
-		// 		echo json_encode($this->input->post());
-		// 		$query = $this->Entidades->RegistrarEntidad();
-		// 		if ($query) {
-		// 			echo json_encode($query);
-		// 		}
-		// 		}
-		// 	break;
+		 case '0':
+		 case 'gestionar':
+		 	if ($this->uri->segment(4) == "guardar") {
+		 		echo json_encode($this->input->post());
+		 		$query = $this->Inspeccion->RegistrarInspeccion();
+		 		if ($query) {
+		 			echo json_encode($query);
+		 		}
+		 		}
+		 	break;
 			case 'ver':
 				$query = $this->Inspeccion->ConsultaInspeccion($this->uri->segment(4));
 				echo json_encode($query);

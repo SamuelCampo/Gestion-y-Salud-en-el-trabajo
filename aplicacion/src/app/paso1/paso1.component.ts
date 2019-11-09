@@ -17,7 +17,7 @@ import {
   styleUrls: ['./paso1.component.css']
 })
 export class Paso1Component implements OnInit {
-
+form_verdadero;
   constructor(
 
   	private configuracion:ConfiguracionService,

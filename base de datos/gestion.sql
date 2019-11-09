@@ -13,8 +13,7 @@
 
 
 -- Volcando estructura de base de datos para gestion
-CREATE DATABASE IF NOT EXISTS `gestion` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `gestion`;
+
 
 -- Volcando estructura para tabla gestion.ps_categoria_for_t6
 CREATE TABLE IF NOT EXISTS `ps_categoria_for_t6` (

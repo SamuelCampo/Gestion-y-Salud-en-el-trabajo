@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { EvaluacionService } from '../../../service/evaluacion/evaluacion.service';
 import { ActivatedRoute,Router } from '@angular/router';
 import { FormsModule,NgForm } from '@angular/forms';
-import {Location} from '@angular/common'; 
 
 @Component({
   selector: 'app-items-e',
@@ -20,7 +19,6 @@ export class ItemsEComponent implements OnInit {
   		private route:ActivatedRoute,
   		private navigate: Router,
   		private serv_eval: EvaluacionService,
-  		private location:Location
   	) { }
 
   ngOnInit() {
@@ -57,9 +55,7 @@ export class ItemsEComponent implements OnInit {
   
 }
 
-	back(){
-		this._location.back();
-	}
+
 
 	validar(id,val,complementario,val_cmpl){
 		let arreglo = {'items':id,'valor':val,'cmpl':complementario,'val_cmpl':val_cmpl};
