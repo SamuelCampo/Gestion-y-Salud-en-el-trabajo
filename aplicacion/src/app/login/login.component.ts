@@ -33,10 +33,7 @@ export class LoginComponent implements OnInit {
     .subscribe((newUsuario) => {
       localStorage.setItem('user',JSON.stringify(newUsuario['usr']));
       let keys = localStorage.getItem('user');
-      console.log(keys);
-      if (keys.length > 0) {
-        this.router.navigateByUrl(''); 
-      }
+      location.reload();
     })
     
   }

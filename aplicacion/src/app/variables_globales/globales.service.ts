@@ -9,7 +9,7 @@ export class GlobalesService {
 
 
   url() {
-  	const path = "http://tienda.hms.com.co/api/index.php/";
+  	const path = "http://localhost/gestion/api/index.php/";
   	return path;
   }
 

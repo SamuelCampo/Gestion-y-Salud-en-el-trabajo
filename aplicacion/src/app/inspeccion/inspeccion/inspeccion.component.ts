@@ -1,6 +1,8 @@
 import { Component, OnInit, Pipe } from '@angular/core';
 import { FormsModule,NgForm } from '@angular/forms';
+import { ConfiguracionService } from '../../service/configuracion.service';
 import { Router,ActivatedRoute } from '@angular/router';
+import { InspeccionService } from '../../service/inspeccion/inspeccion.service';
 
 @Component({
   selector: 'app-inspeccion',
@@ -28,7 +30,14 @@ export class InspeccionComponent implements OnInit {
   recursos;
   fundamentos;
   
-  constructor() {}
+  constructor(
+
+    private configuracion:ConfiguracionService,
+    private router:Router,
+    private route:ActivatedRoute,
+    private inspeccion:InspeccionService
+
+    ) {}
 
   ngOnInit() {
   	//this.validarCheck();	
@@ -43,7 +52,13 @@ export class InspeccionComponent implements OnInit {
   		'cargo': f.value['cargo'],
   		'fecha': f.value['fecha'],
   		'recursos': f.value['recursos'],
-  		'fundamentos': f.value['fundamentos']
+  		'fundamentos': f.value['fundamentos'];
+
+    this.inspeccion.guardarInspeccion(f.value)
+      .subscribe((newUsuario) => {
+      //console.log(newUsuario);
+
+    })
   	};
   	this.tareas.push(arreglo);
   	this.porcentaje = this.tareas.length / this.valor * 100;
@@ -60,5 +75,14 @@ export class InspeccionComponent implements OnInit {
   	this.quanty = this.quanty - 1;
   	this.style = Math.round(100 / this.quanty) + '%';
   }
+
+  // agregarItems(f: NgForm,){
+  //   this.inspeccion.guardarInspeccion(f.value)
+  //   .subscribe((newUsuario) => {
+  //     //console.log(newUsuario);
+
+  //   })
+  //  // this.router.navigateByUrl('lista-entidades'); 
+  // }
 
 }
