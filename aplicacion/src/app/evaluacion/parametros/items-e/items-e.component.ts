@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EvaluacionService } from '../../../service/evaluacion/evaluacion.service';
 import { ActivatedRoute,Router } from '@angular/router';
 import { FormsModule,NgForm } from '@angular/forms';
+import {Location} from '@angular/common'; 
 
 @Component({
   selector: 'app-items-e',
@@ -18,7 +19,8 @@ export class ItemsEComponent implements OnInit {
   constructor(
   		private route:ActivatedRoute,
   		private navigate: Router,
-  		private serv_eval: EvaluacionService
+  		private serv_eval: EvaluacionService,
+  		private location:Location
   	) { }
 
   ngOnInit() {
@@ -27,6 +29,9 @@ export class ItemsEComponent implements OnInit {
   		this.complementario = params.get('evaluacion');
   	});
   	this.listarItems(this.id,this.complementario);
+  	this.navigate.events.subscribe((events) => {
+     			console.log(events);
+     		})
   }
 
 
@@ -43,10 +48,18 @@ export class ItemsEComponent implements OnInit {
   guardarItems(f:NgForm){
      this.serv_eval.guardarItems(f.value,this.arr_items)
      .subscribe((data)=>{
-     	console.log(data);
+     	if (data) {
+     		this.navigate.events.subscribe((events) => {
+     			console.log(events);
+     		})
+     	}
      });
   
 }
+
+	back(){
+		this._location.back();
+	}
 
 	validar(id,val,complementario,val_cmpl){
 		let arreglo = {'items':id,'valor':val,'cmpl':complementario,'val_cmpl':val_cmpl};
