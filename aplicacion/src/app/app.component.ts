@@ -16,12 +16,16 @@ export class AppComponent implements OnInit{
   ngOnInit(){
   	let id = localStorage.getItem('user');
     this.user = JSON.parse(localStorage.getItem('user'));
-  	console.log(id);
+  	//console.log(id);
   	if (id != null) {
   		this.keys = true;
   	}else{
   		this.keys = false;
   		this.router.navigateByUrl('/login');
   	}
+
+    this.router.events.subscribe((events) => {
+           console.log(events);
+         })
   }
 }

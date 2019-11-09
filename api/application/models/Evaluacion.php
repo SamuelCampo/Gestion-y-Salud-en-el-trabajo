@@ -127,6 +127,34 @@ public function RegistrarEvaluacion($datevaluacion = "" ,$idevaluacion_t9 = "")
 			}
 
 		}
+
+
+		public function guardarItems()
+		{
+			$items = (object)$this->input->post();
+			$n = count(json_decode($items->items));
+
+			$itms = (object)json_decode($items->items);
+			foreach ($itms as $key => $val) {
+				$val_complete = $val->val_cmpl /  $n;			
+			
+				$arr_items['idps_items_t26'] = $val->items;
+				$arr_items['valor_items_t26'] = $val->valor;
+				$arr_items['complementario_t26'] = $val->cmpl;
+				$arr_items['puntaje_evaluado_t26'] = $val_complete;
+				if ($val->valor == "C") {
+				$arr_items['puntaje_total_t26'] = $val_complete;
+				}else{
+				$arr_items['puntaje_total_t26'] = 0;
+				}
+				$arr_items['idps_evaluacion_t26'] = $items->idevaluacion;
+				$arr_items['fmod_t26'] = date('Y-m-d h:i:s');
+				$arr_items['usrmod_t26'] = $items->usrmod;
+				$query = $this->db->insert('ps_valor_evaluacion_items_t26', $arr_items);
+			}
+
+			return $query;
+		}
 }
 
 /* End of file Evaluacion.php */
