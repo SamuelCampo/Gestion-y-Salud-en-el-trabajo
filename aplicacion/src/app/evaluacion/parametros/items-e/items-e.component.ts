@@ -71,4 +71,5 @@ export class ItemsEComponent implements OnInit {
 	    console.log(this.arr_items);
 	}
 
+
 }
