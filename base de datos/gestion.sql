@@ -150,12 +150,22 @@ CREATE TABLE IF NOT EXISTS `ps_eval_formato_t25` (
   `fmod_t25` datetime DEFAULT '0000-00-00 00:00:00',
   `usrmod_t25` varchar(100) DEFAULT '0',
   PRIMARY KEY (`idps_eval_formato_t25`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='resumen de la evaluacion';
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COMMENT='resumen de la evaluacion';
 
--- Volcando datos para la tabla gestion.ps_eval_formato_t25: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla gestion.ps_eval_formato_t25: ~7 rows (aproximadamente)
 /*!40000 ALTER TABLE `ps_eval_formato_t25` DISABLE KEYS */;
 INSERT INTO `ps_eval_formato_t25` (`idps_eval_formato_t25`, `idformato_t25`, `finicio_t25`, `ffinal_t25`, `tiempodil_t25`, `area_admin_t25`, `fmod_t25`, `usrmod_t25`) VALUES
-	(1, 1, '2019-10-31 12:45:00', '2019-10-31 12:49:00', 4, 'cocina', '2019-10-31 12:49:00', 'super usuario');
+	(1, 1, '2019-10-31 12:45:00', '2019-10-31 12:49:00', 4, 'cocina', '2019-10-31 12:49:00', 'super usuario'),
+	(8, 3, '2019-11-09 07:57:39', '0000-00-00 00:00:00', 0, '', '2019-11-09 07:57:39', '1053124899'),
+	(9, 3, '2019-11-09 08:14:33', '0000-00-00 00:00:00', 0, '', '2019-11-09 08:14:33', '1053124899'),
+	(10, 3, '2019-11-09 08:14:46', '0000-00-00 00:00:00', 0, '', '2019-11-09 08:14:46', '1053124899'),
+	(11, 1, '2019-11-09 08:14:52', '0000-00-00 00:00:00', 0, '', '2019-11-09 08:14:52', '1053124899'),
+	(12, 1, '2019-11-09 09:23:19', '0000-00-00 00:00:00', 0, '', '2019-11-09 09:23:19', '1053124899'),
+	(13, 1, '2019-11-09 09:23:21', '0000-00-00 00:00:00', 0, '', '2019-11-09 09:23:21', '1053124899'),
+	(14, 1, '2019-11-09 09:56:13', '0000-00-00 00:00:00', 0, '', '2019-11-09 09:56:13', '1053124899'),
+	(15, 1, '2019-11-09 09:58:20', '0000-00-00 00:00:00', 0, '', '2019-11-09 09:58:20', '1053124899'),
+	(16, 1, '2019-11-09 10:20:36', '0000-00-00 00:00:00', 0, '', '2019-11-09 10:20:36', '1053124899'),
+	(17, 1, '2019-11-09 10:20:48', '0000-00-00 00:00:00', 0, '', '2019-11-09 10:20:48', '1053124899');
 /*!40000 ALTER TABLE `ps_eval_formato_t25` ENABLE KEYS */;
 
 -- Volcando estructura para tabla gestion.ps_formato_t2
@@ -301,16 +311,33 @@ INSERT INTO `ps_usuario_t0` (`idusuario_t0`, `cedula_t0`, `primer_nombre_t0`, `s
 -- Volcando estructura para tabla gestion.ps_valor_evaluacion_items_t26
 CREATE TABLE IF NOT EXISTS `ps_valor_evaluacion_items_t26` (
   `idps_valor_items_t26` int(11) NOT NULL AUTO_INCREMENT,
-  `idps_items_t26` int(10) unsigned zerofill NOT NULL DEFAULT '0000000000',
-  `idps_formato_t26` int(10) unsigned zerofill NOT NULL DEFAULT '0000000000',
-  `idps_evaluacion_t26` int(10) unsigned zerofill NOT NULL DEFAULT '0000000000',
-  `fmod_t26` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `usrmod_t26` varchar(100) DEFAULT '0',
+  `idps_items_t26` int(10) unsigned DEFAULT NULL,
+  `valor_items_t26` float unsigned NOT NULL DEFAULT '0',
+  `complementario_t26` int(10) unsigned NOT NULL DEFAULT '0',
+  `puntaje_evaluado_t26` float unsigned NOT NULL DEFAULT '0',
+  `puntaje_total_t26` float unsigned NOT NULL DEFAULT '0',
+  `idps_formato_t26` bigint(20) unsigned NOT NULL,
+  `idps_evaluacion_t26` bigint(20) unsigned NOT NULL,
+  `fmod_t26` datetime NOT NULL,
+  `usrmod_t26` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`idps_valor_items_t26`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Tabla para guardar cada resultado de los items';
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COMMENT='Tabla para guardar cada resultado de los items';
 
--- Volcando datos para la tabla gestion.ps_valor_evaluacion_items_t26: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla gestion.ps_valor_evaluacion_items_t26: ~4 rows (aproximadamente)
 /*!40000 ALTER TABLE `ps_valor_evaluacion_items_t26` DISABLE KEYS */;
+INSERT INTO `ps_valor_evaluacion_items_t26` (`idps_valor_items_t26`, `idps_items_t26`, `valor_items_t26`, `complementario_t26`, `puntaje_evaluado_t26`, `puntaje_total_t26`, `idps_formato_t26`, `idps_evaluacion_t26`, `fmod_t26`, `usrmod_t26`) VALUES
+	(13, 1, 0, 1, 1, 0, 0, 1, '2019-11-09 09:34:35', '1053124899'),
+	(14, 2, 0, 1, 1, 0, 0, 1, '2019-11-09 09:34:35', '1053124899'),
+	(15, 3, 0, 1, 1, 0, 0, 1, '2019-11-09 09:34:35', '1053124899'),
+	(16, 4, 0, 1, 1, 0, 0, 1, '2019-11-09 09:34:35', '1053124899'),
+	(17, 1, 0, 1, 1, 1, 0, 1, '2019-11-09 10:20:57', '1053124899'),
+	(18, 2, 0, 1, 1, 0, 0, 1, '2019-11-09 10:20:58', '1053124899'),
+	(19, 3, 0, 1, 1, 0, 0, 1, '2019-11-09 10:20:58', '1053124899'),
+	(20, 4, 0, 1, 1, 1, 0, 1, '2019-11-09 10:20:58', '1053124899'),
+	(21, 1, 0, 1, 1, 1, 0, 1, '2019-11-09 10:24:03', '1053124899'),
+	(22, 3, 0, 1, 1, 0, 0, 1, '2019-11-09 10:24:03', '1053124899'),
+	(23, 4, 0, 1, 1, 1, 0, 1, '2019-11-09 10:24:03', '1053124899'),
+	(24, 2, 0, 1, 1, 1, 0, 1, '2019-11-09 10:24:03', '1053124899');
 /*!40000 ALTER TABLE `ps_valor_evaluacion_items_t26` ENABLE KEYS */;
 
 -- Volcando estructura para tabla gestion.roles_t11
