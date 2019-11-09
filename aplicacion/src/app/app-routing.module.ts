@@ -71,7 +71,7 @@ const routes: Routes = [
 
 	{ path: 'lista-inspeccion', component: ListaInspeccionComponent },
 
-	{ path: 'paso1', component: Paso1Component },
+	{ path: 'paso1/:id', component: Paso1Component },
 	{ path: 'paso2', component: Paso2Component },
 	{ path: 'paso3', component: Paso3Component }
 

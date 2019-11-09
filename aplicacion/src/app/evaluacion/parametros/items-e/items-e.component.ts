@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EvaluacionService } from '../../../service/evaluacion/evaluacion.service';
 import { ActivatedRoute,Router } from '@angular/router';
+import { FormsModule,NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-items-e',
@@ -13,6 +14,7 @@ export class ItemsEComponent implements OnInit {
   complementario: string = "";
   arr_estructura;
   valpermit: any = ['C','NC','NP'];
+  validar;
   constructor(
   		private route:ActivatedRoute,
   		private navigate: Router,
@@ -42,7 +44,5 @@ export class ItemsEComponent implements OnInit {
      this.serv_eval.guardarItems(f.value)
      .subscribe((data)=>{
      });
-     
-  }
   
 }
