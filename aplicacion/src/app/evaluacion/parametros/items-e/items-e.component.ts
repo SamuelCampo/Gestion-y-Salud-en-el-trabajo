@@ -38,8 +38,8 @@ export class ItemsEComponent implements OnInit {
   	});
   }
 
-  guardarItems(f:NgForm){
-     this.serv_eval.buscarCategoria(f)
+  guardarItems(f:NgForm,evaluacion){
+     this.serv_eval.guardarItems(f.value)
      .subscribe((data)=>{
      });
      
