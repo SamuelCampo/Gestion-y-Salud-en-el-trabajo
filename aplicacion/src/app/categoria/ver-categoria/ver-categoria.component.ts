@@ -55,7 +55,7 @@ export class VerCategoriaComponent implements OnInit {
   	this.configuracion.RegistrarSubcategoria(f.value,this.idcategoria)	
     .subscribe((categoria) => {
       if (categoria) {
-      	//location.reload();
+      	this.router.navigateByUrl('/listacategoria');
       }
     })
   }

@@ -46,6 +46,7 @@ export class ItemsEComponent implements OnInit {
   guardarItems(f:NgForm){
      this.serv_eval.guardarItems(f.value,this.arr_items)
      .subscribe((data)=>{
+     	console.log(data);
      	if (data) {
      		alert('Excelente el compleemtario ha sido diligenciado');
      		this.navigate.navigateByUrl('/step2/27/1');

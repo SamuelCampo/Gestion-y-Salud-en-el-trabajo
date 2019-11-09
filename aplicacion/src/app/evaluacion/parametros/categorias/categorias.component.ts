@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EvaluacionService } from '../../../service/evaluacion/evaluacion.service';
 import { ActivatedRoute,Router } from '@angular/router';
 import { trigger,style,transition,animate,state } from '@angular/animations';
+import { GlobalesService } from '../../../variables_globales/globales.service';
 
 @Component({
   selector: 'app-categorias',
@@ -16,7 +17,8 @@ export class CategoriasEvaluacionComponent implements OnInit {
   constructor(
   	private serv_eval:EvaluacionService,
   	private route:ActivatedRoute,
-    private navigator:Router
+    private navigator:Router,
+    private global:GlobalesService
   	) { }
 
   ngOnInit() {
@@ -31,7 +33,7 @@ export class CategoriasEvaluacionComponent implements OnInit {
 
     this.serv_eval.guardarEvaluacion(this.formato)
     .subscribe((data) => {
-      console.log(data);
+      this.global.insertFormato(data);
     })
 
   }

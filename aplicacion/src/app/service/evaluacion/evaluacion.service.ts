@@ -24,7 +24,7 @@ export class EvaluacionService {
 
   guardarItems(idevaluacion:string,arr_items){
     this.formData.append('items',JSON.stringify(arr_items));
-    this.formData.append('idevaluacion',1);
+    this.formData.append('idevaluacion',this.global.getFormato());
     this.formData.append('usrmod',this.global.usr());
     return this.http.post(this.global.url()+'/Evaluaciones/Evaluacion/guardarItems/',this.formData,{headers:this.headers});
   }

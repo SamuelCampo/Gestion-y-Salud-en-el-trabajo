@@ -18,6 +18,14 @@ export class GlobalesService {
   	return titulo;
   }
 
+  getFormato(){
+    return localStorage.getItem('idformato');
+  }
+
+  insertFormato(id){
+    localStorage.setItem('idformato',id);
+  }
+
   usr(){
     let arreglo = JSON.parse(localStorage.getItem('user'));
      return arreglo.cedula_t0;
