@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EntidadesService } from '../../service/entidad/entidades.service';
+import { FormsModule,NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-lista-entidades',
@@ -24,7 +25,12 @@ export class ListaEntidadesComponent implements OnInit {
   		this.arr_entidad = data;
   		console.log(data);
   	})
-  }  
+  }
+
+
+  buscarEntidades(f:NgForm){
+
+  }
 
   eliminarEntidad(id,descripcion,formato){
       let v = confirm('Estas seguro de eliminar la entidad'+' '+descripcion);

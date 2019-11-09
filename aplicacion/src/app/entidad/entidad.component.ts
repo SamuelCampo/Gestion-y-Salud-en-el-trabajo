@@ -30,6 +30,7 @@ listar;
 entidades;
 config: any = {};
 ver_entidad: any = {};
+ver_usuario;
 
   constructor(
   	private configuracion:ConfiguracionService,

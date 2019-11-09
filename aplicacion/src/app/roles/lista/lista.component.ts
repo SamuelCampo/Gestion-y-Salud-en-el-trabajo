@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../../service/usuario.service';
+import { FormsModule,NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-lista',
@@ -16,11 +17,11 @@ export class ListaComponent implements OnInit {
   list_rol;
 
   ngOnInit() {
-  	this.listar();
+  	this.listar(this.listarItems);
   }
 
 
-  listar(){
+  listar(f:NgForm){
   	this.serv_usuario.listarRoles("")
   	.subscribe((data) => {
   		this.list_rol = data;

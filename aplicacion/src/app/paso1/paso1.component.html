@@ -1,37 +1,274 @@
-<div class="container">
+<div class="container-fluid">
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="card">
-			  <div class="card-header">
-			    Categoria
+			  <div class="card-header text-center">
+			    <h5>Estandares Minimos</h5>
+			    <h6>Tabla de valores y calificaciones</h6>
 			  </div>
 			  <div class="card-body">
-			    <blockquote class="blockquote mb-0">
-			    	<div class="row">
-			    		<div class="col-lg-12">
-							<h3></h3>
-							<div class="card">
-							  <div class="card-header">
-							    Sub-categoria
-							  </div>
-							  <div class="card-body">
-							    <a class="btn btn-info" [routerLink]="['/paso2']">Siguiente</a>
-							  </div>
-							</div>
-						</div>
-						<div class="col-lg-12">
-							<h3></h3>
-							<div class="card">
-							  <div class="card-header">
-							    Sub-categoria
-							  </div>
-							  <div class="card-body">
-							    <a class="btn btn-info" [routerLink]="['/paso2']">Siguiente</a>
-							  </div>
-							</div>
-						</div>
-			    	</div>
-			    </blockquote>
+			  	<table class="table">
+			  		<thead>
+			  			<tr>
+			  				<th>Ciclo</th>
+			  				<th>Estandar</th>
+			  				<th>Item Standar</th>
+			  				<th>Valor</th>
+			  				<th>Peso Porcentual</th>
+			  				<th>Puntaje Posible 
+			  					<table style="margin: 0% 0% -5% 0%" class="table">
+			  						<tr>
+			  							<td>CUMPLE TOTALMENTE</td>
+			  							<td>NO CUMPLE</td>
+			  							<td>JUSTIFICA</td>
+			  							<td>NO JUSTIFICA</td>
+			  						</tr>
+			  					</table>
+			  				</th>
+			  				<th>Calificacion de la empresa o contratante</th>
+			  				<th>Accion</th>
+			  			</tr>
+			  		</thead>
+
+			  		<tbody>	
+						<tr>
+							<td>I.PLANEAR</td>
+							<td>
+								<div class="container">
+									<div class="row">
+										<div class="col-lg-3">RECURSOS (10%)</div>
+										<div class="col-lg-9">	Recursos financieros, técnicos,  humanos y de otra índole requeridos para coordinar y desarrollar el Sistema de Gestión de la Seguridad y la Salud en el Trabajo (SG-SST) (4%)</div>
+									</div>
+								</div>
+							 </td>
+							<td>1.1.1. Responsable del Sistema de Gestión de Seguridad y Salud en el Trabajo SG-SST</td>
+							<td>valor</td>
+							<td>0,5</td>
+							<td>
+								<table style="margin: -5% 0% 0% 0%" class="table">
+			  						<tr>
+			  							<td>0,5</td>
+			  							<td>0</td>
+			  							<td>X</td>
+			  							<td>0</td>
+			  						</tr>
+			  					</table>
+							</td>
+							<td>Calificacion de la empresa o contratante</td>
+							<td>
+								<button type="button" class="btn btn-secondary" ><i class="material-icons">remove_red_eye</i></button>
+						 		<a [routerLink]="['/inspeccion']" class="btn btn-secondary" (click)="form_verdadero = true"><i class="material-icons">add</i></a>
+						 	</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								
+							 </td>
+							<td>1.1.2 Responsabilidades en el Sistema de Gestión de Seguridad y Salud en el Trabajo – SG-SST</td>
+							<td></td>
+							<td>0,5</td>
+							<td>
+								<table style="margin: -5% 0% 0% 0%" class="table">
+			  						<tr>
+			  							<td>0,5</td>
+			  							<td>0</td>
+			  							<td>X</td>
+			  							<td>0</td>
+			  						</tr>
+			  					</table>
+							</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								
+							 </td>
+							<td>1.1.3 Asignación de recursos para el Sistema de Gestión en Seguridad y Salud en el Trabajo – SG-SST</td>
+							<td></td>
+							<td>0,5</td>
+							<td>
+								<table style="margin: -5% 0% 0% 0%" class="table">
+			  						<tr>
+			  							<td>0,5</td>
+			  							<td>0</td>
+			  							<td>X</td>
+			  							<td>0</td>
+			  						</tr>
+			  					</table>
+							</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								
+							 </td>
+							<td>1.1.4 Afiliación al Sistema General de Riesgos Laborales</td>
+							<td></td>
+							<td>0,5</td>
+							<td>
+								<table style="margin: -5% 0% 0% 0%" class="table">
+			  						<tr>
+			  							<td>0,5</td>
+			  							<td>0</td>
+			  							<td>X</td>
+			  							<td>0</td>
+			  						</tr>
+			  					</table>
+							</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								
+							 </td>
+							<td>1.1.5 Pago de pensión trabajadores alto riesgo</td>
+							<td></td>
+							<td>0,5</td>
+							<td>
+								<table style="margin: -5% 0% 0% 0%" class="table">
+			  						<tr>
+			  							<td>0,5</td>
+			  							<td>0</td>
+			  							<td>X</td>
+			  							<td>0</td>
+			  						</tr>
+			  					</table>
+							</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								
+							 </td>
+							<td>1.1.6 Conformación COPASST / Vigía</td>
+							<td></td>
+							<td>0,5</td>
+							<td>
+								<table style="margin: -5% 0% 0% 0%" class="table">
+			  						<tr>
+			  							<td>0,5</td>
+			  							<td>0</td>
+			  							<td>X</td>
+			  							<td>0</td>
+			  						</tr>
+			  					</table>
+							</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								
+							 </td>
+							<td>1.1.7 Capacitación COPASST / Vigía</td>
+							<td></td>
+							<td>0,5</td>
+							<td>
+								<table style="margin: -5% 0% 0% 0%" class="table">
+			  						<tr>
+			  							<td>0,5</td>
+			  							<td>0</td>
+			  							<td>X</td>
+			  							<td>0</td>
+			  						</tr>
+			  					</table>
+							</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								
+							 </td>
+							<td>1.1.8 Conformación Comité de Convivencia</td>
+							<td></td>
+							<td>0,5</td>
+							<td>
+								<table style="margin: -5% 0% 0% 0%" class="table">
+			  						<tr>
+			  							<td>0,5</td>
+			  							<td>0</td>
+			  							<td>X</td>
+			  							<td>0</td>
+			  						</tr>
+			  					</table>
+							</td>
+							<td></td>
+						</tr>
+			  		</tbody>
+			  		<tbody>
+			  			<tr>
+							<td></td>
+							<td>
+								<div class="container">
+									<div class="row">
+										<div class="col-lg-3">RECURSOS (10%)</div>
+										<div class="col-lg-9">	Capacitación en el Sistema de Gestión de la Seguridad y la Salud en el Trabajo (6%)</div>
+									</div>
+								</div>
+							 </td>
+							<td>1.2.1 Programa Capacitación promoción y prevención PYP</td>
+							<td>valor</td>
+							<td>0,5</td>
+							<td>
+								<table style="margin: -5% 0% 0% 0%" class="table">
+			  						<tr>
+			  							<td>0</td>
+			  							<td>0</td>
+			  							<td>0</td>
+			  							<td>0</td>
+			  						</tr>
+			  					</table>
+							</td>
+							<td>Calificacion de la empresa o contratante</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								
+							 </td>
+							<td>1.2.2 Capacitación, Inducción y Reinducción en Sistema de Gestión de Seguridad y Salud en el Trabajo SG-SST, actividades de Promoción y Prevención PyP</td>
+							<td></td>
+							<td>0,5</td>
+							<td>
+								<table style="margin: -5% 0% 0% 0%" class="table">
+			  						<tr>
+			  							<td>0,5</td>
+			  							<td>0</td>
+			  							<td>X</td>
+			  							<td>0</td>
+			  						</tr>
+			  					</table>
+							</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>
+								
+							 </td>
+							<td>1.2.3 Responsables del Sistema de Gestión de Seguridad y Salud en el Trabajo SG-SST con curso (50 horas)</td>
+							<td></td>
+							<td>0,5</td>
+							<td>
+								<table style="margin: -5% 0% 0% 0%" class="table">
+			  						<tr>
+			  							<td>0,5</td>
+			  							<td>0</td>
+			  							<td>X</td>
+			  							<td>0</td>
+			  						</tr>
+			  					</table>
+							</td>
+							<td></td>
+						</tr>
+			  		</tbody>
+			  	</table>
 			  </div>
 			</div>
 		</div>

@@ -44,10 +44,10 @@ export class ListaInspeccionComponent implements OnInit {
         console.log(data);
       })
     });
-        this.consultarInspeccion();
+        this.consultarInspeccion(this.inspecciones);
   }
 
-   consultarInspeccion(){
+   consultarInspeccion(f:NgForm){
     this.configuracion.getConfig()
       .subscribe(data => {
       this.config = data;

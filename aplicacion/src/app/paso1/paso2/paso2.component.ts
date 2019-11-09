@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./paso2.component.css']
 })
 export class Paso2Component implements OnInit {
+  
 
+  form_verdadero;
   constructor() { }
 
   ngOnInit() {
