@@ -52,14 +52,15 @@ export class InspeccionComponent implements OnInit {
   		'cargo': f.value['cargo'],
   		'fecha': f.value['fecha'],
   		'recursos': f.value['recursos'],
-  		'fundamentos': f.value['fundamentos'];
+  		'fundamentos': f.value['fundamentos']
+  	};
+
 
     this.inspeccion.guardarInspeccion(f.value)
       .subscribe((newUsuario) => {
-      //console.log(newUsuario);
+      
 
     })
-  	};
   	this.tareas.push(arreglo);
   	this.porcentaje = this.tareas.length / this.valor * 100;
   	this.e = this.e + 1;

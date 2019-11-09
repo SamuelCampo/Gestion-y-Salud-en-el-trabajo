@@ -18,7 +18,6 @@ export class ItemsEComponent implements OnInit {
   constructor(
   		private route:ActivatedRoute,
   		private navigate: Router,
-  		private serv_eval: EvaluacionService,
   		private serv_eval: EvaluacionService
   	) { }
 

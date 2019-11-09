@@ -34,7 +34,7 @@ export class Paso1Component implements OnInit {
 
 
   listarResult(id){
-    this.inspeccion.buscarResultado();
+    //this.inspeccion.buscarResultado();
   }
 
 }
