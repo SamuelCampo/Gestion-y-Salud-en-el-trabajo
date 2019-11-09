@@ -52,7 +52,7 @@ export class InspeccionComponent implements OnInit {
   		'cargo': f.value['cargo'],
   		'fecha': f.value['fecha'],
   		'recursos': f.value['recursos'],
-  		'fundamentos': f.value['fundamentos']
+  		'fundamentos': f.value['fundamentos'];
 
     this.inspeccion.guardarInspeccion(f.value)
       .subscribe((newUsuario) => {
