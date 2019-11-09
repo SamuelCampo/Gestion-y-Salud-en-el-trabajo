@@ -20,6 +20,7 @@ import { InspeccionService } from '../service/inspeccion/inspeccion.service';
 })
 export class Paso1Component implements OnInit {
   form_verdadero;
+  resultados;
   constructor(
 
   	private configuracion:ConfiguracionService,

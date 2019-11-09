@@ -64,6 +64,7 @@ const routes: Routes = [
 	{ path: 'roles', component: RolesComponent },
 	{ path: 'lista_roles' , component: ListaComponent },
 	{ path: 'inspeccion', component: InspeccionComponent },
+	{ path: 'inspeccion/:id', component: InspeccionComponent },
 	{ path: 'entidad', component: EntidadComponent },
 	{ path: 'lista-entidades', component: ListaEntidadesComponent },
 

@@ -27,9 +27,15 @@ export class InspeccionService {
 	    formData.append('varlorItems_t28',arr_inspeccion.varlorItems_t28);
 	    formData.append('fecha_t28',arr_inspeccion.fecha_t28);
 	    formData.append('cargo_t28',arr_inspeccion.cargo_t28);
+	    formData.append('fundamentos_t28',arr_inspeccion.fundamentos_t28);
 	    console.log(arr_inspeccion);
-   		const path = this.global.url()+"Inspecciones/Inspeccion/gestionar/guardar/"+arr_inspeccion.idinspeccion_t28;
+   		const path = this.global.url()+"Inspecciones/Inspeccion/gestionar/guardar/";
 	  	return this.http.post<any>(path, formData,{headers:headers});
+	}
+
+	getConfig2(id:string) {
+   		const path = this.global.url()+"Inspecciones/Inspeccion/ver_inspe/"+id;
+	  	return this.http.get(path);
 	}
 
 }

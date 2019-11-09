@@ -29,6 +29,13 @@ export class InspeccionComponent implements OnInit {
   fecha;
   recursos;
   fundamentos;
+  varlorItems_t28;
+  ver_inspeccion;
+  inspecciones;
+  id;
+  listar;
+  config;
+
   
   constructor(
 
@@ -40,8 +47,31 @@ export class InspeccionComponent implements OnInit {
     ) {}
 
   ngOnInit() {
-  	//this.validarCheck();	
+    this.route.paramMap.subscribe(params => {
+      this.id = params.get('id');
+      //console.log(this.id);
+      this.inspeccion.getConfig2(this.id)
+      .subscribe((data) =>{
+        this.ver_inspeccion = data[0];
+        console.log(data);
+      })
+    });
+    this.consultarInspe();
   }
+
+  consultarInspe(){
+    this.configuracion.getConfig()
+      .subscribe(data => {
+      this.config = data;
+      if (data !== false) {
+       
+      }else{
+        
+      }
+    },error => {
+
+    })
+    }
 
 
 

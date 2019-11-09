@@ -30,7 +30,11 @@ class Inspecciones extends CI_Controller {
 			case 'ver':
 				$query = $this->Inspeccion->ConsultaInspeccion($this->uri->segment(4));
 				echo json_encode($query);
-				break;
+			break;
+			case 'ver_inspe':
+				$query = $this->Inspeccion->ConsultaInspe($this->uri->segment(4));
+				echo json_encode($query);
+			break;
 
 		// case 'delete':
 		// 	if ($this->uri->segment(4)) {
