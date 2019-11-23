@@ -1,4 +1,5 @@
 <?php
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends CI_Controller {
@@ -18,7 +19,11 @@ class Login extends CI_Controller {
 
  public function validarSesion()
 	{
-
+		header('Access-Control-Allow-Origin: *');
+	header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method");
+	header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+	header("Allow: GET, POST, OPTIONS, PUT, DELETE");
+		
  	if ($this->uri->segment(3) == 'guardar') {
 
  	$user = $this->input->post('usuario_t0');
@@ -33,17 +38,19 @@ class Login extends CI_Controller {
  		);
  		
  		$this->session->set_userdata( $array );
- 		var_dump($this->session->userdata());
+ 		echo json_encode($this->session->userdata());
  	}
 	
  }
 
- $this->load->view('login');
-  
  }
 
  function saludar(){
- 	var_dump($this->session->userdata());
+ 	header('Access-Control-Allow-Origin: *');
+	header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method");
+	header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+	header("Allow: GET, POST, OPTIONS, PUT, DELETE");
+ 	return json_encode($this->session->userdata());
  }
 
 }

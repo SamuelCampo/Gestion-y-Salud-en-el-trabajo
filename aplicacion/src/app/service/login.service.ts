@@ -20,9 +20,8 @@ export class LoginService {
   getConfig(arr_login:Login) {
     this.formData.append('usuario',arr_login.usuario_t0);
     this.formData.append('clave',arr_login.clave_t0);
-
     this.headers.append('Access-Control-Allow-Origin','*');
-	  return this.http.post(this.global.url()+"Login/validarSesion/",this.formData,{headers:this.headers});
+	  return this.http.post(this.global.url()+"Login/saludar/guardar",this.formData,{headers:this.headers});
 	}
 
 	
