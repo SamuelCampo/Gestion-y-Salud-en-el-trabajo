@@ -51,26 +51,41 @@ public function RegistrarEvaluacion($datevaluacion = "" ,$idevaluacion_t9 = "")
 				}
 	}
 
-		public function get($id_formato = "",$position = "",$id_sub = "",$id_complementario = "")
+		public function get($id_formato = "")
 		{
 			//$this->db->select('tituloformato_t6, categoria_t6,descripcion_t4,descripcion_t3,iditens_t10');
 			$this->db->from('ps_categoria_for_t6');
 			$this->db->join('ps_formato_t2', 'idformato_t2 = idformato_t6', 'inner');
-			$this->db->join('ps_categoria_t8', 'idcategoria_t8 = idcategoria_t6', 'inner');
+			/*$this->db->join('ps_categoria_t8', 'idcategoria_t8 = idcategoria_t6', 'inner');
 			$this->db->join('ps_subcategoria_t4', 'idcategoria_t4 = idcategoria_t8', 'inner');
 			$this->db->join('ps_complementos_t3', 'idsubcategoria_t3 = idsubcategoria_t4', 'inner');
 			$this->db->join('ps_categoria_items_t7', 'identificativo_t7 = idcomplementos_t3', 'inner');
-			//$this->db->join('ps_items_t10', 'idcomplemento_t10 = idcomplemento_t10', 'inner');
-			$this->db->where('idformato_t2', $id_formato);
-			$this->db->limit(1,$position);
-			$query['formato'] = $this->db->get()->result();
-
-			$this->db->from('ps_items_t10');
-			$this->db->where('idcomplemento_t10',$query[0]->idcomplemento_t10);
-			$query['items'] = $this->db->get()->result();
+			$this->db->join('ps_items_t10', 'idcomplemento_t10 = idcomplemento_t10', 'inner');
+			*/$this->db->where('idformato_t2', $id_formato);
+			$query = $this->db->get()->result();
 			return $query;
+		}
 
+		public function subCategoria($id,$idformato)
+		{
+			$this->db->from('ps_categoria_for_t6');
+			$this->db->join('ps_categoria_t8', 'idcategoria_t8 = idcategoria_t6', 'inner');
+			$this->db->join('ps_subcategoria_t4', 'idcategoria_t4 = idcategoria_t8', 'inner');
+			$this->db->where('idformato_t6', $idformato);
+			$this->db->where('idrelacion_t6', $id);
+			$query = $this->db->get()->result();
+			return $query;
+		}
 
+		public function Complementario($id)
+		{
+			$this->db->from('ps_subcategoria_t4');
+			$this->db->join('ps_complementos_t3', 'idsubcategoria_t3 = idsubcategoria_t4', 'inner');
+			$this->db->join('ps_categoria_items_t7', 'complementario_t7 = idcomplementos_t3', 'inner');
+			$this->db->join('ps_items_t10', 'iditens_t10 = identificativo_t7', 'inner');
+			$this->db->where('idsubcategoria_t4', $id);
+			$query = $this->db->get()->result();
+			return $query;
 		}
 
 		public function Eva($position = "")
@@ -85,6 +100,60 @@ public function RegistrarEvaluacion($datevaluacion = "" ,$idevaluacion_t9 = "")
 
 			return $query;
 
+		}
+
+		public function IniciarEvaluacion($id = "",$formato = "")
+		{
+			$eval = (object)$this->input->post();
+
+			if (!empty($formato))$arr_evaluacion['idformato_t25'] = $formato;
+			if (empty($id))$arr_evaluacion['finicio_t25'] = date('Y-m-d h:i:s');
+			if (!empty($eval->finalizar))$arr_evaluacion['ffinal_t25'] = date('Y-m-d h:i:s');;
+			if (!empty($eval->finalizar))$arr_evaluacion['tiempodil_t25'] = "";
+			$arr_evaluacion['area_admin_t25'] = "";
+			$arr_evaluacion['fmod_t25'] = date('Y-m-d h:i:s');;
+			$arr_evaluacion['usrmod_t25'] = $eval->usrmod;
+
+			$this->db->where('idps_eval_formato_t25', $id);
+			$query = $this->db->get('ps_eval_formato_t25')->row();
+
+			if (is_array($query)) {
+				$this->db->where('idps_eval_formato_t25', $id);
+				$this->db->update('ps_eval_formato_t25', $arr_evaluacion);
+				return $id;
+			}else{
+				$this->db->insert('ps_eval_formato_t25', $arr_evaluacion);
+				return $this->db->insert_id();
+			}
+
+		}
+
+
+		public function guardarItems()
+		{
+			$items = (object)$this->input->post();
+			$n = count(json_decode($items->items));
+
+			$itms = (object)json_decode($items->items);
+			foreach ($itms as $key => $val) {
+				$val_complete = $val->val_cmpl /  $n;			
+			
+				$arr_items['idps_items_t26'] = $val->items;
+				$arr_items['valor_items_t26'] = $val->valor;
+				$arr_items['complementario_t26'] = $val->cmpl;
+				$arr_items['puntaje_evaluado_t26'] = $val_complete;
+				if ($val->valor == "C") {
+				$arr_items['puntaje_total_t26'] = $val_complete;
+				}else{
+				$arr_items['puntaje_total_t26'] = 0;
+				}
+				$arr_items['idps_evaluacion_t26'] = $items->idevaluacion;
+				$arr_items['fmod_t26'] = date('Y-m-d h:i:s');
+				$arr_items['usrmod_t26'] = $items->usrmod;
+				$query = $this->db->insert('ps_valor_evaluacion_items_t26', $arr_items);
+			}
+
+			return $query;
 		}
 }
 

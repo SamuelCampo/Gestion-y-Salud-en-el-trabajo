@@ -1,0 +1,65 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="login-wrap">
+			    <form #f="ngForm" (ngSubmit)="listar(f)"  id="form_tercero" class="form-inline login-html">
+			    	<div class="form-group" style="width: 60%">
+    					<input type="text" [(ngModel)]="id" name="desc" class="input form-control col-lg-12" id="staticEmail2" placeholder="Nombe del Rol">
+			    	</div>
+			    	<div class="form-group">
+			    		<button class="btn btn-light"><i class="material-icons">search</i></button>
+			    	</div>
+			    	<div class="form-group">
+			    		<a class="btn btn-light" [routerLink]="['/roles']"><i class="material-icons">control_point</i></a>
+			    	</div>
+			    </form>
+			 </div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12" >
+			<table class="table">
+			  <thead class="thead-dark">
+			    <tr>
+			      <th scope="col">Acción</th>
+			      <th scope="col">#</th>
+			      <th scope="col">Rol</th>
+			      <th scope="col">Fecha de Modificacion</th>
+			    </tr>
+			  </thead>
+			  <tbody *ngFor="let rol of list_rol">
+			  	<tr>
+			  		<td>
+			  			<div class="btn-group" role="group" aria-label="Basic example">
+					  	<a class="btn btn-secondary" [routerLink]="['/roles',rol.idroles_t11]"><i class="material-icons">create</i></a>
+					  	<button type="button" class="btn btn-secondary" (click)="eliminarRol(rol.idroles_t11,rol.nombre_rol_t11,rol)"><i class="material-icons">delete_forever</i></button>
+					</div>
+			  		</td>
+			  		<td>{{rol.idroles_t11}}</td>
+			  		<td>{{rol.nombre_rol_t11}}</td>
+			  		<td>{{rol.fcreacion_rol_t11}}</td>
+			  	</tr>
+			  </tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<div class="container-fluid" *ngIf="load">
+  <div class="background" >
+    <div class="left">
+      <div class="image"></div>
+      <div class="mask thick"></div>
+    </div>
+    <div class="right">
+      <div class="bar"></div>
+      <div class="mask thick"></div>
+      <div class="bar"></div>
+      <div class="mask thin"></div>
+      <div class="bar medium"></div>
+      <div class="mask thick"></div>
+      <div class="bar small"></div>
+    </div>
+  </div>	
+</div>

@@ -1,70 +1,7 @@
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Secciones de Tarea <button type="button" class="btn btn-dark" (click)="agregarItems()">+</button></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      	<div class="container-fluid">
-      		<div class="row">
-      			<div class="col-lg-4">
-      				<p>Titulo del Items</p>
-      			</div>
-      			<div class="col-lg-4">
-      				<p>Valor del Items {{valor}} </p>
-      			</div>
-      			<div class="col-lg-4">
-      				<p>Fecha de la evaluación</p>
-      			</div>
-      		</div>
-      		<div class="row">
-      			<div class="col-lg-4">
-      				<p>Progreso del Items</p>
-      			</div>
-      			<div class="col-lg-8">
-      				<div class="progress">
-					  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" [ngStyle]="{'width': style}" attr.aria-valuenow="{{porcentaje}}" aria-valuemin="0" aria-valuemax="100"></div>
-					</div>
-      			</div>
-      		</div>
-      		
-      		<table class="table">
-      			<thead class="bg-dark text-white">
-      				<tr>
-      					<td>Numero de Items</td>
-      					<td>Concepto</td>
-      					<td>Valor</td>
-      					<td>Fecha de entrega</td>
-      					<td>Responsable</td>
-      				</tr>
-      			</thead>
-      			<tbody *ngFor="let tar of tareas">
-      				<tr>
-      					<td>resultado</td>
-      					<td></td>
-      					<td></td>
-      					<td></td>
-      					<td></td>
-      				</tr>
-      			</tbody>
-      		</table>
-      	</div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="!form_verdadero">
 	<div class="card">
 	  <div class="card-body">
-	  	<h2>Resumen del Formato </h2>
+<!-- 	  	<h2>Resumen del Formato </h2>
 	    <table class="table table-stripped">
 	    	<thead>
 	    		<tr>
@@ -86,7 +23,7 @@
 	    			<td>
 	    				<div class="btn-group" role="group" aria-label="Basic example">
 						  <button type="button" class="btn btn-secondary"><i class="material-icons">remove_red_eye</i></button>
-						  <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" ><i class="material-icons">add</i></button>
+						  <button type="button" class="btn btn-secondary" (click)="form_verdadero = true" ><i class="material-icons">add</i></button>
 						</div>
 	    			</td>
 	    		</tr>
@@ -99,7 +36,7 @@
 	    			<td>
 	    				<div class="btn-group" role="group" aria-label="Basic example">
 						  <button type="button" class="btn btn-secondary"><i class="material-icons">remove_red_eye</i></button>
-						  <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" ><i class="material-icons">add</i></button>
+						  <button type="button" class="btn btn-secondary" (click)="form_verdadero = true" ><i class="material-icons">add</i></button>
 						</div>
 	    			</td>
 	    		</tr>
@@ -112,12 +49,194 @@
 	    			<td>
 	    				<div class="btn-group" role="group" aria-label="Basic example">
 						  <button type="button" class="btn btn-secondary"><i class="material-icons">remove_red_eye</i></button>
-						  <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" ><i class="material-icons">add</i></button>
+						  <button type="button" class="btn btn-secondary" (click)="form_verdadero = true" ><i class="material-icons">add</i></button>
 						</div>
 	    			</td>
 	    		</tr>
 	    	</tbody>
-	    </table>
+	    </table> -->
+	    <div class="container-fluid">
+      		<div class="row">
+      			<div class="col-lg-4">
+      				<button class="btn btn-secondary" (click)="add_item = true">+</button>
+      			</div>
+      			<div class="col-lg-8">
+      				Items de evaluacion
+      			</div>
+      		</div>
+      		<div class="row">
+      			<div class="col-lg-4">
+      				<p>Titulo del Items</p>
+      			</div>
+      			<div class="col-lg-4">
+      				<p>Valor del Items {{valor}} </p>
+      			</div>
+      			<div class="col-lg-4">
+      				<p>Fecha de la evaluación</p>
+      			</div>
+      		</div>
+      		<div class="row">
+      			<div class="col-lg-4">
+      				<p>Progreso del Items</p>
+      			</div>
+      			<div class="col-lg-8">
+      				<div class="progress">
+					  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" [ngStyle]="{'width': style}" attr.aria-valuenow="{{varlorItems}}" aria-valuemin="0" aria-valuemax="100"></div>
+					</div>
+      			</div>
+      		</div>
+      		
+      		<table class="table">
+      			<thead class="bg-dark text-white">
+      				<tr>
+      					<td>Numero de Items</td>
+      					<td>Concepto</td>
+      					<td>Valor</td>
+      					<td>Fecha de entrega</td>
+      					<td>Responsable</td>
+      				</tr>
+      			</thead>
+      			<tbody *ngFor="let inspecciones of ver_inspeccion">
+      				<tr>
+      					<td><input type="checkbox" name="idtareas" (change)="validarCheck()" value=""></td>
+      					<td>{{inspecciones.plan_accion_t28}}</td>
+      					<td>{{varlorItems_t28 | number}}</td>
+      					<td>{{inspecciones.fecha_t28}}</td>
+      					<td>{{inspecciones.varlorItems_t28}}</td>
+      				</tr>
+      			</tbody>
+      		</table>
+      		<form #f="ngForm" (ngSubmit)="agregarItems(f)">
+      		      <div class="container-fluid">
+      			   <div *ngIf="add_item" class="row">
+      				
+      					<div class="col">
+      						<mat-form-field class="example-full-width">
+						      <input matInput [(ngModel)]="plan_accion" name="plan_accion_t28" placeholder="Plan de Acciòn">
+						    </mat-form-field>	
+						</div>
+      					<div class="col">
+      						<mat-form-field class="example-full-width">
+						      <input matInput [(ngModel)]="cargo" name="cargo_t28" placeholder="Cargo Responsable">
+						    </mat-form-field>
+						</div>
+      					<div class="col">
+      						<mat-form-field style="">
+							  <input matInput [(ngModel)]="fecha" name="fecha_t28" [matDatepicker]="picker" placeholder="Fecha de entrega">
+							  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+							  <mat-datepicker #picker startView="year"  [startAt]="startDate"></mat-datepicker>
+							</mat-form-field>
+						</div>
+      					<div class="col">
+      						<mat-form-field class="example-full-width">
+						      <input matInput [(ngModel)]="recursos" name="varlorItems_t28" placeholder="Resursos a utilizar">
+						    </mat-form-field>
+						</div>
+      					<div class="col">
+      						<mat-form-field class="example-full-width">
+						      <input matInput [(ngModel)]="fundamentos" name="fundamentos_t28" placeholder="Fundamentos y soportes de la efectividad de las acciones y actividades">
+						    </mat-form-field>
+						</div>
+						<div class="col-lg-12">
+							<button type="submit" class="btn btn-primary btn-block">Guardar</button>
+						</div>
+      			   </div>
+      		      </div>
+      		</form>
+      </div>
 	  </div>
 	</div>
 </div>
+<!-- <div class="modal-body" *ngIf="form_verdadero">
+      	<div class="container-fluid">
+      		<div class="row">
+      			<div class="col-lg-4">
+      				<button class="btn btn-secondary" (click)="add_item = true">+</button>
+      			</div>
+      			<div class="col-lg-8">
+      				Items de evaluacion
+      			</div>
+      		</div>
+      		<div class="row">
+      			<div class="col-lg-4">
+      				<p>Titulo del Items</p>
+      			</div>
+      			<div class="col-lg-4">
+      				<p>Valor del Items {{valor}} </p>
+      			</div>
+      			<div class="col-lg-4">
+      				<p>Fecha de la evaluación</p>
+      			</div>
+      		</div>
+      		<div class="row">
+      			<div class="col-lg-4">
+      				<p>Progreso del Items</p>
+      			</div>
+      			<div class="col-lg-8">
+      				<div class="progress">
+					  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" [ngStyle]="{'width': style}" attr.aria-valuenow="{{varlorItems}}" aria-valuemin="0" aria-valuemax="100"></div>
+					</div>
+      			</div>
+      		</div>
+      		
+      		<table class="table">
+      			<thead class="bg-dark text-white">
+      				<tr>
+      					<td>Numero de Items</td>
+      					<td>Concepto</td>
+      					<td>Valor</td>
+      					<td>Fecha de entrega</td>
+      					<td>Responsable</td>
+      				</tr>
+      			</thead>
+      			<tbody *ngFor="let tar of tareas">
+      				<tr>
+      					<td><input type="checkbox" name="idtareas" (change)="validarCheck()" value=""></td>
+      					<td>{{tar.plan_accion}}</td>
+      					<td>{{varlorItems | number}}</td>
+      					<td>{{tar.fecha}}</td>
+      					<td>{{tar.cargo}}</td>
+      				</tr>
+      			</tbody>
+      		</table>
+      		<form #f="ngForm" (ngSubmit)="agregarItems(f)">
+      		<div class="container-fluid">
+      			<div *ngIf="add_item" class="row">
+      				
+      					<div class="col">
+      						<mat-form-field class="example-full-width">
+						      <input matInput [(ngModel)]="plan_accion" name="plan_accion" placeholder="Plan de Acciòn">
+						    </mat-form-field>	
+						</div>
+      					<div class="col">
+      						<mat-form-field class="example-full-width">
+						      <input matInput [(ngModel)]="cargo" name="cargo" placeholder="Cargo Responsable">
+						    </mat-form-field>
+						</div>
+      					<div class="col">
+      						<mat-form-field style="">
+							  <input matInput [(ngModel)]="fecha" name="fecha" [matDatepicker]="picker" placeholder="Fecha de entrega">
+							  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+							  <mat-datepicker #picker startView="year"  [startAt]="startDate"></mat-datepicker>
+							</mat-form-field>
+						</div>
+      					<div class="col">
+      						<mat-form-field class="example-full-width">
+						      <input matInput [(ngModel)]="recursos" name="recursos" placeholder="Resursos a utilizar">
+						    </mat-form-field>
+						</div>
+      					<div class="col">
+      						<mat-form-field class="example-full-width">
+						      <input matInput [(ngModel)]="fundamentos" name="fundamentos" placeholder="Fundamentos y soportes de la efectividad de las acciones y actividades">
+						    </mat-form-field>
+						</div>
+						<div class="col-lg-12">
+							<button type="submit" class="btn btn-primary btn-block">Guardar</button>
+						</div>
+					
+      			</div>
+      		</div>
+      		</form>
+      </div>
+  </div>
+     -->

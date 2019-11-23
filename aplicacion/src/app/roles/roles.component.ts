@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule,NgForm } from '@angular/forms';
 import { ConfiguracionService } from '../service/configuracion.service';
 import { Router,ActivatedRoute } from '@angular/router';
-import { RolesService } from '../service/roles/roles.service';
+import { UsuarioService } from '../service/usuario.service';
 
 import {
   trigger,
@@ -31,7 +31,7 @@ export class RolesComponent implements OnInit {
     private configuracion:ConfiguracionService,
     private router:Router,
     private route:ActivatedRoute,
-    private roles:RolesService
+    private serv_usuario: UsuarioService
     ) { }
 
 
@@ -47,9 +47,11 @@ export class RolesComponent implements OnInit {
   }
 
   guardarRoles(f:NgForm){
-    this.roles.guardarRol(f.value)
-    .subscribe((data) =>{
-        console.log(data);
+    this.serv_usuario.guardarRol(f.value)
+    .subscribe((data) => {
+       if (data) {
+         this.router.navigateByUrl('/lista_roles');
+       }
     })
   }
 

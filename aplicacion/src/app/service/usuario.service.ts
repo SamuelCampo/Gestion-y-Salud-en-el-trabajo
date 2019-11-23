@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient , HttpHeaders} from '@angular/common/http';
 import { Usuario } from '../interface/usuario';
+import { Roles } from '../interface/roles';
 import { GlobalesService } from '../variables_globales/globales.service';
 
 
@@ -45,6 +46,23 @@ export class UsuarioService {
 		let path = this.global.url()+"Registrar/usuario/delete/"+id;
     return this.http.delete(path);
 	}
+
+	listarRoles(id:string){
+		let path = this.global.url()+'Rol/roles/ver/';
+		return this.http.get(path);
+	}
+
+	guardarRol(arr_rol:Roles){
+		this.formData.append('nombre_rol_t11',arr_rol.nombre_rol_t11);
+		return this.http.post(this.global.url()+'Rol/roles/gestionar/guardar',this.formData);
+
+	}
+
+	eliminarRol(id){
+		let path = this.global.url()+"Rol/roles/delete/"+id;
+    return this.http.delete(path);
+	}
+
 }
 
 

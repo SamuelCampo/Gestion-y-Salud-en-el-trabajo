@@ -35,6 +35,7 @@ export class IntroduccionComponent implements OnInit {
   roll;
   id;
   ver_usuario: any = {};
+  list_rol;
   constructor(
     private configuracion:ConfiguracionService,
     private router:Router,
@@ -52,6 +53,7 @@ export class IntroduccionComponent implements OnInit {
         console.log(data);
       })
     });
+    this.listar();
     this.consultarUsuarios();
   }
 
@@ -76,6 +78,13 @@ export class IntroduccionComponent implements OnInit {
     },error => {
 
     })
+  }
+
+  listar(){
+    this.usuarios.listarRoles("")
+    .subscribe((data) => {
+      this.list_rol = data;
+    });
   }
 
 }

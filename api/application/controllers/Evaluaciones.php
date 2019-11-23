@@ -20,15 +20,29 @@ class Evaluaciones extends CI_Controller {
 			case '0':
 			case 'gestionar':
 				if ($this->uri->segment(4) == "guardar") {
-
-				$query = $this->evaluacion->RegistrarEvaluacion();
-				echo json_encode($query);
+					$query = $this->evaluacion->IniciarEvaluacion("",$this->uri->segment(5));
+					echo json_encode($query);
 				}
 				break;
 			case 'ver':
 				$id_position = $this->uri->segment(5);
 				$id = $this->uri->segment(4);
 				$query = $this->evaluacion->get($id,$id_position);
+				echo json_encode($query);
+				break;
+			case 'complementarios':
+				$formato = $this->uri->segment(5);
+				$id = $this->uri->segment(4);
+				$query = $this->evaluacion->subCategoria($id,$formato);
+				echo json_encode($query);
+				break;
+			case 'items':
+				$id = $this->uri->segment(4);
+				$query = $this->evaluacion->Complementario($id);
+				echo json_encode($query);
+				break;
+			case 'guardarItems':
+				$query = $this->evaluacion->guardarItems();
 				echo json_encode($query);
 				break;
 		}

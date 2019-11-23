@@ -4,3 +4,16 @@
 	    margin: 1.75rem auto;
 	}
 }
+
+.md-datepicker-calendar-pane{
+	z-index: -2;
+}
+
+.modal{
+	position: absolute;
+	z-index: 1049 !important;
+}
+
+.decoracion{
+	text-decoration:line-through;
+}

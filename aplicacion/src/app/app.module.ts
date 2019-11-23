@@ -27,10 +27,31 @@ import { ComplementarioComponent } from './complementario/complementario.compone
 import { ListaComplementarioComponent } from './complementario/lista-complementario/lista-complementario.component';
 import { ListaUsuarioComponent } from './introduccion/lista-usuario/lista-usuario.component';
 import { RolesComponent } from './roles/roles.component';
-import { ListarRolesComponent } from './roles/listar-roles/listar-roles.component';
 import { InspeccionComponent } from './inspeccion/inspeccion/inspeccion.component';
 import { ListaInspeccionComponent } from './inspeccion/lista-inspeccion/lista-inspeccion.component';
 import { ModalComponent } from './modals/modal/modal.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { 
+   MatDatepickerModule, 
+   MatNativeDateModule,
+   MatFormFieldModule,
+   MatInputModule
+} from '@angular/material';
+import { ListaComponent } from './roles/lista/lista.component';
+
+import { EntidadComponent } from './entidad/entidad.component';
+import { ListaEntidadesComponent } from './entidad/lista-entidades/lista-entidades.component';
+
+import { CategoriasEvaluacionComponent } from './evaluacion/parametros/categorias/categorias.component';
+
+import { Paso1Component } from './paso1/paso1.component';
+import { Paso2Component } from './paso1/paso2/paso2.component';
+import { Paso3Component } from './paso1/paso3/paso3.component';
+
+import { SubCategoriaEvaluacionComponent } from './evaluacion/parametros/sub-categoria-evaluacion/sub-categoria-evaluacion.component';
+import { ItemsEComponent } from './evaluacion/parametros/items-e/items-e.component';
+
+
 
 const routes: Routes = [];
 @NgModule({
@@ -57,10 +78,25 @@ const routes: Routes = [];
     ListaComplementarioComponent,
     ListaUsuarioComponent,
     RolesComponent,
-    ListarRolesComponent,
     InspeccionComponent,
     ListaInspeccionComponent,
     ModalComponent,
+    ListaComponent,
+
+    EntidadComponent,
+    ListaEntidadesComponent,
+
+    CategoriasEvaluacionComponent,
+
+    Paso1Component,
+
+    Paso2Component,
+
+    Paso3Component,
+
+    SubCategoriaEvaluacionComponent,
+
+    ItemsEComponent,
   ],
   entryComponents: [ModalComponent],
   imports: [
@@ -69,9 +105,20 @@ const routes: Routes = [];
     FormsModule,
     HttpClientModule,
     TruncateModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    BrowserAnimationsModule,
+     MatDatepickerModule,
+      MatNativeDateModule,
+      MatFormFieldModule,
+      MatInputModule
   ],
-  exports: [RouterModule,ModalComponent],
+  exports: [
+      RouterModule,
+      ModalComponent,
+      MatDatepickerModule,
+      MatNativeDateModule,
+      MatFormFieldModule,
+      MatInputModule],
   providers: [],
   bootstrap: [AppComponent]
 })

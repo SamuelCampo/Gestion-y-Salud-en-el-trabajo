@@ -18,6 +18,7 @@ export class ItemsComponent implements OnInit {
   marco_legal1;
   criterio1;
   verificacion1;
+  validar;
 
   constructor(
   	private ser_categoria:CategoriaPadreService,

@@ -1,15 +1,10 @@
 <div class="container">
 	<div class="row">
-		<div class="col-lg-12 text-center">
-			<h3>Hola , Eres nuevo te invitamos a configurar los datos de tu <b>tu sistema de gestion y salud en el trabajo</b></h3>
-		</div>
-	</div>
-	<div class="row">
 		<div class="col-lg-2"></div>
 		<div class="col-lg-8">
-			<div class="card">
-			  <div class="card-header">
-			    Crea tu usuario principal
+			<div class="card" style="border: none;">
+			  <div class="text-center">
+			    <h4>Crea tu usuario principal</h4>
 			  </div>
 			  <div class="login-wrap" *ngIf="!id">
 			  	Insertar
@@ -55,12 +50,7 @@
 							<div class="group">
 							    <label for="" class="label">Roll del Usuario</label>
 							    <select [(ngModel)]="roll" name="roll_t0" id="" class="input form-control">
-							    	<option value="roll_t0"></option>
-							    	<option value=""></option>
-							    	<option value="SELECT 1" style="color: black">SELECT 1</option>
-							    	<option value="SELECT 2" style="color: black">SELECT 2</option>
-							    	<option value="SELECT 3" style="color: black">SELECT 3</option>
-							    	<option value="SELECT 4" style="color: black">SELECT 4</option>
+							    	<option *ngFor="let rol of list_rol" value="{{rol.nombre_rol_t11}}">{{rol.nombre_rol_t11}}</option>
 							    </select>
 							</div>
 							    <div class="group">
@@ -119,13 +109,8 @@
 							</div>
 							<div class="group">
 							    <label for="" class="label">Roll del Usuario</label>
-							    <select [(ngModel)]="ver_usuario.roll" name="roll_t0" id="" class="input form-control">
-							    	<option value="{{ver_usuario.cargo_t0}}" [(ngModel)]="roll" style="color: black">{{ver_usuario.cargo_t0}}</option>
-							    	<option value=""></option>
-							    	<option value="SELECT 1" style="color: black">SELECT 1</option>
-							    	<option value="SELECT 2" style="color: black">SELECT 2</option>
-							    	<option value="SELECT 3" style="color: black">SELECT 3</option>
-							    	<option value="SELECT 4" style="color: black">SELECT 4</option>
+							    <select [(ngModel)]="roll" name="roll_t0" id=""  class="form-control">
+							    	<option *ngFor="let rol of list_rol" value="{{rol.nombre_rol_t11}}">{{rol.nombre_rol_t11}}</option>
 							    </select>
 							</div>
 							    <div class="group">

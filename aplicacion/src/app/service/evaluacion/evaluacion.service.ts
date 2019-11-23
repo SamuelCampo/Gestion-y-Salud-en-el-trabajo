@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient , HttpHeaders} from '@angular/common/http';
 import { Evaluacion,Fmto_evaluacion } from '../../interface/evaluacion'
 import { GlobalesService } from '../../variables_globales/globales.service';
+import { ItemsVal } from '../../interface/items-val';
 
 @Injectable({
   providedIn: 'root'
@@ -12,19 +13,20 @@ export class EvaluacionService {
   constructor(private http:HttpClient , public global:GlobalesService) { }
 
 
-  buscarCategoria(evaluacion:Evaluacion,idposition){
-  	//console.log(this.base_url+'Evaluaciones/Evaluacion/ver/'+evaluacion);
-  	let offset = idposition;
-  	if (idposition = 0) {
+  buscarCategoria(evaluacion:Evaluacion){
   	  return this.http.get(this.global.url()+'Evaluaciones/Evaluacion/ver/'+evaluacion);	
-  	}else{
-      console.log(this.global.url()+'Evaluaciones/Evaluacion/ver/'+evaluacion+'/'+offset);
-  		return this.http.get(this.global.url()+'Evaluaciones/Evaluacion/ver/'+evaluacion+'/'+offset);	
-  	}
   }
 
-  guardarEvaluacion(arr_formato:Fmto_evaluacion){
-  	console.log(arr_formato);
+  guardarEvaluacion(id){
+    this.formData.append('usrmod',this.global.usr());
+  	return this.http.post(this.global.url()+'Evaluaciones/Evaluacion/gestionar/guardar/'+id,this.formData);
+  }
+
+  guardarItems(idevaluacion:string,arr_items){
+    this.formData.append('items',JSON.stringify(arr_items));
+    this.formData.append('idevaluacion',this.global.getFormato());
+    this.formData.append('usrmod',this.global.usr());
+    return this.http.post(this.global.url()+'/Evaluaciones/Evaluacion/guardarItems/',this.formData,{headers:this.headers});
   }
 
 
@@ -32,4 +34,11 @@ export class EvaluacionService {
     return this.http.get(this.global.url()+'Evaluaciones/Inspecciones/ver'+id);
   }
 
+  buscarComplementos(id:string,formato:string){
+    return this.http.get(this.global.url()+'Evaluaciones/Evaluacion/complementarios/'+id+"/"+formato);
+  }
+
+  buscarItems(id,evaluacion){
+    return this.http.get(this.global.url()+'Evaluaciones/Evaluacion/items/'+id+'/'+evaluacion);
+  }
 }

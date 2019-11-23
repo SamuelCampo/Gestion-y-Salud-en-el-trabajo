@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Pipe } from '@angular/core';
+import { FormsModule,NgForm } from '@angular/forms';
+import { ConfiguracionService } from '../../service/configuracion.service';
+import { Router,ActivatedRoute } from '@angular/router';
+import { InspeccionService } from '../../service/inspeccion/inspeccion.service';
 
 @Component({
   selector: 'app-inspeccion',
@@ -8,29 +12,108 @@ import { Component, OnInit } from '@angular/core';
 
 export class InspeccionComponent implements OnInit {
 
+  startDate = new Date();
+  minDate = new Date(2019, 11, 2);
   msj;
   tareas:any = [];
   porcentaje;
-  valor = 5;
+  valor : number = 5.0;
   style;
+  varlorItems:number = 0.0;
+  e: number = 0;
+  quanty;
+  form_verdadero = false;
+  add_item;
+  plan_accion;
+  cargo;
+  fecha;
+  recursos;
+  fundamentos;
+  varlorItems_t28;
+  ver_inspeccion;
+  inspecciones;
+  id;
+  listar;
+  config;
+
   
-  constructor() {}
+  constructor(
+
+    private configuracion:ConfiguracionService,
+    private router:Router,
+    private route:ActivatedRoute,
+    private inspeccion:InspeccionService
+
+    ) {}
 
   ngOnInit() {
-  	this.validarCheck();	
+    this.route.paramMap.subscribe(params => {
+      this.id = params.get('id');
+      //console.log(this.id);
+      this.inspeccion.getConfig2(this.id)
+      .subscribe((data) =>{
+        this.ver_inspeccion = data[0];
+        console.log(data);
+      })
+    });
+    this.consultarInspe();
   }
 
+  consultarInspe(){
+    this.configuracion.getConfig()
+      .subscribe(data => {
+      this.config = data;
+      if (data !== false) {
+       
+      }else{
+        
+      }
+    },error => {
+
+    })
+    }
 
 
-  agregarItems(){
-  	let arreglo = {'tarea 1':'Esta es la aplicacion a la que vamos a tener que buscar'};
+
+  agregarItems(f:NgForm){
+  	console.log(f.value);
+  	let arreglo = {
+  		'plan_accion':f.value['plan_accion'],
+  		'cargo': f.value['cargo'],
+  		'fecha': f.value['fecha'],
+  		'recursos': f.value['recursos'],
+  		'fundamentos': f.value['fundamentos']
+  	};
+
+
+    this.inspeccion.guardarInspeccion(f.value)
+      .subscribe((newUsuario) => {
+      
+
+    })
   	this.tareas.push(arreglo);
   	this.porcentaje = this.tareas.length / this.valor * 100;
-  	this.style = Math.round(this.porcentaje) + '%';
+  	this.e = this.e + 1;
+  	this.varlorItems = this.valor / this.e;
+  	this.quanty = this.tareas.length;
+  	this.style = Math.round(100 / this.quanty) + '%';
+  	console.log(100 / this.tareas.length);
+  	this.add_item = false;
+  	f.reset();
   }
 
   validarCheck(){
-  	//setInterval(function(){ alert("Hello"); }, 3000);
+  	this.quanty = this.quanty - 1;
+  	this.style = Math.round(100 / this.quanty) + '%';
   }
+
+  // agregarItems(f: NgForm,){
+  //   this.inspeccion.guardarInspeccion(f.value)
+  //   .subscribe((newUsuario) => {
+  //     //console.log(newUsuario);
+
+  //   })
+  //  // this.router.navigateByUrl('lista-entidades'); 
+  // }
 
 }

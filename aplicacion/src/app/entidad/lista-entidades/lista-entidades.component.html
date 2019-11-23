@@ -1,0 +1,56 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="login-wrap">
+			    <form #f="ngForm" (ngSubmit)="buscarEntidades(f)"  id="form_tercero" class="form-inline login-html">
+			    	<div class="form-group" style="width: 60%">
+    					<input type="text" [(ngModel)]="desc" name="desc" class="input form-control col-lg-12" id="staticEmail2" placeholder="Nombre de la entidad">
+			    	</div>
+			    	<div class="form-group">
+			    		<button class="btn btn-light"><i class="material-icons">search</i></button>
+			    	</div>
+			    	<div class="form-group">
+			    		<a class="btn btn-light" [routerLink]="['/entidad']"><i class="material-icons">control_point</i></a>
+
+			    	</div>
+			    </form>
+			 </div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12" >
+			<table class="table">
+			  <thead class="thead-dark">
+			    <tr>
+			      <th scope="col">Accion</th>
+			      <th scope="col">Nombre de la Entidad</th>
+			      <th scope="col">Nit de la Entidad</th>
+			      <th scope="col">Responsable</th>
+			      <th scope="col">Telefono</th>
+			      <th scope="col">Correo</th>
+			      <th scope="col">Direccion</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr *ngFor="let entidades of arr_entidad">
+			    	<td>
+			    	  <div class="btn-group" role="group" aria-label="Basic example">
+					  	<a class="btn btn-secondary" [routerLink]="['/entidad',entidades.nit_t12]"><i class="material-icons">create</i></a>
+					  	<button type="button" class="btn btn-secondary" (click)="eliminarEntidad(entidades.nit_t12,entidades.nombre_t12,entidades)"><i class="material-icons">delete_forever</i></button>
+					</div>
+			    	</td>
+			    	<td>{{entidades.nombre_t12}}</td>
+			    	<td>{{entidades.nit_t12}}</td>
+			    	<td>{{entidades.responsable_t12}}</td>
+			    	<td>{{entidades.telefono_t12}}</td>
+			    	<td>{{entidades.correo_t12}}</td>
+			    	<td>{{entidades.direccion_t12}}</td>
+			    </tr>
+			  </tbody>
+			</table>
+		</div>
+	</div>
+</div>
+

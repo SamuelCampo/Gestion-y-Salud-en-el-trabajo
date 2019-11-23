@@ -1,52 +1,22 @@
 <div class="container-fluid">
-	<div class="row" *ngIf="parametros == '' ">
-		<h1 class="text-left col-lg-12">Comencemos una nueva evaluación</h1>
-		<form #f="ngForm" (ngSubmit)="iniciar(f)" id="form_tercero" class="col-lg-12">
-			<div class="group">
-				<label for="#evaluacion">Selecciona el formato para evaluar
-					<select [(ngModel)]="id_formato" name="id_formato" id="id_formato" class="form-control">
-						<option *ngFor="let format of formato" value="{{format.idformato_t2}}">{{format.titulo_t2}}</option>
-					</select>
-				</label>
-			</div>
-			<div class="group">
-				<button name="iniciar" value="si" class="btn btn-ligth">Iniciar Evaluación</button>
-			</div>
-		</form>
-	</div>
-	<div class="row" *ngIf="parametros != '' ">	
-		<h1 class="col-lg-12" *ngFor="let header of parametros ; index as i; first as isFirst">
-			<div class="card ">
-				<div class="card-header text-center">
-					<h5 >Iniciamos con el formato: <b>{{parametros.titulo_t2}}</b></h5>
-					<h6 >Categoria: {{header.categoria_t6}}</h6>
-					<h6 >{{header.n_identificador_t4}} {{formato.descripcion_t4}}</h6>
-					<h6>{{header.n_identificativo_t3}} {{ header.descripcion_t3 }} Valor: {{ header.valoracion_t3 }} %</h6>
+	<div class="row text-center" *ngIf="parametros == '' ">
+		<img src="../../assets/img/test.png" style="max-width: 150px;display:block;margin:auto;" alt="">
+		<h1 class="text-center col-lg-12">Comencemos una nueva evaluación</h1>
+		<div class="col-lg-4"></div>
+		<div class="col-lg-4">
+			<form #f="ngForm" (ngSubmit)="iniciar(f)" id="form_tercero" class="col-lg-12">
+				<div class="group">
+					<label for="#evaluacion">Selecciona el formato para evaluar
+						<select [(ngModel)]="id_formato" name="id_formato" id="id_formato" class="form-control">
+							<option *ngFor="let format of formato" value="{{format.idformato_t2}}">{{format.titulo_t2}}</option>
+						</select>
+					</label>
 				</div>
-				<div class="card-body row">
-					<form #f="ngForm" (ngSubmit)="guardarItems(f)" id="form_tercero">
-						<div class="col-lg-12" *ngFor="let item of items">
-							<div class="">
-									<p style="font-size: 15px">	{{item.mo_verificacion_t10}}</p>
-							</div>
-							<div class="form-check-inline" *ngFor="let val of valpermit">
-							     <label style="font-size: 15px">{{ val }}
-							     	<input type="radio" class="form-check-input" (click)="validar(val)" [(ngModel)]="item.iditens_t10" name="occurrences_{{item.iditens_t10}}" value="{{val}}" />
-							     </label>
-							</div>
-						</div>
-						<div class="col-md-4"></div>
-						<div class="col-md-4">	
-							<button type="submit" class="btn btn-ligth" value="1">Enviar</button>
-						</div>
-						<div class="col-md-4">	</div>
-						<input type="hidden" name="nomb_eval_t14" [(ngModel)]="parametros.titulo_t2">
-						<input type="hidden" name="id_evalenc_t14" [(ngModel)]="parametros.idformato_t2">
-						<input type="hidden" name="posicion" [(ngModel)]="posicion">
-					</form>
+				<div class="group">
+					<button name="iniciar" value="si" class="btn btn-ligth">Iniciar Evaluación</button>
 				</div>
-				<div class="card-footer"></div>
-			</div>
-		</h1>
+			</form>	
+		</div>
+		<div class="col-lg-4"></div>
 	</div>
 </div>
